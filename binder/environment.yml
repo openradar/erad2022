@@ -7,7 +7,7 @@ dependencies:
   - scipy
   - matplotlib
   - pandas
-  - xarray>=0.12.2
+  - xarray
   - tqdm
   - dask-gateway
 # data science stuff
@@ -32,7 +32,6 @@ dependencies:
   - wradlib
   - coincbc
   - pip:
-    - sphinx-pythia-theme
     - git+https://github.com/ARM-DOE/pyart.git
     - git+https://github.com/openradar/PyDDA.git
     - nexradaws
