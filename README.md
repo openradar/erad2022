@@ -2,8 +2,8 @@
 
 # ERAD 2022 Open Radar Science Shortcourse
 
-[![nightly-build](https://github.com/mgrover1/erad2022/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/mgrover1/erad2022/actions/workflows/nightly-build.yaml)
-[![Binder](https://binder-staging.2i2c.cloud/badge_logo.svg)](https://binder-staging.2i2c.cloud/v2/gh/mgrover1/erad2022/main?labpath=notebooks)
+[![nightly-build](https://github.com/openradar/erad2022/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/openradar/erad2022/actions/workflows/nightly-build.yaml)
+[![Binder](https://binder-staging.2i2c.cloud/badge_logo.svg)](https://binder-staging.2i2c.cloud/v2/gh/openradar/erad2022/main?labpath=notebooks)
 
 This tutorial covers how to get started with the Open Radar Science stack!
 
@@ -17,12 +17,11 @@ Daniel Wolfensberger, Jordi Figueras I Ventura, Scott Collis, Mike Dixon, Maxwel
 
 ### Contributors
 
-<a href="https://github.com/mgrover1/erad2022/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=mgrover1/erad2022" />
+<a href="https://github.com/openradar/erad2022/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=openradar/erad2022" />
 </a>
 
 ## Structure
-(State one or more sections that will comprise the notebook. E.g., *This cookbook is broken up into two main sections - "Foundations" and "Example Workflows."* Then, describe each section below.)
 
 ### Tool Foundations
 Content relevant to each of the Open Radar packages (ex. Py-ART, wradlib, LROSE, BALTRAD).
@@ -55,10 +54,10 @@ If you are interested in running this material locally on your computer, you wil
 
 (Replace "cookbook-example" with the title of your cookbooks)   
 
-1. Clone the `https://github.com/mgrover1/erad2022.git` repository:
+1. Clone the `https://github.com/openradar/erad2022.git` repository:
 
    ```bash
-    git clone https://github.com/mgrover1/erad2022.git
+    git clone https://github.com/openradar/erad2022.git
     ```  
 1. Move into the `cookbook-example` directory
     ```bash
