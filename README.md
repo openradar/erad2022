@@ -13,7 +13,7 @@ The course will discuss the principles of open science and provide an overview o
 
 ## Authors
 
-[Max Grover](@mgrover1)
+Daniel Wolfensberger, Jordi Figueras I Ventura, Scott Collis, Mike Dixon, Maxwell Grover, Robert Jackson, Kai Mühlbauer, Joseph O’Brien, Velibor Pejčić
 
 ### Contributors
 
