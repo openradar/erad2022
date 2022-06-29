@@ -1,37 +1,37 @@
 <img src="thumbnail.svg" alt="thumbnail" width="300"/>
 
-# (Replace_with_your_title) Cookbook
+# ERAD 2022 Open Radar Science Shortcourse
 
-[![nightly-build](https://github.com/ProjectPythiaCookbooks/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythiaCookbooks/cookbook-template/actions/workflows/nightly-build.yaml)
-[![Binder](https://binder-staging.2i2c.cloud/badge_logo.svg)](https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaCookbooks/cookbook-template/main?labpath=notebooks)
+[![nightly-build](https://github.com/mgrover1/erad2022/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/mgrover1/erad2022/actions/workflows/nightly-build.yaml)
+[![Binder](https://binder-staging.2i2c.cloud/badge_logo.svg)](https://binder-staging.2i2c.cloud/v2/gh/mgrover1/erad2022/main?labpath=notebooks)
 
 This Project Pythia Cookbook covers ... (replace `...` with the main subject of your cookbook ... e.g., *working with radar data in Python*)
 
 ## Motivation
 
-(Add a few sentences stating why this cookbook will be useful. What skills will you, "the chef", gain once you have reached the end of the cookbook?)
+The course will discuss the principles of open science and provide an overview of the most mature and exciting open-source software packages available for radar data processing. Additionally it will provide guidelines to collaborate in or start a new open project. It will have a hands-on approach and the students will be able to use the software packages themselves. Anyone with interest in using or developing open source software tools is welcomed.
 
 ## Authors
 
-[First Author](@first-author), [Second Author](@second-author), etc. *Acknowledge primary content authors here*
+Daniel Wolfensberger, Jordi Figueras I Ventura, Scott Collis, Mike Dixon, Maxwell Grover, Robert Jackson, Kai Mühlbauer, Joseph O’Brien, Velibor Pejčić
 
 ### Contributors
 
-<a href="https://github.com/ProjectPythiaCookbooks/cookbook-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ProjectPythiaCookbooks/cookbook-template" />
+<a href="https://github.com/mgrover1/erad2022/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mgrover1/erad2022" />
 </a>
 
 ## Structure
 (State one or more sections that will comprise the notebook. E.g., *This cookbook is broken up into two main sections - "Foundations" and "Example Workflows."* Then, describe each section below.)
 
-### Section 1 ( Replace with the title of this section, e.g. "Foundations" )
-(Add content for this section, e.g., "The foundational content includes ... ")
+### Tool Foundations
+Content relevant to each of the Open Radar packages (ex. Py-ART, wradlib, LROSE, BALTRAD).
 
-### Section 2 ( Replace with the title of this section, e.g. "Example workflows" )
-(Add content for this section, e.g., "Example workflows include ... ")
+### Example Workflows
+Workflows utilizing the various packages and open radar data.
 
 ## Running the Notebooks
-You can either run the notebook using [Binder](https://mybinder.org/) or on your local machine.
+You can either run the notebook using the [Pangeo Binder](https://binder-staging.2i2c.cloud) or on your local machine.
 
 ### Running on Binder
 
@@ -55,10 +55,10 @@ If you are interested in running this material locally on your computer, you wil
 
 (Replace "cookbook-example" with the title of your cookbooks)   
 
-1. Clone the `https://github.com/ProjectPythiaCookbooks/cookbook-example` repository:
+1. Clone the `https://github.com/mgrover1/erad2022.git` repository:
 
    ```bash
-    git clone https://github.com/ProjectPythiaCookbooks/cookbook-example.git
+    git clone https://github.com/mgrover1/erad2022.git
     ```  
 1. Move into the `cookbook-example` directory
     ```bash
@@ -67,7 +67,7 @@ If you are interested in running this material locally on your computer, you wil
 1. Create and activate your conda environment from the `environment.yml` file
     ```bash
     conda env create -f environment.yml
-    conda activate cookbook-example
+    conda activate erad-2022-dev
     ```  
 1.  Move into the `notebooks` directory and start up Jupyterlab
     ```bash
