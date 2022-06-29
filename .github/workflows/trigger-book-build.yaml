@@ -1,0 +1,19 @@
+name: trigger-book-build
+on:
+  pull_request:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build-book.yaml
+    with:
+      environment_name: cookbook-dev
+      environment_file: environment.yml
+      path_to_notebooks: ./
+      use_cached_environment: 'true'  # This is default, not strickly needed. Set to 'false' to always build a new environment
+  link-check:
+    uses: ./.github/workflows/link-checker.yaml
+    with:
+      environment_name: cookbook-dev
+      environment_file: environment.yml
+      path_to_notebooks: ./
+      use_cached_environment: 'true'

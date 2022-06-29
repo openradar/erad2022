@@ -1,0 +1,21 @@
+name: nightly-build
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # Daily “At 00:00”
+
+jobs:
+  build:
+    uses: ./.github/workflows/build-book.yaml
+    with:
+      environment_name: cookbook-dev
+      environment_file: environment.yml
+      path_to_notebooks: ./
+
+  link-check:
+    uses: ./.github/workflows/link-checker.yaml
+    with:
+      environment_name: cookbook-dev
+      environment_file: environment.yml
+      path_to_notebooks: ./
