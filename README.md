@@ -1,4 +1,4 @@
-<img src="thumbnail.svg" alt="thumbnail" width="300"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Norman_Doppler_Radar_-_NOAA.jpg/640px-Norman_Doppler_Radar_-_NOAA.jpg" alt="thumbnail" width="300"/>
 
 # ERAD 2022 Open Radar Science Shortcourse
 
