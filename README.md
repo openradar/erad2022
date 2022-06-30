@@ -9,7 +9,7 @@ This tutorial covers how to get started with the Open Radar Science stack!
 
 ## Motivation
 
-The course will take place on August 28th 2012, right before the [2022 ERAD Radar Conference](https://www.erad2022.ch/). We will introduce the participants to [community software packages](http://openradarscience.org) designed for radar data processing, including (but not limited to) [BALTRAD](https://github.com/baltrad), [Py-ART](http://arm-doe.github.io/pyart/), and [wradlib](https://wradlib.org). Following a welcome, there will be an introduction to Open Science concepts and the Open Radar context.
+The course will take place on August 28th 2022, right before the [2022 ERAD Radar Conference](https://www.erad2022.ch/). We will introduce the participants to [community software packages](http://openradarscience.org) designed for radar data processing, including (but not limited to) [BALTRAD](https://github.com/baltrad), [Py-ART](http://arm-doe.github.io/pyart/), and [wradlib](https://wradlib.org). Following a welcome, there will be an introduction to Open Science concepts and the Open Radar context.
 
 The common ground for most of those tools is Python, so we'll feature a quick intro to the Python programming language, and endow participants with the basics of how to contribute to community software. 
 
