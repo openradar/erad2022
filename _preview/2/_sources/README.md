@@ -9,17 +9,41 @@ This tutorial covers how to get started with the Open Radar Science stack!
 
 ## Motivation
 
-The course will discuss the principles of open science and provide an overview of the most mature and exciting open-source software packages available for radar data processing. Additionally it will provide guidelines to collaborate in or start a new open project. It will have a hands-on approach and the students will be able to use the software packages themselves. Anyone with interest in using or developing open source software tools is welcomed.
+The course will take place on August 28th 2012, right before the [2022 ERAD Radar Conference](https://www.erad2022.ch/). We will introduce the participants to [community software packages](http://openradarscience.org) designed for radar data processing, including (but not limited to) [BALTRAD](https://github.com/baltrad), [Py-ART](http://arm-doe.github.io/pyart/), and [wradlib](https://wradlib.org). Following a welcome, there will be an introduction to Open Science concepts and the Open Radar context.
 
-## Authors
+The common ground for most of those tools is Python, so we'll feature a quick intro to the Python programming language, and endow participants with the basics of how to contribute to community software. 
 
-Daniel Wolfensberger, Jordi Figueras I Ventura, Scott Collis, Mike Dixon, Maxwell Grover, Robert Jackson, Kai Mühlbauer, Joseph O’Brien, Velibor Pejčić
+## List of Instructors
+* Collis, Scott (Argonne National Laboratory, USA)
+* Jackson, Bobby (Argonne National Laboratory, USA)
+* Grover, Maxwell (Argonne National Laboratory, USA)
+* Michelson, Daniel B. (Environment and Climate Change, Canada)
+* Figueras i Ventura, Jordi (MeteoFrance, France)
+* Wolfensberger, Daniel (MeteoSwiss, Switzerland)
+* Dixon, Mike (National center for Atmospheric Research, USA)
+* Mühlbauer Kai (University of Bonn, Germany)
+* Pejčić, Velibor (University of Bonn, Germany)
 
 ### Contributors
 
 <a href="https://github.com/openradar/erad2022/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=openradar/erad2022" />
 </a>
+
+## Course program
+* 09:00 - 09:15 Welcome and getting started
+* 09:15 - 09:45 Community weather radar software and Open Science
+* 09:45 - 10:30 Overview of the open source radar processing packages
+* 10:30 - 11:00 Coffee break
+* 11:00 - 11:45 Hands on Py-ART
+* 11:45 - 12:30 Hands on wradlib
+* 12:30 - 13:30 Lunch break
+* 13:30 - 14:15 Hands on BALTRAD
+* 14:15 - 15:00 Hands on LROSE
+* 15:00 - 15:30 Coffee break
+* 15:30 - 16:00 Combining multiple packages
+* 16:00 - 16:30 Becoming a developer in a open project, best practices
+* 16:30 - 17:00 Open slot, discussion, evaluation
 
 ## Structure
 
@@ -29,47 +53,5 @@ Content relevant to each of the Open Radar packages (ex. Py-ART, wradlib, LROSE,
 ### Example Workflows
 Workflows utilizing the various packages and open radar data.
 
-## Running the Notebooks
-You can either run the notebook using the [Pangeo Binder](https://binder-staging.2i2c.cloud) or on your local machine.
-
-### Running on Binder
-
-The simplest way to interact with a Jupyter Notebook is through
-[Binder](https://mybinder.org/), which enables the execution of a
-[Jupyter Book](https://jupyterbook.org) in the cloud. The details of how this works are not
-important for now. All you need to know is how to launch a Pythia
-Cookbooks chapter via Binder. Simply navigate your mouse to
-the top right corner of the book chapter you are viewing and click
-on the rocket ship icon, (see figure below), and be sure to select
-“launch Binder”. After a moment you should be presented with a
-notebook that you can interact with. I.e. you’ll be able to execute
-and even change the example programs. You’ll see that the code cells
-have no output at first, until you execute them by pressing
-{kbd}`Shift`\+{kbd}`Enter`. Complete details on how to interact with
-a live Jupyter notebook are described in [Getting Started with
-Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyter.html).
-
-### Running on Your Own Machine
-If you are interested in running this material locally on your computer, you will need to follow this workflow:
-
-(Replace "cookbook-example" with the title of your cookbooks)   
-
-1. Clone the `https://github.com/openradar/erad2022.git` repository:
-
-   ```bash
-    git clone https://github.com/openradar/erad2022.git
-    ```  
-1. Move into the `cookbook-example` directory
-    ```bash
-    cd cookbook-example
-    ```  
-1. Create and activate your conda environment from the `environment.yml` file
-    ```bash
-    conda env create -f environment.yml
-    conda activate erad-2022-dev
-    ```  
-1.  Move into the `notebooks` directory and start up Jupyterlab
-    ```bash
-    cd notebooks/
-    jupyter lab
-    ```
+## Things You Need to Prepare
+Participants need to bring their own 64-bit notebook (Linux, Windows, Mac).  The exercices will take place on a cloud server. On Windows, the use of a ssh-client such as [Putty](https://www.putty.org/) or [MobaXterm](https://mobaxterm.mobatek.net/) will be necessary. 
