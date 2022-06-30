@@ -2,39 +2,13 @@ name: erad-2022-dev
 channels:
   - conda-forge
 dependencies:
+  - python=3.9
   - jupyter-book
   - numpy
   - scipy
   - matplotlib
-  - pandas
-  - xarray>=0.12.2
-  - tqdm
-  - dask-gateway
-# data science stuff
-  - boto
-  - boto3
-  - blas
-  - liblapacke
-# geospatial
-  - proj4
   - cartopy
-  - geopandas
-  - netcdf4
-  - h5py
-  - h5netcdf
-# geoscience-related
-  - metpy
-  - satpy
-# jupyter-related
-  - ipyleaflet
-  - pip
-# radar
+  - pandas
+  - xarray
   - wradlib
-  - coincbc
-  - pip:
-    - sphinx-pythia-theme
-    - git+https://github.com/ARM-DOE/pyart.git
-    - git+https://github.com/openradar/PyDDA.git
-    - nexradaws
-    - cdsapi
-    - git+https://github.com/CSU-Radarmet/CSU_RadarTools.git
+  - arm_pyart
