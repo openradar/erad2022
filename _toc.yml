@@ -1,6 +1,16 @@
 format: jb-book
 root: README
 parts:
-  - caption: Introduction
+  - caption: Introductions + Overview
     chapters:
-      - file: notebooks/notebook-template
+      - file: open-science/README.md
+      - file: open-radar/README.md
+  - caption: Tool Foundations
+    chapters:
+      - file: pyart/README.md
+      - file: wradlib/README.md
+      - file: baltrad/README.md
+      - file: lrose/README.md
+  - caption: Open Radar Workflows
+    chapters:
+      - file: workflows/README.md
