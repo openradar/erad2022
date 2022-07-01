@@ -36,13 +36,13 @@ The common ground for most of those tools is Python, so we'll feature a quick in
 * 09:45 - 10:30 Overview of the open source radar processing packages
 * 10:30 - 11:00 Coffee break
 * 11:00 - 11:45 Hands on Py-ART
-* 11:45 - 12:30 Hands on wradlib
+* 11:45 - 12:30 Hands on [wradlib](wradlib/README.md)
 * 12:30 - 13:30 Lunch break
 * 13:30 - 14:15 Hands on BALTRAD
 * 14:15 - 15:00 Hands on LROSE
 * 15:00 - 15:30 Coffee break
 * 15:30 - 16:00 Combining multiple packages
-* 16:00 - 16:30 Becoming a developer in a open project, best practices
+* 16:00 - 16:30 [Becoming a developer](package-development/README.md) in an open source project, best practices
 * 16:30 - 17:00 Open slot, discussion, evaluation
 
 ## Structure

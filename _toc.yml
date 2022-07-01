@@ -9,8 +9,13 @@ parts:
     chapters:
       - file: pyart/README.md
       - file: wradlib/README.md
+        sections:
+          - file: notebooks/wradlib_intro.ipynb
       - file: baltrad/README.md
       - file: lrose/README.md
   - caption: Open Radar Workflows
     chapters:
       - file: workflows/README.md
+  - caption: Becoming a developer
+    chapters:
+      - file: package-development/README.md
