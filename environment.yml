@@ -5,5 +5,12 @@ dependencies:
   - jupyter-book
   - pip
   - wradlib
+  - arm_pyart
+  - cartopy
+  - matplotlib
+  - cartopy
+  - numpy
+  - xarray
+  - metpy
   - pip:
       - sphinx-pythia-theme
