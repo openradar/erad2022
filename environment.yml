@@ -4,5 +4,6 @@ channels:
 dependencies:
   - jupyter-book
   - pip
+  - wradlib
   - pip:
       - sphinx-pythia-theme
