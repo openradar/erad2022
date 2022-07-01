@@ -58,3 +58,6 @@ sphinx:
         Meteoswiss: notebooks/images/logos/meteoswiss_logo.svg
         ARM: notebooks/images/logos/arm_logo.png
         Argonne: notebooks/images/logos/argonne_logo.png
+        Bonne: notebooks/images/logos/university_bonn.png
+        Canada: notebooks/images/logos/environemnt_canada_logo.png
+        NCAR: notebooks/images/logos/NCAR-contemp-logo.svg
