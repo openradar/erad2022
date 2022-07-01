@@ -20,11 +20,11 @@ export CONDA_PREFIX=/srv/conda/envs/notebook
             --with-hdf5=$CONDA_PREFIX/include,$CONDA_PREFIX/lib \
             --enable-py3support \
             --with-py3bin=$CONDA_PREFIX/bin/python3 \
-            --with-numpy=$CONDA_PREFIX/lib/python3.7/site-packages/numpy/core/include/numpy/
+            --with-numpy=$CONDA_PREFIX/lib/python3.9/site-packages/numpy/core/include/numpy/
 make
 make test
 make install
-mv $CONDA_PREFIX/hlhdf/hlhdf.pth $CONDA_PREFIX/lib/python3.7/site-packages/.
+mv $CONDA_PREFIX/hlhdf/hlhdf.pth $CONDA_PREFIX/lib/python3.9/site-packages/.
 
 grep -l hlhdf ~/.bashrc
 if [[ $? == 1 ]]; then
