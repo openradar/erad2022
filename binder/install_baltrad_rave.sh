@@ -26,12 +26,12 @@ export CONDA_PREFIX=/srv/conda/envs/notebook
             --with-hlhdf=$CONDA_PREFIX/hlhdf \
             --with-proj=$CONDA_PREFIX/include,$CONDA_PREFIX/lib \
             --with-expat=$CONDA_PREFIX/include,$CONDA_PREFIX/lib \
-            --with-numpy=$CONDA_PREFIX/lib/python3.7/site-packages/numpy/core/include/numpy/ \
+            --with-numpy=$CONDA_PREFIX/lib/python3.9/site-packages/numpy/core/include/numpy/ \
             --with-netcdf=$CONDA_PREFIX/include,$CONDA_PREFIX/lib \
             --enable-py3support \
             --with-py3bin=$CONDA_PREFIX/bin/python \
             --with-py3bin-config=$CONDA_PREFIX/bin/python3-config \
-            --with-python-makefile=$CONDA_PREFIX/lib/python3.7/config-3.7m-x86_64-linux-gnu/Makefile
+            --with-python-makefile=$CONDA_PREFIX/lib/python3.9/config-3.9-x86_64-linux-gnu/Makefile
 make
 make test
 make install
