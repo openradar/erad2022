@@ -24,7 +24,7 @@ rm $CONDA_PREFIX/rave_gmap/web/index.php
 # HACK the setup.py files need to add the line
 # import distutils.sysconfig
 # The .pth file is not copied because of this, manually create the file
-echo $CONDA_PREFIX/rave_gmap/Lib/ > $CONDA_PREFIX/lib/python3.6/site-packages/rave_gmap.pth
+echo $CONDA_PREFIX/rave_gmap/Lib/ > $CONDA_PREFIX/lib/python3.9/site-packages/rave_gmap.pth
 
 # Add an amazing case!
 cp /vagrant/vendor/opt/baltrad/rave_gmap/web/smhi-areas.xml $CONDA_PREFIX/rave_gmap/web/.

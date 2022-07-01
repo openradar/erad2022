@@ -24,7 +24,7 @@ export CONDA_PREFIX=/srv/conda/envs/notebook
 make
 make test
 make install
-echo $CONDA_PREFIX/beamb/share/beamb/pybeamb > $CONDA_PREFIX/lib/python3.7/site-packages/beamb.pth
+echo $CONDA_PREFIX/beamb/share/beamb/pybeamb > $CONDA_PREFIX/lib/python3.9/site-packages/beamb.pth
 
 grep -l beamb ~/.bashrc
 if [[ $? == 1 ]] ;
