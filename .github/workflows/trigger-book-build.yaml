@@ -9,7 +9,7 @@ jobs:
       environment_name: cookbook-dev
       environment_file: environment.yml
       path_to_notebooks: ./
-      use_cached_environment: 'true'  # This is default, not strickly needed. Set to 'false' to always build a new environment
+      use_cached_environment: 'false'  # This is default, not strickly needed. Set to 'false' to always build a new environment
   link-check:
     uses: ./.github/workflows/link-checker.yaml
     with:
