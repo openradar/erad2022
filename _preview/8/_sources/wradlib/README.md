@@ -16,7 +16,7 @@ A very short overview on the available data quality algorithms.
 ## Attenuation Correction using ZPHI-Method
 
 Already quite aged the attenuation correction based on the ZPHI-method 
-(see [Testud et. al.](dx.doi.org/10.1175/1520-0426(2000)017%3C0332:TRPAAT%3E2.0.CO;2)) 
+(see [Testud et. al.](https://doi.org/10.1175/1520-0426(2000)017%3C0332:TRPAAT%3E2.0.CO;2)) 
 is still one of the most used algorithms in weather radar. A quick walkthrough the 
 necessary steps to derive specific attenuation is shown.
 
