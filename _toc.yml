@@ -9,8 +9,8 @@ parts:
     chapters:
       - file: pyart/README.md
         sections:
-          - file: pyart/pyart-basics
-          - file: pyart/pyart-gridding
+          - file: notebooks/pyart-basics
+          - file: notebooks/pyart-gridding
       - file: wradlib/README.md
         sections:
           - file: notebooks/wradlib_intro.ipynb
