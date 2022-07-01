@@ -9,7 +9,7 @@ copyright: '2022'
 
 # Execute the notebooks upon build
 execute:
-  execute_notebooks: on
+  execute_notebooks: auto
 
 # Add a few extensions to help with parsing content
 parse:
