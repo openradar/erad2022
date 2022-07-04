@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -x
 
-# Vagrant provision script for installing BALTRAD bropo component
-export CONDA_PREFIX=/srv/conda/envs/notebook
+# needed for environment variables
+conda activate $RADARENV
 
-# dependencies
+# needed to find dependencies
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib:$CONDA_PREFIX/rave/lib
 
 # install bropo from source
@@ -16,9 +16,9 @@ cd tmp
 git clone --depth 1 https://github.com/baltrad/bropo.git
 cd bropo/
 
-source $CONDA_DIR/bin/activate $RADARENV
+#source $CONDA_DIR/bin/activate $RADARENV
 # Why must the following line be explicit? Second time just to be safe...
-export CONDA_PREFIX=/srv/conda/envs/notebook
+#export CONDA_PREFIX=/srv/conda/envs/notebook
 
 ./configure --prefix=$CONDA_PREFIX/bropo \
             --with-rave=$CONDA_PREFIX/rave \

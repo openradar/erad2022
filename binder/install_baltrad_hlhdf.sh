@@ -1,20 +1,17 @@
 #!/usr/bin/env bash
 set -x
 
-# Vagrant provision script for installing BALTRAD HL-HDF component
+# needed for environment variables
+conda activate $RADARENV
 
 # Install hlhdf from source into conda env
 cd ~
 if [ ! -d tmp ]; then
     mkdir tmp
-    fi
+fi
 cd tmp
 git clone --depth=1 https://github.com/baltrad/hlhdf.git
 cd hlhdf/
-
-source $CONDA_DIR/bin/activate $RADARENV
-# Why must the following line be explicit?
-export CONDA_PREFIX=/srv/conda/envs/notebook
 
 ./configure --prefix=$CONDA_PREFIX/hlhdf \
             --with-hdf5=$CONDA_PREFIX/include,$CONDA_PREFIX/lib \

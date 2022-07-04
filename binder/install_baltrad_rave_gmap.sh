@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 set -x
 
-# Vagrant provision script for installing BALTRAD GoogleMapsPlugin component
+# needed for environment variables
+conda activate $RADARENV
+
+# needed to find dependencies
+export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib:$CONDA_PREFIX/rave/lib
 
 # dependencies
+# kmuehlbauer todo: this needs fixing as it doesn't work atm
 #sudo apt-get install -qq libfreetype6-dev
 sudo apt-get install -qq apache2
 sudo apt-get install -qq php
@@ -15,7 +20,6 @@ sudo cp /vagrant/vendor/etc/apache2/sites-enabled/000-default.conf /etc/apache2/
 cd ~/tmp
 git clone --depth=1 https://github.com/baltrad/GoogleMapsPlugin.git
 cd GoogleMapsPlugin/
-source $CONDA_DIR/bin/activate $RADARENV
 python setup.py install --prefix=$CONDA_PREFIX
 # Replace Google Maps with OpenStreetMap
 cp web/index.html $CONDA_PREFIX/rave_gmap/web/.
