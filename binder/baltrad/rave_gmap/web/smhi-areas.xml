@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<!-- 
+  Note, you must have a valid google map projection in order to
+  get reliable behaviour.
+  Note, order is cruicial and will be shown in the order they are
+  listed here.
+  
+  product:
+    name = name of area, data catalog must exist
+    description = what should be shown as option text
+    zoom = default zoom level 1 - 9
+-->
+
+<productlist>
+  <product name="cawkr_gmaps" description="King City, ON" zoom="5"/>
+</productlist>
+
+
