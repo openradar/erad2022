@@ -6,6 +6,7 @@ conda activate $RADARENV
 
 # needed to find dependencies
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib:$CONDA_PREFIX/rave/lib
+export RAVEROOT=$CONDA_PREFIX
 
 cd ~
 if [ ! -d tmp ]; then
