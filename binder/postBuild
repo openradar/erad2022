@@ -3,12 +3,13 @@
 jupyter labextension install @pyviz/jupyterlab_pyviz \
                              jupyter-leaflet
 
+# create tmp dir
+cd ~
+if [ ! -d tmp ]; then
+    mkdir tmp
+fi
 
-export COIN_INSTALL_DIR=/srv/conda/envs/notebook
-# kmuehlbauer: is CyLP still used in pyart? Commenting for now
-# /srv/conda/envs/notebook/bin/pip install git+https://github.com/coin-or/CyLP
-
-#INSTALLING BALTRAD
+# INSTALLING BALTRAD
 CONDA_DIR=/srv/conda
 RADARENV=notebook
 CONDA_PREFIX=$CONDA_DIR/envs/$RADARENV
@@ -17,14 +18,13 @@ echo "export CONDA_DIR=$CONDA_DIR" >> ~/.profile
 echo "export RADARENV=$RADARENV" >> ~/.profile
 echo "export CONDA_PREFIX=$CONDA_PREFIX" >> ~/.profile
 
-bash /home/jovyan/binder/install_baltrad_hlhdf.sh
-bash /home/jovyan/binder/install_baltrad_rave.sh
-bash /home/jovyan/binder/install_baltrad_beamb.sh
-bash /home/jovyan/binder/install_baltrad_bropo.sh
-bash /home/jovyan/binder/install_baltrad_wrwp.sh
-bash /home/jovyan/binder/install_baltrad_rave_gmap.sh
-# kmuehlbauer: This shell script is currently missing, so commenting it here
-# bash /home/jovyan/binder/install_baltrad_drqc.sh
-bash /home/jovyan/binder/install_baltrad_short_course.sh
+bash -l /home/jovyan/binder/install_baltrad_hlhdf.sh 2>&1 |tee ~/tmp/install_baltrad_hlhdf.log
+bash -l /home/jovyan/binder/install_baltrad_rave.sh 2>&1 |tee ~/tmp/install_baltrad_rave.log
+bash -l /home/jovyan/binder/install_baltrad_beamb.sh 2>&1 |tee ~/tmp/install_baltrad_beamb.log
+bash -l /home/jovyan/binder/install_baltrad_bropo.sh 2>&1 |tee ~/tmp/install_baltrad_bropo.log
+bash -l /home/jovyan/binder/install_baltrad_wrwp.sh 2>&1 |tee ~/tmp/install_baltrad_wrwp.log
+bash -l /home/jovyan/binder/install_baltrad_drqc.sh 2>&1 |tee ~/tmp/install_baltrad_drqc.log
+bash -l /home/jovyan/binder/install_baltrad_rave_gmap.sh 2>&1 |tee ~/tmp/install_baltrad_rave_gmap.log
+bash -l /home/jovyan/binder/install_baltrad_short_course.sh
 cp /home/jovyan/binder/kernel.json $CONDA_PREFIX/share/jupyter/kernels/python3/.
 # End
