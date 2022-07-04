@@ -12,3 +12,15 @@ dependencies:
   - xarray
   - wradlib
   - arm_pyart
+  # this is needed for baltrad compilation
+  - compilers
+  - make
+  - gnuconfig
+  - bash
+  - libaec
+  - coreutils
+  - autoconf
+  - automake
+  - tar
+  - libblas=*=*netlib
+  - liblapacke=*=*netlib
