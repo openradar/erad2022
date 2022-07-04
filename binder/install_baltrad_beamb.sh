@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -x
 
-# Vagrant provision script for installing BALTRAD beamb component
-export CONDA_PREFIX=/srv/conda/envs/notebook
+# needed for environment variables
+conda activate $RADARENV
 
-# install dependencies
+# needed to find dependencies
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib:$CONDA_PREFIX/rave/lib
 
 # install beamb from source
@@ -15,10 +15,6 @@ fi
 cd tmp
 git clone --depth=1 https://github.com/baltrad/beamb.git
 cd beamb/
-
-source $CONDA_DIR/bin/activate $RADARENV
-# Why must the following line be explicit? Second time just to be safe...
-export CONDA_PREFIX=/srv/conda/envs/notebook
 
 ./configure --prefix=$CONDA_PREFIX/beamb --with-rave=$CONDA_PREFIX/rave
 make

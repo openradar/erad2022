@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 set -x
 
-# Vagrant provision script for installing BALTRAD RAVE component
+# needed for environment variables
+conda activate $RADARENV
+
+# needed to find dependencies
+export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib
 
 # Install RAVE from source
 cd ~
@@ -18,10 +22,6 @@ sed -i -e 's/from baltrad.bdbclient/#from baltrad.bdbclient/g' Lib/rave_bdb.py
 sed -i -e 's/from keyczar import keyczar/#from keyczar import keyczar/g' Lib/BaltradFrame.py
 # kmuehlbauer: This file is missing currently, so disabling
 # cp -p ~/binder/baltrad/fix_shebang.sh bin/.  # Copies in path to Python for conda
-
-source $CONDA_DIR/bin/activate $RADARENV
-# Why must the following line be explicit?
-export CONDA_PREFIX=/srv/conda/envs/notebook
 
 ./configure --prefix=$CONDA_PREFIX/rave \
             --with-hlhdf=$CONDA_PREFIX/hlhdf \
