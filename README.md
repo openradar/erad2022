@@ -9,20 +9,20 @@ This tutorial covers how to get started with the Open Radar Science stack!
 
 ## Motivation
 
-The course will take place on August 28th 2022, right before the [2022 ERAD Radar Conference](https://www.erad2022.ch/). We will introduce the participants to [community software packages](http://openradarscience.org) designed for radar data processing, including (but not limited to) [BALTRAD](https://github.com/baltrad), [Py-ART](http://arm-doe.github.io/pyart/), and [wradlib](https://wradlib.org). Following a welcome, there will be an introduction to Open Science concepts and the Open Radar context.
+The course will take place on 28 August 2022, the day before before the [2022 ERAD Radar Conference](https://www.erad2022.ch/). We will introduce the participants to [community software packages](http://openradarscience.org) designed for radar data processing, including (but not limited to) [BALTRAD](https://github.com/baltrad), [LROSE](http://lrose.net/), [Py-ART](http://arm-doe.github.io/pyart/), and [wradlib](https://wradlib.org). Following a welcome, there will be an introduction to Open Science concepts with the Open Radar context.
 
 The common ground for most of those tools is Python, so we'll feature a quick intro to the Python programming language, and endow participants with the basics of how to contribute to community software. 
 
 ## List of Instructors
-* Collis, Scott (Argonne National Laboratory, USA)
-* Jackson, Bobby (Argonne National Laboratory, USA)
-* Grover, Maxwell (Argonne National Laboratory, USA)
-* Michelson, Daniel B. (Environment and Climate Change, Canada)
-* Figueras i Ventura, Jordi (MeteoFrance, France)
-* Wolfensberger, Daniel (MeteoSwiss, Switzerland)
-* Dixon, Mike (National center for Atmospheric Research, USA)
-* Mühlbauer Kai (University of Bonn, Germany)
-* Pejčić, Velibor (University of Bonn, Germany)
+* Scott Collis (Argonne National Laboratory, USA)
+* Bobby Jackson (Argonne National Laboratory, USA)
+* Maxwell Grover (Argonne National Laboratory, USA)
+* Daniel Michelson (Environment and Climate Change Canada)
+* Jordi Figueras i Ventura (Météo-France, France)
+* Daniel Wolfensberger (MeteoSwiss, Switzerland)
+* Mike Dixon (National Center for Atmospheric Research, USA)
+* Kai Mühlbauer (University of Bonn, Germany)
+* Velibor Pejčić (University of Bonn, Germany)
 
 ### Contributors
 
@@ -38,7 +38,7 @@ The common ground for most of those tools is Python, so we'll feature a quick in
 * 11:00 - 11:45 Hands on Py-ART
 * 11:45 - 12:30 Hands on [wradlib](wradlib/README.md)
 * 12:30 - 13:30 Lunch break
-* 13:30 - 14:15 Hands on BALTRAD
+* 13:30 - 14:15 Hands on BALTRAD [BALTRAD](baltrad/README.md)
 * 14:15 - 15:00 Hands on LROSE
 * 15:00 - 15:30 Coffee break
 * 15:30 - 16:00 Combining multiple packages
