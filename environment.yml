@@ -12,6 +12,7 @@ dependencies:
   - numpy
   - xarray
   - metpy
+  - nbstripout
   # this is needed for baltrad compilation
   - compilers
   - make
