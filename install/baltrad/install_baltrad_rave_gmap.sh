@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+# show commands before execution
 set -x
 
-# needed for environment variables
-conda activate $RADARENV
+# do not fail GHA on nonzero exit status
+set +e
 
 # needed to find dependencies
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib:$CONDA_PREFIX/rave/lib
@@ -17,10 +18,12 @@ export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib:$CONDA_PREFIX/r
 #sudo cp /vagrant/vendor/etc/apache2/apache2.conf /etc/apache2/apache2.conf
 #sudo cp /vagrant/vendor/etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
-# install GoogleMapsPlugin from source
-cd ~/tmp
+# download
+cd $BALTRAD_INSTALL_ROOT/tmp
 git clone --depth=1 https://github.com/baltrad/GoogleMapsPlugin.git
 cd GoogleMapsPlugin/
+
+# build and install
 python setup.py install --prefix=$CONDA_PREFIX
 # Replace Google Maps with OpenStreetMap
 cp web/index.html $CONDA_PREFIX/rave_gmap/web/.
@@ -32,10 +35,10 @@ rm $CONDA_PREFIX/rave_gmap/web/index.php
 echo $CONDA_PREFIX/rave_gmap/Lib/ > $CONDA_PREFIX/lib/python3.9/site-packages/rave_gmap.pth
 
 # Add an amazing case!
-cp ~/binder/baltrad/rave_gmap/web/smhi-areas.xml $CONDA_PREFIX/rave_gmap/web/.
-cp ~/binder/baltrad/rave_gmap/web/products.js $CONDA_PREFIX/rave_gmap/web/.
+cp $BALTRAD_INSTALL_ROOT/install/baltrad/rave_gmap/web/smhi-areas.xml $CONDA_PREFIX/rave_gmap/web/.
+cp $BALTRAD_INSTALL_ROOT/install/baltrad/rave_gmap/web/products.js $CONDA_PREFIX/rave_gmap/web/.
 mkdir $CONDA_PREFIX/rave_gmap/web/data
-cp ~/binder/baltrad/rave_gmap/web/data/cawkr_gmaps.tgz $CONDA_PREFIX/rave_gmap/web/data/.
+cp $BALTRAD_INSTALL_ROOT/install/baltrad/rave_gmap/web/data/cawkr_gmaps.tgz $CONDA_PREFIX/rave_gmap/web/data/.
 cd $CONDA_PREFIX/rave_gmap/web/data
 tar xzf cawkr_gmaps.tgz
 rm cawkr_gmaps.tgz

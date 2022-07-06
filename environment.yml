@@ -2,15 +2,28 @@ name: cookbook-dev
 channels:
   - conda-forge
 dependencies:
+  - python=3.9
   - jupyter-book
   - pip
   - wradlib
   - arm_pyart
   - cartopy
   - matplotlib
-  - cartopy
   - numpy
   - xarray
   - metpy
+  - nbstripout
+  # this is needed for baltrad compilation
+  - compilers
+  - make
+  - gnuconfig
+  - bash
+  - libaec
+  - coreutils
+  - autoconf
+  - automake
+  - tar
+  - libblas=*=*netlib
+  - liblapacke=*=*netlib
   - pip:
       - sphinx-pythia-theme

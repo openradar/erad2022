@@ -12,6 +12,7 @@ dependencies:
   - xarray
   - wradlib
   - arm_pyart
+  - nbstripout
   # this is needed for baltrad compilation
   - compilers
   - make
