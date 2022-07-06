@@ -58,6 +58,11 @@ jobs:
           || steps.cache.outputs.cache-hit != 'true'
         run: mamba env update -n ${{ inputs.environment_name }} -f ${{ inputs.environment_file }}
 
+      - name: Install baltrad
+        run: |
+          export BALTRAD_INSTALL_ROOT=$PWD
+          bash -l $BALTRAD_INSTALL_ROOT/install/baltrad/install_baltrad.sh
+
       - name: Build the book
         run: |
           jupyter-book build ${{ inputs.path_to_notebooks }}
