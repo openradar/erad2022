@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
+# show commands before execution
 set -x
+
+# do not fail GHA on nonzero exit status
+set +e
 
 # needed to find dependencies
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
+# show commands before execution
 set -x
+
+# do not fail GHA on nonzero exit status
+set +e
 
 # download
 cd $BALTRAD_INSTALL_ROOT/tmp

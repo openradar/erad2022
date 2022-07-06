@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
+# show commands before execution
 set -x
+
+# do not fail GHA on nonzero exit status
+set +e
 
 # needed to find dependencies
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib:$CONDA_PREFIX/rave/lib
@@ -19,7 +23,7 @@ echo $CONDA_PREFIX/beamb/share/beamb/pybeamb > $CONDA_PREFIX/lib/python3.9/site-
 # activation script
 grep -l beamb ${CONDA_PREFIX}/etc/conda/activate.d/baltrad.sh
 if [[ $? == 1 ]] ;
-then 
+then
 echo "export PATH=\"\$PATH:$CONDA_PREFIX/beamb/bin\"" >> ${CONDA_PREFIX}/etc/conda/activate.d/baltrad.sh
 echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:$CONDA_PREFIX/beamb/lib\"" >> ${CONDA_PREFIX}/etc/conda/activate.d/baltrad.sh
 fi
