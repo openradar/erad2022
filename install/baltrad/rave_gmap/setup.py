@@ -38,7 +38,7 @@ Usage:
 from distutils.core import setup
 
 if __name__ == "__main__":
-  import sys, distutils, os, glob, shutil
+  import sys, distutils, os, glob
   try:
     import _pyhl
   except Exception:
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     pth = distutils.sysconfig.get_python_lib() + '/rave_gmap.pth'
     with open(pth, 'w') as f: f.write('%s/Lib\n' % ipath)
     eggpth = distutils.sysconfig.get_python_lib() + open(source, 'r').read()[1:-1]
-    shutil.rmtree(eggpth)
+    os.remove(eggpth)
     os.remove(source)
     print("GoogleMapsPlugin installed to %s" % ipath)
     print("PTH file installed to %s" % pth)
