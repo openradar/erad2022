@@ -1,25 +1,19 @@
 #!/usr/bin/env bash
+# show commands before execution
 set -x
 
-# needed for environment variables
-conda activate $RADARENV
+# do not fail GHA on nonzero exit status
+set +e
 
 # needed to find dependencies
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib:$CONDA_PREFIX/rave/lib
 
-# install bropo from source
-cd ~
-if [ ! -d tmp ]; then
-    mkdir tmp
-fi
-cd tmp
+# download
+cd $BALTRAD_INSTALL_ROOT/tmp
 git clone --depth 1 https://github.com/baltrad/bropo.git
 cd bropo/
 
-#source $CONDA_DIR/bin/activate $RADARENV
-# Why must the following line be explicit? Second time just to be safe...
-#export CONDA_PREFIX=/srv/conda/envs/notebook
-
+# build, test and install
 ./configure --prefix=$CONDA_PREFIX/bropo \
             --with-rave=$CONDA_PREFIX/rave \
             --with-png=$CONDA_PREFIX
@@ -27,11 +21,14 @@ make
 make test
 make install
 
-grep -l bropo ~/.bashrc
+# activation script
+grep -l bropo ${CONDA_PREFIX}/etc/conda/activate.d/baltrad.sh
 if [[ $? == 1 ]]; then
-    echo "export PATH=\"\$PATH:$CONDA_PREFIX/bropo/bin\"" >> ~/.bashrc;
-    echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:$CONDA_PREFIX/bropo/lib\"" >> ~/.bashrc;
+    echo "export PATH=\"\$PATH:$CONDA_PREFIX/bropo/bin\"" >> ${CONDA_PREFIX}/etc/conda/activate.d/baltrad.sh
+    echo "export LD_LIBRARY_PATH=\"\$LD_LIBRARY_PATH:$CONDA_PREFIX/bropo/lib\"" >> ${CONDA_PREFIX}/etc/conda/activate.d/baltrad.sh
 fi
+
+# plugin
 grep -l ropo_quality_plugin $CONDA_PREFIX/rave/etc/rave_pgf_quality_registry.xml
 if [[ $? == 1 ]]; then
     sed -i 's/<\/rave-pgf-quality-registry>/  <quality-plugin name="ropo" module="ropo_quality_plugin" class="ropo_quality_plugin"\/>\n<\/rave-pgf-quality-registry>/g' $CONDA_PREFIX/rave/etc/rave_pgf_quality_registry.xml;

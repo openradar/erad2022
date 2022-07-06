@@ -1,30 +1,31 @@
 #!/bin/bash
 
+# installing extensions
+# kmuehlbauer: this seems to not work currently
 jupyter labextension install @pyviz/jupyterlab_pyviz \
                              jupyter-leaflet
 
-# create tmp dir
-cd ~
-if [ ! -d tmp ]; then
-    mkdir tmp
-fi
 
 # INSTALLING BALTRAD
 CONDA_DIR=/srv/conda
 RADARENV=notebook
 CONDA_PREFIX=$CONDA_DIR/envs/$RADARENV
 
+# enter user home folder
+cd ~
+echo "current directory: $PWD"
+
+# export, needed for subsequent installation process
+export BALTRAD_INSTALL_ROOT=$PWD
+
+# have it available in every new bash instance
 echo "export CONDA_DIR=$CONDA_DIR" >> ~/.profile
 echo "export RADARENV=$RADARENV" >> ~/.profile
 echo "export CONDA_PREFIX=$CONDA_PREFIX" >> ~/.profile
 
-bash -l /home/jovyan/binder/install_baltrad_hlhdf.sh 2>&1 |tee ~/tmp/install_baltrad_hlhdf.log
-bash -l /home/jovyan/binder/install_baltrad_rave.sh 2>&1 |tee ~/tmp/install_baltrad_rave.log
-bash -l /home/jovyan/binder/install_baltrad_beamb.sh 2>&1 |tee ~/tmp/install_baltrad_beamb.log
-bash -l /home/jovyan/binder/install_baltrad_bropo.sh 2>&1 |tee ~/tmp/install_baltrad_bropo.log
-bash -l /home/jovyan/binder/install_baltrad_wrwp.sh 2>&1 |tee ~/tmp/install_baltrad_wrwp.log
-bash -l /home/jovyan/binder/install_baltrad_drqc.sh 2>&1 |tee ~/tmp/install_baltrad_drqc.log
-bash -l /home/jovyan/binder/install_baltrad_rave_gmap.sh 2>&1 |tee ~/tmp/install_baltrad_rave_gmap.log
-bash -l /home/jovyan/binder/install_baltrad_short_course.sh
-cp /home/jovyan/binder/kernel.json $CONDA_PREFIX/share/jupyter/kernels/python3/.
-# End
+# install baltrad
+cd $BALTRAD_INSTALL_ROOT
+bash -l $BALTRAD_INSTALL_ROOT/install/baltrad/install_baltrad.sh
+
+# copy kernel.json
+cp $BALTRAD_INSTALL_ROOT/binder/kernel.json $CONDA_PREFIX/share/jupyter/kernels/python3/.
