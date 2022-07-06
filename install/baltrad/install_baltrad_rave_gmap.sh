@@ -18,21 +18,17 @@ export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib:$CONDA_PREFIX/r
 #sudo cp /vagrant/vendor/etc/apache2/apache2.conf /etc/apache2/apache2.conf
 #sudo cp /vagrant/vendor/etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
-# download
+# download, use tweaked setup.py
 cd $BALTRAD_INSTALL_ROOT/tmp
 git clone --depth=1 https://github.com/baltrad/GoogleMapsPlugin.git
 cd GoogleMapsPlugin/
+cp ../../install/baltrad/rave_gmap/setup.py .
 
 # build and install
 python setup.py install --prefix=$CONDA_PREFIX
 # Replace Google Maps with OpenStreetMap
 cp web/index.html $CONDA_PREFIX/rave_gmap/web/.
 rm $CONDA_PREFIX/rave_gmap/web/index.php
-
-# HACK the setup.py files need to add the line
-# import distutils.sysconfig
-# The .pth file is not copied because of this, manually create the file
-echo $CONDA_PREFIX/rave_gmap/Lib/ > $CONDA_PREFIX/lib/python3.9/site-packages/rave_gmap.pth
 
 # Add an amazing case!
 cp $BALTRAD_INSTALL_ROOT/install/baltrad/rave_gmap/web/smhi-areas.xml $CONDA_PREFIX/rave_gmap/web/.
