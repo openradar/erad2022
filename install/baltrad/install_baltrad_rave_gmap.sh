@@ -22,7 +22,7 @@ export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$CONDA_PREFIX/hlhdf/lib:$CONDA_PREFIX/r
 cd $BALTRAD_INSTALL_ROOT/tmp
 git clone --depth=1 https://github.com/baltrad/GoogleMapsPlugin.git
 cd GoogleMapsPlugin/
-cp ../../install/baltrad/rave_gmap/setup.py .
+cp $BALTRAD_INSTALL_ROOT/install/baltrad/rave_gmap/setup.py .
 
 # build and install
 python setup.py install --prefix=$CONDA_PREFIX
