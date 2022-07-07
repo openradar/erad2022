@@ -675,6 +675,11 @@ Optional attributes: Radar is a VAISWRM200 running IRIS
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quantity DBZH now has 4 optional attributes
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -709,6 +714,12 @@ Optional attributes: Radar is a VAISWRM200 running IRIS
 <span class="n">newscan</span><span class="o">.</span><span class="n">addParameter</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2"> rays per sweep&quot;</span> <span class="o">%</span> <span class="n">newscan</span><span class="o">.</span><span class="n">nrays</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2"> bins per ray&quot;</span> <span class="o">%</span> <span class="n">newscan</span><span class="o">.</span><span class="n">nbins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>420 rays per sweep
+500 bins per ray
 </pre></div>
 </div>
 </div>
@@ -752,6 +763,11 @@ Optional attributes: Radar is a VAISWRM200 running IRIS
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ODIM_H5 file is 4721 bytes large
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="remove-compression-it-makes-file-i-o-faster-you-can-also-tune-hdf5-file-creation-properties-through-the-i-o-container-object">
 <h3>Remove compression. It makes file I/O faster. You can also tune HDF5 file-creation properties through the I/O container object.<a class="headerlink" href="#remove-compression-it-makes-file-i-o-faster-you-can-also-tune-hdf5-file-creation-properties-through-the-i-o-container-object" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
@@ -760,6 +776,11 @@ Optional attributes: Radar is a VAISWRM200 running IRIS
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">container</span><span class="o">.</span><span class="n">compression_level</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># ZLIB compression levels 0-9</span>
 <span class="n">container</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;data/myscan.h5&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ODIM_H5 file is now </span><span class="si">%i</span><span class="s2"> bytes large&quot;</span> <span class="o">%</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s2">&quot;data/myscan.h5&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ODIM_H5 file is now 214320 bytes large
 </pre></div>
 </div>
 </div>
