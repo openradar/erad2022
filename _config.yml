@@ -10,6 +10,8 @@ copyright: '2022'
 # Execute the notebooks upon build
 execute:
   execute_notebooks: auto
+  timeout: 300
+  allow_errors: true
 
 # Add a few extensions to help with parsing content
 parse:
