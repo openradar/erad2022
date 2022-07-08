@@ -58,6 +58,7 @@ sphinx:
           url: https://openradarscience.org
       footer_logos:
         Meteoswiss: notebooks/images/logos/meteoswiss_logo.svg
+        Meteofrance: notebooks/images/logos/meteo-france.jpg
         ARM: notebooks/images/logos/arm_logo.png
         Argonne: notebooks/images/logos/argonne_logo.png
         Bonne: notebooks/images/logos/university_bonn.png
