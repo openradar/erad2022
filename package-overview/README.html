@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wradlib Tutorial &#8212; Project Pythia Cookbook Template</title>
+    <title>Overview of radar open source software packages &#8212; Project Pythia Cookbook Template</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="wradlib introduction" href="../notebooks/wradlib_intro.html" />
-    <link rel="prev" title="Py-ART Gridding" href="../notebooks/pyart-gridding.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -172,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
   Tool Foundations
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../pyart/README.html">
    Py-ART Tutorial
@@ -195,11 +193,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../wradlib/README.html">
    Wradlib Tutorial
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
@@ -283,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/wradlib/README.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/package-overview/README.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -303,10 +301,10 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/openradar/erad2022/issues/new?title=Issue%20on%20page%20%2Fwradlib/README.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/openradar/erad2022/issues/new?title=Issue%20on%20page%20%2Fpackage-overview/README.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/openradar/erad2022/edit/main/wradlib/README.md"><button
+        <a class="edit-button" href="https://github.com/openradar/erad2022/edit/main/package-overview/README.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -326,44 +324,6 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> On this page
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reading-routines-based-on-xarray">
-   Reading routines based on xarray
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-quality-processing">
-   Data Quality Processing
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#attenuation-correction-using-zphi-method">
-   Attenuation Correction using ZPHI-Method
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rain-rate-retrieval">
-   Rain Rate Retrieval
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-gridding-and-export">
-   Data Gridding and Export
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#short-overview-over-wradlib-features">
-   Short Overview over wradlib features
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -372,43 +332,9 @@ const thebe_selector_output = ".output, .cell_output"
               
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="wradlib-tutorial">
-<h1>Wradlib Tutorial<a class="headerlink" href="#wradlib-tutorial" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
-<p>This is a short overview of wradlib capabilities in 45 minutes. Brace yourself.</p>
-<div class="section" id="reading-routines-based-on-xarray">
-<h2>Reading routines based on xarray<a class="headerlink" href="#reading-routines-based-on-xarray" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Reading routines for several radar data formats based on xarray are shown.
-Data will be read into xarray datasets with easy access for quick analysis and
-visualisation. Datasets can be written to ODIM_H5 and CfRadial2-like files.
-Easy multiprocessing using DASK can be facilitated.</p>
-</div>
-<div class="section" id="data-quality-processing">
-<h2>Data Quality Processing<a class="headerlink" href="#data-quality-processing" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>A very short overview on the available data quality algorithms.</p>
-</div>
-<div class="section" id="attenuation-correction-using-zphi-method">
-<h2>Attenuation Correction using ZPHI-Method<a class="headerlink" href="#attenuation-correction-using-zphi-method" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Already quite aged the attenuation correction based on the ZPHI-method
-(see <a class="reference external" href="https://doi.org/10.1175/1520-0426(2000)017%3C0332:TRPAAT%3E2.0.CO;2">Testud et. al.</a>)
-is still one of the most used algorithms in weather radar. A quick walkthrough the
-necessary steps to derive specific attenuation is shown.</p>
-</div>
-<div class="section" id="rain-rate-retrieval">
-<h2>Rain Rate Retrieval<a class="headerlink" href="#rain-rate-retrieval" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Different methods of rain rate retrieval, based eg. on ZH, ZDR, KDP, A, are described.</p>
-</div>
-<div class="section" id="data-gridding-and-export">
-<h2>Data Gridding and Export<a class="headerlink" href="#data-gridding-and-export" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Exporting cartesian, georeferenced rain retrievals in data format readable by
-Geoinformation Systems (GIS) is shown.</p>
-</div>
-<div class="section" id="short-overview-over-wradlib-features">
-<h2>Short Overview over wradlib features<a class="headerlink" href="#short-overview-over-wradlib-features" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Here we just mention the capabilities of wradlib and emphasize a few of the new
-enhancements in recent wradlib versions.</p>
-</div>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="overview-of-radar-open-source-software-packages">
+<h1>Overview of radar open source software packages<a class="headerlink" href="#overview-of-radar-open-source-software-packages" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<p>We provide here an overview of the main software packages</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -424,7 +350,7 @@ enhancements in recent wradlib versions.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./wradlib"
+            path: "./package-overview"
         },
         predefinedOutput: true
     }
@@ -433,21 +359,7 @@ enhancements in recent wradlib versions.</p>
 
               </div>
               <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../notebooks/pyart-gridding.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Py-ART Gridding</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../notebooks/wradlib_intro.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">wradlib introduction</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             </div>
           </div>
