@@ -12,7 +12,6 @@ dependencies:
   - xarray
   - wradlib
   - arm_pyart
-  - nbstripout
   # this is needed for baltrad compilation
   - compilers
   - make
@@ -25,3 +24,9 @@ dependencies:
   - tar
   - libblas=*=*netlib
   - liblapacke=*=*netlib
+  # this is needed for notebooks
+  - pyviz_comms>=2.0
+  - nbstripout
+  - zip
+  - pip:
+      - sphinx-pythia-theme
