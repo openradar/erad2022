@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# installing extensions
-# kmuehlbauer: this seems to not work currently
-jupyter labextension install @pyviz/jupyterlab_pyviz \
-                             jupyter-leaflet
-
-
 # INSTALLING BALTRAD
 CONDA_DIR=/srv/conda
 RADARENV=notebook
