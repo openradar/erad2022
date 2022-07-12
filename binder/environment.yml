@@ -25,6 +25,7 @@ dependencies:
   - libblas=*=*netlib
   - liblapacke=*=*netlib
   # this is needed for notebooks
+  - pip
   - pyviz_comms>=2.0
   - nbstripout
   - zip
