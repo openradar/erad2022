@@ -1,0 +1,68 @@
+name: build-book-pullrequest
+
+on:
+  workflow_call:
+    inputs:
+      environment_name:
+        description: 'Name of conda environment to activate'
+        required: false
+        default: 'cookbook-dev'
+        type: string
+      environment_file:
+        description: 'Name of conda environment file'
+        required: false
+        default: 'environment.yml'
+        type: string
+      path_to_notebooks:
+        description: 'Location of the JupyterBook source relative to repo root'
+        required: false
+        default: './'
+        type: string
+      use_cached_environment:
+        description: 'Flag for whether we should attempt to retrieve a previously cached environment.'
+        required: false
+        default: 'true'
+        type: string  # had a lot of trouble with boolean types, see https://github.com/actions/runner/issues/1483
+
+jobs:
+  build-book:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      - name: checkout files in repo
+        uses: actions/checkout@main
+      - name: remove Dockerfile
+        run: |
+          rm binder/Dockerfile
+      - name: update jupyter dependencies with repo2docker
+        uses: jupyterhub/repo2docker-action@master
+        with:
+          NO_PUSH: true
+      - name: list docker images
+        run: |
+          docker image ls -a
+      - name: Build the book
+        uses: addnab/docker-run-action@v3
+        with:
+          image: ghcr.io/kmuehlbauer/erad2022:latest
+          options: --user root
+          run: |
+            # copy baltrad notebooks to book dir
+            cp -rp /home/jovyan/notebooks/baltrad* notebooks/.
+            install/nbstripout_notebooks.sh
+            jupyter-book build ${{ inputs.path_to_notebooks }}
+      - name: Zip the book
+        run: |
+          set -x
+          set -e
+          if [ -f book.zip ]; then
+              rm -rf book.zip
+          fi
+          zip -r book.zip ${{ inputs.path_to_notebooks }}/_build/html
+      - name: Upload zipped book artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: book-zip-${{github.event.number}}
+          path: ./book.zip

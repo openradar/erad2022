@@ -4,7 +4,7 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/build-book.yaml
+    uses: ./.github/workflows/build-book-pullrequest.yaml
     with:
       environment_name: cookbook-dev
       environment_file: environment.yml
