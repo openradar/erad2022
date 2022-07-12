@@ -5,7 +5,7 @@
 [![nightly-build](https://github.com/openradar/erad2022/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/openradar/erad2022/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder-staging.2i2c.cloud/badge_logo.svg)](https://binder-staging.2i2c.cloud/v2/gh/openradar/erad2022/main?labpath=notebooks)
 
-This tutorial covers how to get started with the Open Radar Science stack! 
+This tutorial covers how to get started with the Open Radar Science stack!
 
 ## Motivation
 
