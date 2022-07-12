@@ -44,6 +44,7 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
           DOCKER_REGISTRY: "ghcr.io"
           PUBLIC_REGISTRY_CHECK: true
+          APPENDIX_FILE: "binder/appendix.txt"
       - name: list docker images
         run: |
           docker image ls -a
