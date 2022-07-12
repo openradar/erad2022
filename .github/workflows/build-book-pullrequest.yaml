@@ -40,19 +40,23 @@ jobs:
         uses: jupyterhub/repo2docker-action@master
         with:
           NO_PUSH: true
+          DOCKER_USERNAME: "openradar"
+          DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          DOCKER_REGISTRY: "ghcr.io"
+          PUBLIC_REGISTRY_CHECK: true
       - name: list docker images
         run: |
           docker image ls -a
       - name: Build the book
         uses: addnab/docker-run-action@v3
         with:
-          image: ghcr.io/kmuehlbauer/erad2022:latest
-          options: --user root
+          image: ghcr.io/openradar/erad2022:latest
+          options: --user root -v ${{ github.workspace }}:/work
           run: |
             # copy baltrad notebooks to book dir
-            cp -rp /home/jovyan/notebooks/baltrad* notebooks/.
-            install/nbstripout_notebooks.sh
-            jupyter-book build ${{ inputs.path_to_notebooks }}
+            cp -rp /home/jovyan/notebooks/baltrad* /work/notebooks/.
+            /work/install/nbstripout_notebooks.sh
+            jupyter-book build /work/${{ inputs.path_to_notebooks }}
       - name: Zip the book
         run: |
           set -x
