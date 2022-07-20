@@ -1,3 +1,3 @@
-# Overview of radar open source software packages
+# Open Radar Community
 
-We provide here an overview of the main software packages
+An overview of the open radar science community.
