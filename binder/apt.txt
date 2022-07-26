@@ -1,1 +1,1 @@
-./$BALTRAD_INSTALL_ROOT/$BALTRAD_INSTALL_ROOT/install/lrose/lrose-core-20190129.debian_9.amd64.deb
+./install/lrose/lrose-core-20190129.debian_9.amd64.deb
