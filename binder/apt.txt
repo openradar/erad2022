@@ -1,1 +1,1 @@
-./install/lrose/lrose-core-20190129.debian_9.amd64.deb
+./install/lrose/lrose-core-20220222.ubuntu_20.04.amd64.deb
