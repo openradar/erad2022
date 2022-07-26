@@ -9,4 +9,4 @@ set +e
 wget https://github.com/NCAR/lrose-core/releases/download/lrose-core-20220222/lrose-core-20220222.ubuntu_20.04.amd64.deb
 
 # install using apt-get
-apt-get install -y ./lrose-core-20190129.debian_9.amd64.deb
+sudo apt-get install -y ./lrose-core-20190129.debian_9.amd64.deb
