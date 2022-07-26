@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>wradlib introduction &#8212; Project Pythia Cookbook Template</title>
+    <title>Major data formats in the weather radar world &#8212; Project Pythia Cookbook Template</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="BALTRAD Tutorial" href="../baltrad/README.html" />
-    <link rel="prev" title="Wradlib Tutorial" href="../wradlib/README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -172,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
   Tool Foundations
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../pyart/README.html">
    Py-ART Tutorial
@@ -184,29 +182,29 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="pyart-basics.html">
+    <a class="reference internal" href="../notebooks/pyart-basics.html">
      Py-ART Basics
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="pyart-gridding.html">
+    <a class="reference internal" href="../notebooks/pyart-gridding.html">
      Py-ART Gridding
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../wradlib/README.html">
    Wradlib Tutorial
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/wradlib_intro.html">
      wradlib introduction
     </a>
    </li>
@@ -283,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/wradlib_intro.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/package-overview/data_formats.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -303,10 +301,10 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/openradar/erad2022/issues/new?title=Issue%20on%20page%20%2Fnotebooks/wradlib_intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/openradar/erad2022/issues/new?title=Issue%20on%20page%20%2Fpackage-overview/data_formats.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/openradar/erad2022/edit/main/notebooks/wradlib_intro.ipynb"><button
+        <a class="edit-button" href="https://github.com/openradar/erad2022/edit/main/package-overview/data_formats.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -321,11 +319,75 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://binder-staging.2i2c.cloud/v2/gh/openradar/erad2022/main?urlpath=lab/tree/package-overview/data_formats.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> On this page
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Major data formats in the weather radar world
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cfradial">
+   CFRadial
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cfradial-hierarchical-data-structure">
+     CFRadial hierarchical data structure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#odim">
+   ODIM
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#odim-data-structure">
+     ODIM data structure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rainbow">
+   Rainbow
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nexrad">
+   Nexrad
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -334,28 +396,73 @@ const thebe_selector_output = ".output, .cell_output"
               
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="wradlib-introduction">
-<h1>wradlib introduction<a class="headerlink" href="#wradlib-introduction" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
-<p>Testing notebook processing</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wradlib</span> <span class="k">as</span> <span class="nn">wrl</span>
-</pre></div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="major-data-formats-in-the-weather-radar-world">
+<h1>Major data formats in the weather radar world<a class="headerlink" href="#major-data-formats-in-the-weather-radar-world" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<ul class="simple">
+<li><p>CFRadial</p></li>
+<li><p>ODIM</p></li>
+<li><p>Rainbow</p></li>
+<li><p>Nexrad</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="cfradial">
+<h1><a class="reference external" href="https://www.eol.ucar.edu/system/files/CfRadialDoc-v2.0-20180430.pdf">CFRadial</a><a class="headerlink" href="#cfradial" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<p><em>Py-ART Radar object inherits CFRadial data structure</em></p>
+<ul class="simple">
+<li><p>Based on NetCDF</p></li>
+<li><p>For <strong>polar</strong> radar coordinates only</p></li>
+<li><p>De-facto standard for the research community</p></li>
+<li><p>Standard format at WMO for radial weather data</p></li>
+<li><p>some CRFRadial readers: <a class="reference external" href="https://docs.wradlib.org/en/stable/generated/wradlib.io.backends.CfRadial2BackendEntrypoint.html">ωradlib</a>, <a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.io.read_cfradial.html">Py-ART</a></p></li>
+</ul>
+<div class="section" id="cfradial-hierarchical-data-structure">
+<h2>CFRadial hierarchical data structure<a class="headerlink" href="#cfradial-hierarchical-data-structure" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p><img alt="data_structure_cfradial.png" src="package-overview/attachment:data_structure_cfradial.png" /></p>
 </div>
 </div>
+<div class="tex2jax_ignore mathjax_ignore section" id="odim">
+<h1><a class="reference external" href="https://www.eumetnet.eu/wp-content/uploads/2019/01/ODIM_H5_v23.pdf">ODIM</a><a class="headerlink" href="#odim" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<ul class="simple">
+<li><p>OPERA (Europe weather radar cooperation) standard</p></li>
+<li><p>Based on HDF5</p></li>
+<li><p>Can be used for polar and Cartesian data</p></li>
+<li><p>some ODIM readers: <a class="reference external" href="https://docs.wradlib.org/en/stable/generated/wradlib.io.hdf.open_odim_mfdataset.html">ωradlib</a>, <a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.aux_io.read_odim_h5.html">Py-ART</a></p></li>
+</ul>
+<div class="section" id="odim-data-structure">
+<h2>ODIM data structure<a class="headerlink" href="#odim-data-structure" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div>
+<img style="float: left;" src="attachment:ODIM_structure.png" width="600">
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">wrl</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-</pre></div>
+<div style="float: left; font-size: 20pt">
+<ul class="simple">
+<li><p><strong>How</strong> : All instrument and acquisition parameters</p></li>
+<li><p><strong>Where</strong> : e.g. WGS coordinates, range, azimuth (polar), grid size (Cartesian)</p></li>
+<li><p><strong>What</strong> :</p>
+<ul>
+<li><p>at top-level: type of data (PVOL, CVOL,…), institution, file format</p></li>
+<li><p>at dataset-level: product name, quantity, gain, offset</p></li>
+</ul>
+</li>
+</ul>
+</div></div>
 </div>
+<div class="tex2jax_ignore mathjax_ignore section" id="rainbow">
+<h1>Rainbow<a class="headerlink" href="#rainbow" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<ul class="simple">
+<li><p>Proprietary format used by the company   <a class="reference internal" href="https://upload.wikimedia.org/wikipedia/commons/d/da/Logo_Leonardo.png"><img alt="https://upload.wikimedia.org/wikipedia/commons/d/da/Logo_Leonardo.png" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Logo_Leonardo.png" style="width: 150px;" /></a></p></li>
+<li><p>Output of Leonardo (prev. Selex) radars, e.g. Germany, Switzerland</p></li>
+<li><p>Non-standard binary file</p></li>
+<li><p>some ODIM readers: <a class="reference external" href="https://docs.wradlib.org/en/stable/generated/wradlib.io.rainbow.read_rainbow.html">ωradlib</a>, <a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.aux_io.read_rainbow_wrl.html">Py-ART</a></p></li>
+</ul>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.16.0
-</pre></div>
-</div>
-</div>
-</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="nexrad">
+<h1>Nexrad<a class="headerlink" href="#nexrad" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<a class="reference internal image-reference" href="https://wx.erau.edu/faculty/mullerb/Wx365/NEXRAD/WSR-88DCONUSCoverage2011.jpg"><img alt="https://wx.erau.edu/faculty/mullerb/Wx365/NEXRAD/WSR-88DCONUSCoverage2011.jpg" src="https://wx.erau.edu/faculty/mullerb/Wx365/NEXRAD/WSR-88DCONUSCoverage2011.jpg" style="width: 30%;" /></a>
+<ul class="simple">
+<li><p>Data from the Next Generation Weather Radar (Nexrad) network in the US (160 S-band radars)</p></li>
+<li><p>This data is easily available so format is often encountered</p></li>
+<li><p>some Nexrad readers <a class="reference external" href="http://arm-doe.github.io/pyart/API/generated/pyart.io.read_nexrad_level3.html">Py-ART</a>, <a class="reference external" href="https://trmm-fc.gsfc.nasa.gov/trmm_gv/software/rsl/">RSL</a>.</p></li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">
@@ -371,7 +478,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./notebooks"
+            path: "./package-overview"
         },
         predefinedOutput: true
     }
@@ -380,21 +487,7 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../wradlib/README.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Wradlib Tutorial</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../baltrad/README.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">BALTRAD Tutorial</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             </div>
           </div>
