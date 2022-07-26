@@ -1,1 +1,1 @@
-./install/lrose/lrose-core-20220222.ubuntu_20.04.amd64.deb
+.$BALTRAD_INSTALL_ROOT/install/lrose/lrose-core-20220222.ubuntu_20.04.amd64.deb
