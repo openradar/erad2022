@@ -11,8 +11,6 @@ cd $BALTRAD_INSTALL_ROOT
 # download the latest installation of lrose
 wget https://github.com/NCAR/lrose-core/releases/download/lrose-core-20220222/lrose-core-20220222.ubuntu_20.04.amd64.deb
 
-apt update && apt install sudo
-
 # Make sure we have permission to open and run
 chmod 777 lrose-core-20220222.ubuntu_20.04.amd64.deb
 
