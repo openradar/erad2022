@@ -1,1 +1,1 @@
-${PWD}/install/lrose/lrose-core-20220222.ubuntu_20.04.amd64.deb
+./${PWD}/install/lrose/lrose-core-20220222.ubuntu_20.04.amd64.deb
