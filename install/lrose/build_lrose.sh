@@ -13,5 +13,8 @@ wget https://github.com/NCAR/lrose-core/releases/download/lrose-core-20220222/lr
 
 apt update && apt install sudo
 
+# Make sure we have permission to open and run
+chmod 777 lrose-core-20190129.debian_9.amd64.deb
+
 # install using apt-get
-sudo apt-get install -y ./lrose-core-20190129.debian_9.amd64.deb
+apt-get install -y lrose-core-20190129.debian_9.amd64.deb
