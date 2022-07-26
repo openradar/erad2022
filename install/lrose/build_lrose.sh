@@ -17,4 +17,4 @@ apt update && apt install sudo
 chmod 777 lrose-core-20190129.debian_9.amd64.deb
 
 # install using apt-get
-apt-get install -y lrose-core-20190129.debian_9.amd64.deb
+sudo apt-get install -y lrose-core-20190129.debian_9.amd64.deb
