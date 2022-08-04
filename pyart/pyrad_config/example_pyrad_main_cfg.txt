@@ -16,6 +16,10 @@ name STRING swiss_tstorm_pyrad_example
 datapath STRING ../data/example_pyrad/
 path_convention STRING MCH
 
+# Loading of saved datasets
+loadbasepath STRING ../data/example_pyrad/
+loadname STRING  rad4alp_cosmotemp_PLL
+
 # --------------------------------------------
 # Output data
 # --------------------------------------------

@@ -4,15 +4,16 @@
 
 # List of datasets to generate.
 # The detailed specification of each dataset is given below.
-dataSetList STRARR 7
+dataSetList STRARR 9
     l0:ZH
+    l0:ZH_grid
     l0:echoID
     l1:echoFilter
     l2:SNRFilter
     l3:KDPc_maesaka
     l4:Att_ZPhi
     l5:hydroclass
-
+    l6:RR_hydro
 
 # ==========================================================================================
 #                 raw data processing
@@ -112,7 +113,7 @@ KDPc_maesaka STRUCT 12
     datatype STRARR 3
         PROC:PhiDPc
         PROC:dBZc
-        CFRADIAL:TEMP
+        CFRADIALPYRAD:TEMP,TEMP,SAVEVOL_TEMP
     rmin FLOAT 1000.
     rmax FLOAT 50000.
     rcell FLOAT 1000.
@@ -142,7 +143,7 @@ Att_ZPhi STRUCT 5
         PROC:dBZc
         PROC:ZDRc
         PROC:PhiDPc
-        CFRADIAL:TEMP
+        CFRADIALPYRAD:TEMP,TEMP,SAVEVOL_TEMP
     ATT_METHOD STRING ZPhi
     MAKE_GLOBAL INT 1
     products STRUCT 2
@@ -166,17 +167,43 @@ hydroclass STRUCT 6
         PROC:ZDRc
         PROC:RhoHVc
         PROC:KDPc
-        CFRADIAL:TEMP
+        CFRADIALPYRAD:TEMP,TEMP,SAVEVOL_TEMP
     HYDRO_METHOD STRING SEMISUPERVISED
     RADARCENTROIDS STRING L
     MAKE_GLOBAL INT 1
     products STRUCT 2
-    EL001_dBZc STRUCT 3
-        type  STRING PPI_MAP
-	 anglenr INT 2
-	 voltype STRING hydro
-    AZ270_dBZc STRUCT 4
-         type  STRING PSEUDORHI_IMAGE
-         angle FLOAT 270.
-         AziTol FLOAT 1.
-         voltype STRING hydro
+        EL001_dBZc STRUCT 3
+            type  STRING PPI_MAP
+	        anglenr INT 2
+	        voltype STRING hydro
+        AZ270_dBZc STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 270.
+            AziTol FLOAT 1.
+            voltype STRING hydro
+         
+# ==========================================================================================
+#               rainfall rate
+# ==========================================================================================
+RR_hydro STRUCT 5
+    type STRING RAINRATE
+    datatype STRARR 3
+        PROC:dBZc
+        PROC:Ahc
+        PROC:hydro
+    RR_METHOD STRING hydro
+    MAKE_GLOBAL INT 0
+    products STRUCT 3
+        SAVEVOL_RR_hydro STRUCT 2
+            type  STRING SAVEVOL
+            voltype STRING RR
+        EL001_dBZc STRUCT 3
+            type  STRING PPI_MAP
+	        anglenr INT 2
+	        voltype STRING RR
+        AZ270_dBZc STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 270.
+            AziTol FLOAT 1.
+            voltype STRING RR
+
