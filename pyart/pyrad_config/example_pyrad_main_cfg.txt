@@ -1,0 +1,41 @@
+#
+# Configuration for open radar course ERAD2022
+
+
+# Name of this configuration:
+# Will be used in product generation save path
+name STRING swiss_tstorm_pyrad_example
+
+# ---------------------------------------------------------
+#  Raw data pathes
+# ---------------------------------------------------------
+
+# Base path of the raw data.
+# Note: Must have a trailing '/'
+# ('<datapath>/<scanname>/<YYYY-MM-DD>/<YYYYMMDDHHMMSS00datatype>.<ext>')
+datapath STRING ../data/example_pyrad/
+path_convention STRING MCH
+
+# Loading of saved datasets
+loadbasepath STRING ../data/example_pyrad/
+loadname STRING  rad4alp_cosmotemp_PLL
+
+# --------------------------------------------
+# Output data
+# --------------------------------------------
+saveimgbasepath STRING ./outputs_example_pyrad/
+# Supported formats: eps, jpeg, jpg, pdf, pgf, png, ps, raw, rgba, svg, svgz, tif, tiff
+imgformat STRING png
+
+# --------------------------------------------------------
+# configuration files pathes
+# --------------------------------------------------------
+
+# Base path of configuration files
+configpath STRING ./
+
+# Configuration of the radar location and approach direction
+locationConfigFile STRING ./example_pyrad_loc_cfg.txt
+
+# Configuration of the product generation
+productConfigFile STRING ./example_pyrad_prod_cfg.txt
