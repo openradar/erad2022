@@ -1,0 +1,886 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BALTRAD I/O model - making sense out of data and metadata &#8212; Project Pythia Cookbook Template</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="132">
+    <div class="container-fluid" id="shim"></div>
+    <div class="container-fluid" id="banner"></div>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar shadow" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="https://openradarscience.org/erad2022/README.html">
+  <img src="../../_static/erad_white_background.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://www.erad2022.ch">Conference Home</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://openradarscience.org">Open Radar Community</a>
+  </li>
+  
+  
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/openradar/erad2022" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" rel="noopener" target="_blank" title="YouTube">
+            <span><i class="fab fa-youtube-square"></i></span>
+            <label class="sr-only">YouTube</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    <div class="container-xl">
+      <div class="row">
+        
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   ERAD 2022 Open Radar Science Shortcourse
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introductions + Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../open-science/README.html">
+   An Overview of Open Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../open-radar/README.html">
+   Open Radar Community
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tool Foundations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pyart/README.html">
+   Py-ART Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pyart-basics.html">
+     Py-ART Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pyart-gridding.html">
+     Py-ART Gridding
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../wradlib/README.html">
+   Wradlib Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib_intro.html">
+     wradlib introduction
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../baltrad/README.html">
+   BALTRAD Tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../lrose/README.html">
+   LROSE Tutorial
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Open Radar Workflows
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../workflows/README.html">
+   Combining Radar Workflows
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Becoming a developer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../package-development/README.html">
+   Developing Open Source Software Packages
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by <a href="https://projectpythia.org">Project Pythia</a>.<br><br>
+
+</div>
+
+</div>
+
+        
+
+        <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main"><div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/baltrad_short_course/BALTRAD IO.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/openradar/erad2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/openradar/erad2022/issues/new?title=Issue%20on%20page%20%2Fnotebooks/baltrad_short_course/BALTRAD IO.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/openradar/erad2022/edit/main/notebooks/baltrad_short_course/BALTRAD IO.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> On this page
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-the-file-i-o-module-along-with-the-main-rave-module-containing-useful-constants">
+   Import the file I/O module along with the main RAVE module containing useful constants
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-an-input-odim-h5-file">
+   Read an input ODIM_H5 file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-the-payload-in-the-i-o-container">
+   What is the payload in the I/O container?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-many-scans-does-this-volume-contain">
+   How many scans does this volume contain?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ascending-or-descending-scan-strategy">
+   Ascending or descending scan strategy?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-is-this-site">
+   Where is this site?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#note-that-all-angles-are-represented-internally-in-radians">
+     Note that all angles are represented internally in radians
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-lowest-scan-and-query-some-characteristics">
+   Access lowest scan and query some characteristics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-horizontal-reflectivity-and-query-some-characteristics">
+   Access horizontal reflectivity and query some characteristics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-primitive-visualizer-for-plotting-b-scans">
+   A primitive visualizer for plotting B-scans
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#management-of-optional-metadata">
+   Management of optional metadata
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-manadatory-metadata-are-represented-as-object-attributes-in-python-optional-metadata-are-not">
+     While manadatory metadata are represented as object attributes in Python, optional metadata are not!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-a-bogus-attribute">
+     Add a bogus attribute
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-an-empty-parameter-and-populate-it">
+   Create an empty parameter and populate it
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-an-empty-scan-and-add-the-parameter-to-it">
+   Create an empty scan and add the parameter to it
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#see-how-the-parameters-dimensions-were-passed-along-to-the-scan-so-they-dont-have-to-be-set-explicitly-nevertheless-plenty-of-metadata-must-be-handled-explicitly-or-odim-h5-files-risk-being-incomplete">
+     See how the parameter’s dimensions were passed along to the scan, so they don’t have to be set explicitly. Nevertheless, plenty of metadata must be handled explicitly or ODIM_H5 files risk being incomplete.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-create-a-new-i-o-container-and-write-the-scan-to-odim-h5-file">
+   Now create a new I/O container and write the scan to ODIM_H5 file.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-compression-it-makes-file-i-o-faster-you-can-also-tune-hdf5-file-creation-properties-through-the-i-o-container-object">
+     Remove compression. It makes file I/O faster. You can also tune HDF5 file-creation properties through the I/O container object.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+          <div id="main-content" class="row">
+            <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+              
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="baltrad-i-o-model-making-sense-out-of-data-and-metadata">
+<h1>BALTRAD I/O model - making sense out of data and metadata<a class="headerlink" href="#baltrad-i-o-model-making-sense-out-of-data-and-metadata" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="import-the-file-i-o-module-along-with-the-main-rave-module-containing-useful-constants">
+<h2>Import the file I/O module along with the main RAVE module containing useful constants<a class="headerlink" href="#import-the-file-i-o-module-along-with-the-main-rave-module-containing-useful-constants" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
+<span class="kn">import</span> <span class="nn">_raveio</span><span class="o">,</span> <span class="nn">_rave</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%pylab is deprecated, use %matplotlib inline and import the required libraries.
+Populating the interactive namespace from numpy and matplotlib
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-an-input-odim-h5-file">
+<h2>Read an input ODIM_H5 file<a class="headerlink" href="#read-an-input-odim-h5-file" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rio</span> <span class="o">=</span> <span class="n">_raveio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;data/201405190715_SUR.h5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="what-is-the-payload-in-the-i-o-container">
+<h2>What is the payload in the I/O container?<a class="headerlink" href="#what-is-the-payload-in-the-i-o-container" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rio</span><span class="o">.</span><span class="n">objectType</span> <span class="ow">is</span> <span class="n">_rave</span><span class="o">.</span><span class="n">Rave_ObjectType_PVOL</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="how-many-scans-does-this-volume-contain">
+<h2>How many scans does this volume contain?<a class="headerlink" href="#how-many-scans-does-this-volume-contain" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pvol</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">object</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2"> scans in polar volume&quot;</span> <span class="o">%</span> <span class="n">pvol</span><span class="o">.</span><span class="n">getNumberOfScans</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8 scans in polar volume
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ascending-or-descending-scan-strategy">
+<h2>Ascending or descending scan strategy?<a class="headerlink" href="#ascending-or-descending-scan-strategy" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pvol</span><span class="o">.</span><span class="n">isAscendingScans</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="where-is-this-site">
+<h2>Where is this site?<a class="headerlink" href="#where-is-this-site" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="section" id="note-that-all-angles-are-represented-internally-in-radians">
+<h3>Note that all angles are represented internally in radians<a class="headerlink" href="#note-that-all-angles-are-represented-internally-in-radians" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Proj</span> <span class="kn">import</span> <span class="n">rd</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Site is located at </span><span class="si">%2.3f</span><span class="s2">° lon, </span><span class="si">%2.3f</span><span class="s2">° lat and </span><span class="si">%3.1f</span><span class="s2"> masl&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pvol</span><span class="o">.</span><span class="n">longitude</span><span class="o">*</span><span class="n">rd</span><span class="p">,</span> <span class="n">pvol</span><span class="o">.</span><span class="n">latitude</span><span class="o">*</span><span class="n">rd</span><span class="p">,</span> <span class="n">pvol</span><span class="o">.</span><span class="n">height</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Site&#39;s ODIM source identifiers are: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">pvol</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Site is located at 25.519° lon, 58.482° lat and 157.0 masl
+Site&#39;s ODIM source identifiers are: WMO:26232,RAD:EE41,PLC:SÃ¼rgavere,NOD:eesur
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="access-lowest-scan-and-query-some-characteristics">
+<h2>Access lowest scan and query some characteristics<a class="headerlink" href="#access-lowest-scan-and-query-some-characteristics" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scan</span> <span class="o">=</span> <span class="n">pvol</span><span class="o">.</span><span class="n">getScan</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">nrays</span><span class="p">,</span> <span class="n">nbins</span> <span class="o">=</span> <span class="n">scan</span><span class="o">.</span><span class="n">nrays</span><span class="p">,</span> <span class="n">scan</span><span class="o">.</span><span class="n">nbins</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Elevation angle </span><span class="si">%2.1f</span><span class="s2">°&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">scan</span><span class="o">.</span><span class="n">elangle</span><span class="o">*</span><span class="n">rd</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2"> rays per sweep&quot;</span> <span class="o">%</span> <span class="n">nrays</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2"> bins per ray&quot;</span> <span class="o">%</span> <span class="n">nbins</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%3.1f</span><span class="s2"> meter range bins&quot;</span> <span class="o">%</span> <span class="n">scan</span><span class="o">.</span><span class="n">rscale</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First ray scanned is ray </span><span class="si">%i</span><span class="s2"> (indexing starts at 0)&quot;</span> <span class="o">%</span> <span class="n">scan</span><span class="o">.</span><span class="n">a1gate</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data acquisition started on </span><span class="si">%s</span><span class="s2">:</span><span class="si">%s</span><span class="s2">Z&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">scan</span><span class="o">.</span><span class="n">startdate</span><span class="p">,</span> <span class="n">scan</span><span class="o">.</span><span class="n">starttime</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data acquisition ended on </span><span class="si">%s</span><span class="s2">:</span><span class="si">%s</span><span class="s2">Z&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">scan</span><span class="o">.</span><span class="n">enddate</span><span class="p">,</span> <span class="n">scan</span><span class="o">.</span><span class="n">endtime</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scan contains </span><span class="si">%i</span><span class="s2"> quantities: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scan</span><span class="o">.</span><span class="n">getParameterNames</span><span class="p">()),</span> <span class="n">scan</span><span class="o">.</span><span class="n">getParameterNames</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elevation angle 0.5°
+360 rays per sweep
+831 bins per ray
+300.0 meter range bins
+First ray scanned is ray 189 (indexing starts at 0)
+Data acquisition started on 20140519:071509Z
+Data acquisition ended on 20140519:071537Z
+Scan contains 10 quantities: [&#39;DBZH&#39;, &#39;RHOHV&#39;, &#39;HCLASS&#39;, &#39;WRADH&#39;, &#39;PHIDP&#39;, &#39;ZDR&#39;, &#39;SQIH&#39;, &#39;KDP&#39;, &#39;VRADH&#39;, &#39;TH&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="access-horizontal-reflectivity-and-query-some-characteristics">
+<h2>Access horizontal reflectivity and query some characteristics<a class="headerlink" href="#access-horizontal-reflectivity-and-query-some-characteristics" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbzh</span> <span class="o">=</span> <span class="n">scan</span><span class="o">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s2">&quot;DBZH&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quantity is </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">dbzh</span><span class="o">.</span><span class="n">quantity</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;8-bit unsigned byte data? </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">dbzh</span><span class="o">.</span><span class="n">datatype</span> <span class="ow">is</span> <span class="n">_rave</span><span class="o">.</span><span class="n">RaveDataType_UCHAR</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear scaling coefficients from 0-255 to dBZ: gain=</span><span class="si">%2.1f</span><span class="s2">, offset=</span><span class="si">%2.1f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dbzh</span><span class="o">.</span><span class="n">gain</span><span class="p">,</span> <span class="n">dbzh</span><span class="o">.</span><span class="n">offset</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unradiated areas = </span><span class="si">%2.1f</span><span class="s2">, radiated areas with no echo = </span><span class="si">%2.1f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dbzh</span><span class="o">.</span><span class="n">nodata</span><span class="p">,</span> <span class="n">dbzh</span><span class="o">.</span><span class="n">undetect</span><span class="p">))</span>
+
+<span class="n">dbzh_data</span> <span class="o">=</span> <span class="n">dbzh</span><span class="o">.</span><span class="n">getData</span><span class="p">()</span>  <span class="c1"># Accesses the NumPy array containing the reflectivities</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NumPy array&#39;s dimensions = </span><span class="si">%s</span><span class="s2"> and type = </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">dbzh_data</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">dbzh_data</span><span class="o">.</span><span class="n">dtype</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quantity is DBZH
+8-bit unsigned byte data? True
+Linear scaling coefficients from 0-255 to dBZ: gain=0.5, offset=-32.0
+Unradiated areas = 255.0, radiated areas with no echo = 0.0
+NumPy array&#39;s dimensions = (360, 831) and type = uint8
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="a-primitive-visualizer-for-plotting-b-scans">
+<h2>A primitive visualizer for plotting B-scans<a class="headerlink" href="#a-primitive-visualizer-for-plotting-b-scans" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convenience functionality. First convert a palette from GoogleMapsPlugin for use with matplotlib</span>
+<span class="kn">from</span> <span class="nn">GmapColorMap</span> <span class="kn">import</span> <span class="n">dbzh</span> <span class="k">as</span> <span class="n">pal</span>
+<span class="n">colorlist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pal</span><span class="p">),</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="n">colorlist</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">pal</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mf">255.0</span><span class="p">,</span> <span class="n">pal</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">255.0</span><span class="p">,</span> <span class="n">pal</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mf">255.0</span><span class="p">])</span>
+
+<span class="c1"># Then create a simple plotter</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;B-scan&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">(</span><span class="n">colorlist</span><span class="p">),</span> <span class="n">clim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">shrink</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">nrays</span><span class="p">)</span><span class="o">/</span><span class="n">nbins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">dbzh_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/BALTRAD IO_20_0.png" src="../../_images/BALTRAD IO_20_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="management-of-optional-metadata">
+<h2>Management of optional metadata<a class="headerlink" href="#management-of-optional-metadata" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="section" id="while-manadatory-metadata-are-represented-as-object-attributes-in-python-optional-metadata-are-not">
+<h3>While manadatory metadata are represented as object attributes in Python, optional metadata are not!<a class="headerlink" href="#while-manadatory-metadata-are-represented-as-object-attributes-in-python-optional-metadata-are-not" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Polar volume has </span><span class="si">%i</span><span class="s2"> optional attributes&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">pvol</span><span class="o">.</span><span class="n">getAttributeNames</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Polar scan has </span><span class="si">%i</span><span class="s2"> optional attributes&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">scan</span><span class="o">.</span><span class="n">getAttributeNames</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quantity </span><span class="si">%s</span><span class="s2"> has </span><span class="si">%i</span><span class="s2"> optional attributes&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dbzh</span><span class="o">.</span><span class="n">quantity</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dbzh</span><span class="o">.</span><span class="n">getAttributeNames</span><span class="p">())))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mandatory attribute: beamwidth is </span><span class="si">%2.1f</span><span class="s2">°&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pvol</span><span class="o">.</span><span class="n">beamwidth</span><span class="o">*</span><span class="n">rd</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optional attributes: Radar is a </span><span class="si">%s</span><span class="s2"> running </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">pvol</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;how/system&quot;</span><span class="p">),</span> <span class="n">pvol</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;how/software&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polar volume has 14 optional attributes
+Polar scan has 36 optional attributes
+Quantity DBZH has 3 optional attributes
+Mandatory attribute: beamwidth is 1.0°
+Optional attributes: Radar is a VAISWRM200 running IRIS
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-a-bogus-attribute">
+<h3>Add a bogus attribute<a class="headerlink" href="#add-a-bogus-attribute" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbzh</span><span class="o">.</span><span class="n">foo</span> <span class="o">=</span> <span class="s2">&quot;bar&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dbzh</span><span class="o">.</span><span class="n">foo</span> <span class="o">=</span> <span class="s2">&quot;bar&quot;</span>
+
+<span class="ne">AttributeError</span>: foo
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbzh</span><span class="o">.</span><span class="n">addAttribute</span><span class="p">(</span><span class="s2">&quot;how/foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quantity </span><span class="si">%s</span><span class="s2"> now has </span><span class="si">%i</span><span class="s2"> optional attributes&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dbzh</span><span class="o">.</span><span class="n">quantity</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dbzh</span><span class="o">.</span><span class="n">getAttributeNames</span><span class="p">())))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quantity DBZH now has 4 optional attributes
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-an-empty-parameter-and-populate-it">
+<h2>Create an empty parameter and populate it<a class="headerlink" href="#create-an-empty-parameter-and-populate-it" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">_polarscanparam</span>
+<span class="n">param</span> <span class="o">=</span> <span class="n">_polarscanparam</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">param</span><span class="o">.</span><span class="n">quantity</span> <span class="o">=</span> <span class="s2">&quot;DBZH&quot;</span>
+<span class="n">param</span><span class="o">.</span><span class="n">nodata</span><span class="p">,</span> <span class="n">param</span><span class="o">.</span><span class="n">undetect</span> <span class="o">=</span> <span class="mf">255.0</span><span class="p">,</span> <span class="mf">0.0</span>
+<span class="n">param</span><span class="o">.</span><span class="n">gain</span><span class="p">,</span> <span class="n">param</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">30.0</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">420</span><span class="p">,</span><span class="mi">500</span><span class="p">),</span> <span class="n">numpy</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">param</span><span class="o">.</span><span class="n">setData</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-an-empty-scan-and-add-the-parameter-to-it">
+<h2>Create an empty scan and add the parameter to it<a class="headerlink" href="#create-an-empty-scan-and-add-the-parameter-to-it" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">_polarscan</span>
+<span class="kn">from</span> <span class="nn">Proj</span> <span class="kn">import</span> <span class="n">dr</span>
+<span class="n">newscan</span> <span class="o">=</span> <span class="n">_polarscan</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">elangle</span> <span class="o">=</span> <span class="mf">25.0</span><span class="o">*</span><span class="n">dr</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">addAttribute</span><span class="p">(</span><span class="s2">&quot;how/simulated&quot;</span><span class="p">,</span> <span class="s2">&quot;True&quot;</span><span class="p">)</span>
+
+<span class="n">newscan</span><span class="o">.</span><span class="n">addParameter</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2"> rays per sweep&quot;</span> <span class="o">%</span> <span class="n">newscan</span><span class="o">.</span><span class="n">nrays</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2"> bins per ray&quot;</span> <span class="o">%</span> <span class="n">newscan</span><span class="o">.</span><span class="n">nbins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>420 rays per sweep
+500 bins per ray
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="see-how-the-parameters-dimensions-were-passed-along-to-the-scan-so-they-dont-have-to-be-set-explicitly-nevertheless-plenty-of-metadata-must-be-handled-explicitly-or-odim-h5-files-risk-being-incomplete">
+<h3>See how the parameter’s dimensions were passed along to the scan, so they don’t have to be set explicitly. Nevertheless, plenty of metadata must be handled explicitly or ODIM_H5 files risk being incomplete.<a class="headerlink" href="#see-how-the-parameters-dimensions-were-passed-along-to-the-scan-so-they-dont-have-to-be-set-explicitly-nevertheless-plenty-of-metadata-must-be-handled-explicitly-or-odim-h5-files-risk-being-incomplete" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newscan</span><span class="o">.</span><span class="n">a1gate</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">beamwidth</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">dr</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">rscale</span> <span class="o">=</span> <span class="mf">500.0</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">rstart</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># Distance in meters to the start of the first range bin, unknown=0.0</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">startdate</span> <span class="o">=</span> <span class="s2">&quot;20140831&quot;</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">starttime</span> <span class="o">=</span> <span class="s2">&quot;145005&quot;</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">enddate</span> <span class="o">=</span> <span class="s2">&quot;20140831&quot;</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">endtime</span> <span class="o">=</span> <span class="s2">&quot;145020&quot;</span>
+
+<span class="c1"># Top-level attributes</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="s2">&quot;20140831&quot;</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="s2">&quot;145000&quot;</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="s2">&quot;WMO:26232,RAD:EE41,PLC:Sürgavere,NOD:eesur&quot;</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">longitude</span> <span class="o">=</span> <span class="mf">25.519</span><span class="o">*</span><span class="n">dr</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">latitude</span> <span class="o">=</span> <span class="mf">58.482</span><span class="o">*</span><span class="n">dr</span>
+<span class="n">newscan</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mf">157.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="now-create-a-new-i-o-container-and-write-the-scan-to-odim-h5-file">
+<h2>Now create a new I/O container and write the scan to ODIM_H5 file.<a class="headerlink" href="#now-create-a-new-i-o-container-and-write-the-scan-to-odim-h5-file" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">container</span> <span class="o">=</span> <span class="n">_raveio</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="n">container</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">newscan</span>
+<span class="n">container</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;data/myscan.h5&quot;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ODIM_H5 file is </span><span class="si">%i</span><span class="s2"> bytes large&quot;</span> <span class="o">%</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s2">&quot;data/myscan.h5&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ODIM_H5 file is 4721 bytes large
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="remove-compression-it-makes-file-i-o-faster-you-can-also-tune-hdf5-file-creation-properties-through-the-i-o-container-object">
+<h3>Remove compression. It makes file I/O faster. You can also tune HDF5 file-creation properties through the I/O container object.<a class="headerlink" href="#remove-compression-it-makes-file-i-o-faster-you-can-also-tune-hdf5-file-creation-properties-through-the-i-o-container-object" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">container</span><span class="o">.</span><span class="n">compression_level</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># ZLIB compression levels 0-9</span>
+<span class="n">container</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;data/myscan.h5&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ODIM_H5 file is now </span><span class="si">%i</span><span class="s2"> bytes large&quot;</span> <span class="o">%</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s2">&quot;data/myscan.h5&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ODIM_H5 file is now 214320 bytes large
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/baltrad_short_course"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </div>
+          </div>
+        </main>
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+<footer class="footer">
+  <div class="container-fluid m-0 p-0">
+  
+    <div class="footer-item">
+    
+  <div class="container-fluid footer-logos">
+    <div class="container-xl">
+      <div class="row d-flex flex-wrap align-items-center">
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="Meteoswiss" src="../../_images/meteoswiss_logo.svg" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="Meteofrance" src="../../_images/meteo-france.jpg" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="ARM" src="../../_images/arm_logo.png" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="Argonne" src="../../_images/argonne_logo.png" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="Bonne" src="../../_images/university_bonn.png" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="Canada" src="../../_images/environment_canada_logo.svg" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="NCAR" src="../../_images/NCAR-contemp-logo-blue.svg" style="width: 100%">
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+  
+    <div class="footer-item">
+    
+    </div>
+  
+    <div class="footer-item">
+      <div class="container-fluid footer-info">
+    <div class="container-xl">
+      <div class="d-flex justify-content-center">
+        <p class="py-1 m-0">
+            &copy;&nbsp;2022.
+        
+          By The Open Radar Community.
+        
+          Last updated on 5 August 2022.
+        </p>
+      </div>
+    </div>
+  </div>
+    </div>
+  
+    <div class="footer-item">
+    
+    </div>
+  
+  </div>
+</footer>
+  </body>
+</html>
