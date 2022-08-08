@@ -1,3 +1,4 @@
+ENV DEBIAN_FRONTEND=noninteractive
 RUN CONDA_DIR=/srv/conda && \
     RADARENV=notebook && \
     CONDA_PREFIX=$CONDA_DIR/envs/$RADARENV && \
