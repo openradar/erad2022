@@ -10,7 +10,7 @@ RUN CONDA_DIR=/srv/conda && \
     ${CONDA_PREFXI}/bin/bash -l $BALTRAD_INSTALL_ROOT/install/baltrad/install_baltrad.sh && \
     apt update && \
     apt-get -y install sudo && \
-    sudo apt-get update && \
+    sudo apt-get -y update && \
     sudo -s && \
     sudo ${CONDA_PREFXI}/bin/bash -l $BALTRAD_INSTALL_ROOT/install/lrose/build_lrose.sh && \
     ${CONDA_PREFXI}/bin/bash -l $BALTRAD_INSTALL_ROOT/install/nbstripout_notebooks.sh && \
