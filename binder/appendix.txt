@@ -6,7 +6,8 @@ RUN CONDA_DIR=/srv/conda && \
     echo "export RADARENV=$RADARENV" >> ~/.profile && \
     echo "export CONDA_PREFIX=$CONDA_PREFIX" >> ~/.profile && \
     ${CONDA_PREFXI}/bin/bash -l $BALTRAD_INSTALL_ROOT/install/baltrad/install_baltrad.sh && \
-    ${CONDA_PREFXI}/bin/bash -l $BALTRAD_INSTALL_ROOT/install/lrose/build_lrose.sh && \
+    apt install sudo
+    sudo ${CONDA_PREFXI}/bin/bash -l $BALTRAD_INSTALL_ROOT/install/lrose/build_lrose.sh && \
     ${CONDA_PREFXI}/bin/bash -l $BALTRAD_INSTALL_ROOT/install/nbstripout_notebooks.sh && \
     cp binder/kernel.json $CONDA_PREFIX/share/jupyter/kernels/python3/.
 
