@@ -1,3 +1,4 @@
+USER root
 ENV DEBIAN_FRONTEND=noninteractive
 RUN CONDA_DIR=/srv/conda && \
     RADARENV=notebook && \
