@@ -1,0 +1,209 @@
+#
+# Product generation configuration
+#
+
+# List of datasets to generate.
+# The detailed specification of each dataset is given below.
+dataSetList STRARR 9
+    l0:ZH
+    l0:ZH_grid
+    l0:echoID
+    l1:echoFilter
+    l2:SNRFilter
+    l3:KDPc_maesaka
+    l4:Att_ZPhi
+    l5:hydroclass
+    l6:RR_hydro
+
+# ==========================================================================================
+#                 raw data processing
+# ==========================================================================================
+ZH STRUCT 3
+   type     STRING RAW
+   datatype STRING CFRADIAL:dBZ
+   products STRUCT 3
+      EL001 STRUCT 3
+         type  STRING PPI_IMAGE
+         anglenr INT 2
+         voltype STRING dBZ
+      AZ270 STRUCT 4
+         type  STRING PSEUDORHI_IMAGE
+         angle FLOAT 270.
+         AziTol FLOAT 1.
+         voltype STRING dBZ
+      EL002_5_MAP STRUCT 3
+            type  STRING PPI_MAP
+            anglenr INT 4
+            voltype STRING dBZ
+
+ZH_grid STRUCT 5
+   type     STRING GRID
+   datatype STRING CFRADIAL:dBZ
+   wfunc STRING NEAREST
+   gridConfig STRUCT 9
+      xmin FLOAT -100.
+      xmax FLOAT 100.
+      ymin FLOAT -100.
+      ymax FLOAT 100.
+      zmin FLOAT 0.
+      zmax FLOAT 12000.
+      hres FLOAT 1000.
+      vres FLOAT 500.
+      altorig FLOAT 0.
+   products STRUCT 2
+      LAT STRUCT 4
+         type STRING LATITUDE_SLICE
+         voltype STRING dBZ
+         lat FLOAT 46.04
+         lon FLOAT 8.83
+      SURFACE STRUCT 3
+         type  STRING SURFACE_IMAGE
+         voltype STRING dBZ
+         level INT 8
+
+# ==========================================================================================
+#                 secondary moments products
+# ==========================================================================================
+
+
+echoID STRUCT 3
+    type STRING SAN
+    datatype STRARR 4
+        CFRADIAL:dBZ
+        CFRADIAL:ZDR
+        CFRADIAL:uPhiDP
+        CFRADIAL:uRhoHV
+    MAKE_GLOBAL INT 1
+   
+
+# ==========================================================================================
+#                 clutter and noise suppression
+# ==========================================================================================
+# echo type 3 : precip, 2 : clutter, 1 : noise
+echoFilter STRUCT 4
+    type STRING ECHO_FILTER
+    datatype STRARR 5
+        PROC:echoID
+        CFRADIAL:dBZ
+        CFRADIAL:ZDR
+        CFRADIAL:uRhoHV
+        CFRADIAL:uPhiDP
+    echo_type INT 3
+    MAKE_GLOBAL INT 1
+ 
+
+# ==========================================================================================
+#                 filtration based on SNR
+# ==========================================================================================
+SNRFilter STRUCT 4
+   type STRING SNR_FILTER
+   datatype STRARR 2
+      CFRADIAL:SNR
+      PROC:PhiDPc
+   SNRmin FLOAT 3.
+   MAKE_GLOBAL INT 1
+
+
+
+# ==========================================================================================
+#                 KDP processing
+# ==========================================================================================
+KDPc_maesaka STRUCT 12
+    type STRING PHIDP_KDP_MAESAKA
+    datatype STRARR 3
+        PROC:PhiDPc
+        PROC:dBZc
+        CFRADIALPYRAD:TEMP,TEMP,SAVEVOL_TEMP
+    rmin FLOAT 1000.
+    rmax FLOAT 50000.
+    rcell FLOAT 1000.
+    Zmin FLOAT 20.
+    Zmax FLOAT 40.
+    rwinds FLOAT 1000.
+    rwindl FLOAT 3000.
+    Zthr FLOAT 40.
+    MAKE_GLOBAL INT 1
+    products STRUCT 2
+      EL001 STRUCT 3
+         type  STRING PPI_IMAGE
+         anglenr INT 2
+         voltype STRING KDPc
+      AZ270 STRUCT 4
+         type  STRING PSEUDORHI_IMAGE
+         angle FLOAT 270.
+         AziTol FLOAT 1.
+         voltype STRING KDPc
+
+# ==========================================================================================
+#                 Attenuation
+# ==========================================================================================
+Att_ZPhi STRUCT 5
+    type STRING ATTENUATION
+    datatype STRARR 4
+        PROC:dBZc
+        PROC:ZDRc
+        PROC:PhiDPc
+        CFRADIALPYRAD:TEMP,TEMP,SAVEVOL_TEMP
+    ATT_METHOD STRING ZPhi
+    MAKE_GLOBAL INT 1
+    products STRUCT 2
+        EL001_dBZc STRUCT 3
+            type  STRING PPI_IMAGE
+            anglenr INT 2
+            voltype STRING dBZc
+        AZ270_dBZc STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 270.
+            AziTol FLOAT 1.
+            voltype STRING dBZc
+     
+# ==========================================================================================
+#                 hydrometeor classification products
+# ==========================================================================================
+hydroclass STRUCT 6
+    type STRING HYDROCLASS
+    datatype STRARR 5
+        PROC:dBZc
+        PROC:ZDRc
+        PROC:RhoHVc
+        PROC:KDPc
+        CFRADIALPYRAD:TEMP,TEMP,SAVEVOL_TEMP
+    HYDRO_METHOD STRING SEMISUPERVISED
+    RADARCENTROIDS STRING L
+    MAKE_GLOBAL INT 1
+    products STRUCT 2
+        EL001_dBZc STRUCT 3
+            type  STRING PPI_MAP
+	        anglenr INT 2
+	        voltype STRING hydro
+        AZ270_dBZc STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 270.
+            AziTol FLOAT 1.
+            voltype STRING hydro
+         
+# ==========================================================================================
+#               rainfall rate
+# ==========================================================================================
+RR_hydro STRUCT 5
+    type STRING RAINRATE
+    datatype STRARR 3
+        PROC:dBZc
+        PROC:Ahc
+        PROC:hydro
+    RR_METHOD STRING hydro
+    MAKE_GLOBAL INT 0
+    products STRUCT 3
+        SAVEVOL_RR_hydro STRUCT 2
+            type  STRING SAVEVOL
+            voltype STRING RR
+        EL001_dBZc STRUCT 3
+            type  STRING PPI_MAP
+	        anglenr INT 2
+	        voltype STRING RR
+        AZ270_dBZc STRUCT 4
+            type  STRING PSEUDORHI_IMAGE
+            angle FLOAT 270.
+            AziTol FLOAT 1.
+            voltype STRING RR
+
