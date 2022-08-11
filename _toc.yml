@@ -3,8 +3,9 @@ root: README
 parts:
   - caption: Introductions + Overview
     chapters:
-      - file: open-science/README.md
-      - file: open-radar/README.md
+      - file: introductions/getting-started
+      - file: introductions/open-science
+      - file: introductions/open-radar
   - caption: Tool Foundations
     chapters:
       - file: pyart/README.md
