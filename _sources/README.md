@@ -54,4 +54,4 @@ Content relevant to each of the Open Radar packages (ex. Py-ART, wradlib, LROSE,
 Workflows utilizing the various packages and open radar data.
 
 ## Things You Need to Prepare
-Participants need to bring their own 64-bit notebook (Linux, Windows, Mac).  The exercices will take place on a cloud server. On Windows, the use of a ssh-client such as [Putty](https://www.putty.org/) or [MobaXterm](https://mobaxterm.mobatek.net/) will be necessary. 
+Participants need to bring their own 64-bit notebook (Linux, Windows, Mac).  The exercices will take place on a cloud server. On Windows, the use of a ssh-client such as [Putty](https://www.putty.org/) or [MobaXterm](https://mobaxterm.mobatek.net/) will be necessary.
