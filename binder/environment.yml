@@ -12,6 +12,7 @@ dependencies:
   - xarray
   - wradlib
   - arm_pyart
+  - pyrad_mch
   # this is needed for baltrad compilation
   - compilers
   - make
