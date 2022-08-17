@@ -1,1 +1,0 @@
-FROM ghcr.io/openradar/erad2022:latest
