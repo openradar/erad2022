@@ -57,7 +57,9 @@ jobs:
         run: |
           # copy baltrad notebooks to book dir
           cp -rp /home/jovyan/notebooks/baltrad* notebooks/.
+          cp -rp /home/jovyan/notebooks/pyart2baltrad* notebooks/.
           install/nbstripout_notebooks.sh
+          conda activate notebook
           jupyter-book build ${{ inputs.path_to_notebooks }}
       - name: Zip the book
         run: |
