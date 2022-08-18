@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>baltrad2wradlib &#8212; Project Pythia Cookbook Template</title>
+    <title>Doppler Velocity Dealiasing with Py-ART and BALTRAD &#8212; Project Pythia Cookbook Template</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Developing Open Source Software Packages" href="../../package-development/README.html" />
+    <link rel="prev" title="In this notebook, an ODIM_H5 file is read using BALTRAD. Then the rain rate is determined from the calculated specific attenuation using Py-ART." href="baltrad_pyart_rain_rate_example.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -268,29 +270,29 @@ const thebe_selector_output = ".output, .cell_output"
   Open Radar Workflows
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../workflows/README.html">
    Combining Radar Workflows
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="baltrad2wradlib.html">
+    <a class="reference internal" href="../baltrad2wradlib/baltrad2wradlib.html">
      Interaction of BALTRAD and wradlib via ODIM_H5
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../pyart2baltrad/baltrad_pyart_rain_rate_example.html">
+    <a class="reference internal" href="baltrad_pyart_rain_rate_example.html">
      In this notebook, an ODIM_H5 file is read using BALTRAD.  Then the rain rate is determined from the calculated specific attenuation using Py-ART.
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../pyart2baltrad/pyart_baltrad_dealias_example.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Doppler Velocity Dealiasing with Py-ART and BALTRAD
     </a>
    </li>
@@ -345,9 +347,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/notebooks/baltrad2wradlib/README.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/notebooks/pyart2baltrad/pyart_baltrad_dealias_example.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -365,10 +367,10 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/openradar/erad2022/issues/new?title=Issue%20on%20page%20%2Fnotebooks/baltrad2wradlib/README.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/openradar/erad2022/issues/new?title=Issue%20on%20page%20%2Fnotebooks/pyart2baltrad/pyart_baltrad_dealias_example.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/openradar/erad2022/edit/main/notebooks/baltrad2wradlib/README.md"><button
+        <a class="edit-button" href="https://github.com/openradar/erad2022/edit/main/notebooks/pyart2baltrad/pyart_baltrad_dealias_example.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -396,10 +398,126 @@ const thebe_selector_output = ".output, .cell_output"
               
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="baltrad2wradlib">
-<h1>baltrad2wradlib<a class="headerlink" href="#baltrad2wradlib" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
-<p>This is the interoperability demonstration between BALTRAD and wradlib.</p>
-<p>It contains the input ODIM_H5 file in folder <code class="docutils literal notranslate"><span class="pre">/in</span></code> and a notebook for the exercise.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="doppler-velocity-dealiasing-with-py-art-and-baltrad">
+<h1>Doppler Velocity Dealiasing with Py-ART and BALTRAD<a class="headerlink" href="#doppler-velocity-dealiasing-with-py-art-and-baltrad" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<p>In this notebook Doppler Velocity data from the ARM C-band SAPR radar is read using Py-ART and dealiased using BALTRAD.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%pylab is deprecated, use %matplotlib inline and import the required libraries.
+Populating the interactive namespace from numpy and matplotlib
+</pre></div>
+</div>
+</div>
+</div>
+<p>Import the necessary modules</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyart</span>
+<span class="kn">import</span> <span class="nn">baltrad_pyart_bridge</span> <span class="k">as</span> <span class="nn">bridge</span>  <span class="c1"># routines to pass data from Py-ART to BALTRAD</span>
+<span class="kn">import</span> <span class="nn">_dealias</span> <span class="c1"># BALTRAD&#39;s dealiasing module</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>## You are using the Python ARM Radar Toolkit (Py-ART), an open source
+## library for working with weather radar data. Py-ART is partly
+## supported by the U.S. Department of Energy as part of the Atmospheric
+## Radiation Measurement (ARM) Climate Research Facility, an Office of
+## Science user facility.
+##
+## If you use this software to prepare a publication, please cite:
+##
+##     JJ Helmus and SM Collis, JORS 2016, doi: 10.5334/jors.119
+</pre></div>
+</div>
+</div>
+</div>
+<p>Read in the data using Py-ART</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;data/sgpcsaprppi_20110520095101.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Examine the velocity data using Py-ART Display object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarDisplay</span><span class="p">(</span><span class="n">radar</span><span class="p">)</span>
+<span class="n">nyquist_velocity</span> <span class="o">=</span> <span class="n">radar</span><span class="o">.</span><span class="n">instrument_parameters</span><span class="p">[</span><span class="s1">&#39;nyquist_velocity&#39;</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_ppi</span><span class="p">(</span><span class="s1">&#39;velocity&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">colorbar_label</span><span class="o">=</span><span class="s1">&#39;m/s&#39;</span><span class="p">,</span> 
+                 <span class="n">vmin</span><span class="o">=-</span><span class="n">nyquist_velocity</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">nyquist_velocity</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pyart_baltrad_dealias_example_8_0.png" src="../../_images/pyart_baltrad_dealias_example_8_0.png" />
+</div>
+</div>
+<p>Convert the radar data into a RaveIO object with the velocity data having the correct name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vel_data</span> <span class="o">=</span> <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s1">&#39;velocity&#39;</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+<span class="n">radar</span><span class="o">.</span><span class="n">add_field_like</span><span class="p">(</span><span class="s1">&#39;velocity&#39;</span><span class="p">,</span> <span class="s1">&#39;VRAD&#39;</span><span class="p">,</span> <span class="n">vel_data</span><span class="p">)</span>
+<span class="n">rio</span> <span class="o">=</span> <span class="n">bridge</span><span class="o">.</span><span class="n">radar2raveio</span><span class="p">(</span><span class="n">radar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pj_obj_create: Open of /srv/conda/envs/notebook/share/proj failed
+pj_obj_create: Open of /srv/conda/envs/notebook/share/proj failed
+pj_obj_create: Open of /srv/conda/envs/notebook/share/proj failed
+pj_obj_create: Open of /srv/conda/envs/notebook/share/proj failed
+pj_obj_create: Open of /srv/conda/envs/notebook/share/proj failed
+</pre></div>
+</div>
+</div>
+</div>
+<p>Perform Doppler velocity dealiasing using BALTRAD.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ret</span> <span class="o">=</span> <span class="n">_dealias</span><span class="o">.</span><span class="n">dealias</span><span class="p">(</span><span class="n">rio</span><span class="o">.</span><span class="n">object</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s2">&quot;This first scan is dealiased:&quot;</span><span class="p">,</span> <span class="n">_dealias</span><span class="o">.</span><span class="n">dealiased</span><span class="p">(</span><span class="n">rio</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">getScan</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+    <span class="nb">print</span> <span class="s2">&quot;This first scan is dealiased:&quot;</span><span class="p">,</span> <span class="n">_dealias</span><span class="o">.</span><span class="n">dealiased</span><span class="p">(</span><span class="n">rio</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">getScan</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>Add the dealiased velocity field to the origin Py-ART radar object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">bridge</span><span class="o">.</span><span class="n">raveio2radar</span><span class="p">(</span><span class="n">rio</span><span class="p">)</span>
+<span class="k">if</span> <span class="s1">&#39;dealiased_velocity&#39;</span> <span class="ow">in</span> <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="p">:</span>
+    <span class="n">radar</span><span class="o">.</span><span class="n">fields</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;dealiased_velocity&#39;</span><span class="p">)</span>
+<span class="n">radar</span><span class="o">.</span><span class="n">add_field_like</span><span class="p">(</span><span class="s1">&#39;velocity&#39;</span><span class="p">,</span> <span class="s1">&#39;dealiased_velocity&#39;</span><span class="p">,</span> <span class="n">temp</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s1">&#39;VRAD&#39;</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot the dealiased velocities.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">plot_ppi</span><span class="p">(</span><span class="s1">&#39;dealiased_velocity&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">colorbar_label</span><span class="o">=</span><span class="s1">&#39;m/s&#39;</span><span class="p">,</span> 
+                 <span class="n">vmin</span><span class="o">=-</span><span class="mi">2</span><span class="o">*</span><span class="n">nyquist_velocity</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">nyquist_velocity</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pyart_baltrad_dealias_example_16_0.png" src="../../_images/pyart_baltrad_dealias_example_16_0.png" />
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -415,7 +533,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./notebooks/baltrad2wradlib"
+            path: "./notebooks/pyart2baltrad"
         },
         predefinedOutput: true
     }
@@ -424,7 +542,21 @@ const thebe_selector_output = ".output, .cell_output"
 
               </div>
               <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="baltrad_pyart_rain_rate_example.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">In this notebook, an ODIM_H5 file is read using BALTRAD.  Then the rain rate is determined from the calculated specific attenuation using Py-ART.</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../package-development/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Developing Open Source Software Packages</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </div>
           </div>
