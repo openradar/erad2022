@@ -17,6 +17,7 @@ parts:
           - file: notebooks/wradlib_intro.ipynb
       - file: baltrad/README.md
       - file: lrose/README.md
+      - file: notebooks/environment.ipynb
   - caption: Open Radar Workflows
     chapters:
       - file: workflows/README.md
