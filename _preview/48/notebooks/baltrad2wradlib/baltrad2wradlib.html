@@ -535,14 +535,14 @@ const thebe_selector_output = ".output, .cell_output"
   if __name__ is &quot;__main__&quot;:
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7ff7b035f8b0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7ff03d2198b0&gt;
 Traceback (most recent call last):
   File &quot;/srv/conda/envs/notebook/lib/python3.9/logging/__init__.py&quot;, line 255, in _after_at_fork_child_reinit_locks
     handler._at_fork_reinit()
   File &quot;/srv/conda/envs/notebook/lib/python3.9/logging/__init__.py&quot;, line 894, in _at_fork_reinit
     self.lock._at_fork_reinit()
 AttributeError: &#39;RLock&#39; object has no attribute &#39;_at_fork_reinit&#39;
-Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7ff7b035f8b0&gt;
+Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7ff03d2198b0&gt;
 Traceback (most recent call last):
   File &quot;/srv/conda/envs/notebook/lib/python3.9/logging/__init__.py&quot;, line 255, in _after_at_fork_child_reinit_locks
     handler._at_fork_reinit()
@@ -778,38 +778,7 @@ dataset1/data1/what...
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [11],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">(</span><span class="n">before</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Before QC&quot;</span><span class="p">,</span> <span class="n">cb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">65</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">(</span><span class="n">after</span><span class="p">,</span>  <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;After QC&quot;</span><span class="p">,</span>  <span class="n">cb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">65</span><span class="p">)</span>
-
-<span class="nn">Input In [10],</span> in <span class="ni">plot_ppi_to_ax</span><span class="nt">(ppi, ax, title, cb, cb_label, cb_shrink, bbox, extend, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">ptchs</span>   <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">pts</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">shapes</span><span class="p">[</span><span class="n">nshp</span><span class="p">]</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">pts</span> <span class="o">=</span> <span class="n">wradlib</span><span class="o">.</span><span class="n">georef</span><span class="o">.</span><span class="n">reproject</span><span class="p">(</span><span class="n">pts</span><span class="p">,</span> <span class="n">projection_target</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">prt</span>     <span class="o">=</span> <span class="n">shapes</span><span class="p">[</span><span class="n">nshp</span><span class="p">]</span><span class="o">.</span><span class="n">parts</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">par</span>     <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">prt</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">pts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-
-<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/wradlib/georef/projection.py:312,</span> in <span class="ni">reproject</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="n">options</span><span class="o">.</span><span class="n">SetAreaOfInterest</span><span class="p">(</span><span class="o">*</span><span class="n">area_of_interest</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span> <span class="n">ct</span> <span class="o">=</span> <span class="n">osr</span><span class="o">.</span><span class="n">CreateCoordinateTransformation</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>     <span class="n">projection_source</span><span class="p">,</span> <span class="n">projection_target</span><span class="p">,</span> <span class="n">options</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">312</span> <span class="n">trans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ct</span><span class="o">.</span><span class="n">TransformPoints</span><span class="p">(</span><span class="n">C</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">315</span>     <span class="c1"># here we could do this one</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span>     <span class="c1"># return(np.array(ct.TransformPoints(C))[...,0:numCols]))</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span>     <span class="c1"># or this one</span>
-<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="n">trans</span> <span class="o">=</span> <span class="n">trans</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="n">numCols</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">cshape</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;TransformPoints&#39;
-</pre></div>
-</div>
-<img alt="../../_images/baltrad2wradlib_19_1.png" src="../../_images/baltrad2wradlib_19_1.png" />
+<img alt="../../_images/baltrad2wradlib_19_0.png" src="../../_images/baltrad2wradlib_19_0.png" />
 </div>
 </div>
 </div>
@@ -848,38 +817,7 @@ dataset1/data1/what...
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">(</span><span class="n">moments</span><span class="p">[</span><span class="s2">&quot;rho&quot;</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;RhoHV&quot;</span><span class="p">,</span> <span class="n">cb_label</span><span class="o">=</span><span class="s2">&quot;(-)&quot;</span><span class="p">,</span> <span class="n">cb_shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s2">&quot;neither&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">(</span><span class="n">moments</span><span class="p">[</span><span class="s2">&quot;phi&quot;</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;PhiDP&quot;</span><span class="p">,</span> <span class="n">cb_label</span><span class="o">=</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span> <span class="n">cb_shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s2">&quot;neither&quot;</span><span class="p">)</span>
-
-<span class="nn">Input In [10],</span> in <span class="ni">plot_ppi_to_ax</span><span class="nt">(ppi, ax, title, cb, cb_label, cb_shrink, bbox, extend, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">ptchs</span>   <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">pts</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">shapes</span><span class="p">[</span><span class="n">nshp</span><span class="p">]</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">pts</span> <span class="o">=</span> <span class="n">wradlib</span><span class="o">.</span><span class="n">georef</span><span class="o">.</span><span class="n">reproject</span><span class="p">(</span><span class="n">pts</span><span class="p">,</span> <span class="n">projection_target</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">prt</span>     <span class="o">=</span> <span class="n">shapes</span><span class="p">[</span><span class="n">nshp</span><span class="p">]</span><span class="o">.</span><span class="n">parts</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">par</span>     <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">prt</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">pts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-
-<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/wradlib/georef/projection.py:312,</span> in <span class="ni">reproject</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="n">options</span><span class="o">.</span><span class="n">SetAreaOfInterest</span><span class="p">(</span><span class="o">*</span><span class="n">area_of_interest</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span> <span class="n">ct</span> <span class="o">=</span> <span class="n">osr</span><span class="o">.</span><span class="n">CreateCoordinateTransformation</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>     <span class="n">projection_source</span><span class="p">,</span> <span class="n">projection_target</span><span class="p">,</span> <span class="n">options</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">312</span> <span class="n">trans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ct</span><span class="o">.</span><span class="n">TransformPoints</span><span class="p">(</span><span class="n">C</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">315</span>     <span class="c1"># here we could do this one</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span>     <span class="c1"># return(np.array(ct.TransformPoints(C))[...,0:numCols]))</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span>     <span class="c1"># or this one</span>
-<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="n">trans</span> <span class="o">=</span> <span class="n">trans</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="n">numCols</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">cshape</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;TransformPoints&#39;
-</pre></div>
-</div>
-<img alt="../../_images/baltrad2wradlib_22_1.png" src="../../_images/baltrad2wradlib_22_1.png" />
+<img alt="../../_images/baltrad2wradlib_22_0.png" src="../../_images/baltrad2wradlib_22_0.png" />
 </div>
 </div>
 </div>
@@ -935,40 +873,7 @@ dataset1/data1/what...
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [15],</span> in <span class="ni">&lt;cell line: 6&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">shrink</span> <span class="o">=</span> <span class="mf">0.8</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">131</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">(</span><span class="n">before</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Before QC&quot;</span><span class="p">,</span> <span class="n">cb_label</span><span class="o">=</span><span class="s2">&quot;Horizontal reflectivity (dBZ)&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                         <span class="n">cb_shrink</span><span class="o">=</span><span class="n">shrink</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">65</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">132</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">(</span><span class="n">after</span><span class="p">,</span>  <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;After QC using BALTRAD Toolbox&quot;</span><span class="p">,</span> <span class="n">cb_label</span><span class="o">=</span><span class="s2">&quot;Horizontal reflectivity (dBZ)&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">     </span><span class="mi">12</span>                         <span class="n">cb_shrink</span><span class="o">=</span><span class="n">shrink</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">65</span><span class="p">)</span>
-
-<span class="nn">Input In [10],</span> in <span class="ni">plot_ppi_to_ax</span><span class="nt">(ppi, ax, title, cb, cb_label, cb_shrink, bbox, extend, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">ptchs</span>   <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">pts</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">shapes</span><span class="p">[</span><span class="n">nshp</span><span class="p">]</span><span class="o">.</span><span class="n">points</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">pts</span> <span class="o">=</span> <span class="n">wradlib</span><span class="o">.</span><span class="n">georef</span><span class="o">.</span><span class="n">reproject</span><span class="p">(</span><span class="n">pts</span><span class="p">,</span> <span class="n">projection_target</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">prt</span>     <span class="o">=</span> <span class="n">shapes</span><span class="p">[</span><span class="n">nshp</span><span class="p">]</span><span class="o">.</span><span class="n">parts</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">par</span>     <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">prt</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">pts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-
-<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/wradlib/georef/projection.py:312,</span> in <span class="ni">reproject</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="n">options</span><span class="o">.</span><span class="n">SetAreaOfInterest</span><span class="p">(</span><span class="o">*</span><span class="n">area_of_interest</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span> <span class="n">ct</span> <span class="o">=</span> <span class="n">osr</span><span class="o">.</span><span class="n">CreateCoordinateTransformation</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>     <span class="n">projection_source</span><span class="p">,</span> <span class="n">projection_target</span><span class="p">,</span> <span class="n">options</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">312</span> <span class="n">trans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ct</span><span class="o">.</span><span class="n">TransformPoints</span><span class="p">(</span><span class="n">C</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">315</span>     <span class="c1"># here we could do this one</span>
-<span class="g g-Whitespace">    </span><span class="mi">316</span>     <span class="c1"># return(np.array(ct.TransformPoints(C))[...,0:numCols]))</span>
-<span class="g g-Whitespace">    </span><span class="mi">317</span>     <span class="c1"># or this one</span>
-<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="n">trans</span> <span class="o">=</span> <span class="n">trans</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="n">numCols</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">cshape</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;TransformPoints&#39;
-</pre></div>
-</div>
-<img alt="../../_images/baltrad2wradlib_26_1.png" src="../../_images/baltrad2wradlib_26_1.png" />
+<img alt="../../_images/baltrad2wradlib_26_0.png" src="../../_images/baltrad2wradlib_26_0.png" />
 </div>
 </div>
 </div>
