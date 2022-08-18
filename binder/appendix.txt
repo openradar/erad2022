@@ -10,10 +10,12 @@ USER ${NB_USER}
 RUN CONDA_DIR=/srv/conda && \
     RADARENV=notebook && \
     CONDA_PREFIX=$CONDA_DIR/envs/$RADARENV && \
+    PROJ_NETWORK=ON && \
     export BALTRAD_INSTALL_ROOT=${PWD} && \
     echo "export CONDA_DIR=$CONDA_DIR" >> ~/.profile && \
     echo "export RADARENV=$RADARENV" >> ~/.profile && \
     echo "export CONDA_PREFIX=$CONDA_PREFIX" >> ~/.profile && \
+    echo "export PROJ_NETWORK=$PROJ_NETWORK" >> ~/.profile && \
     ${CONDA_PREFIX}/bin/bash -l $BALTRAD_INSTALL_ROOT/install/baltrad/install_baltrad.sh && \
     ${CONDA_PREFIX}/bin/bash -l $BALTRAD_INSTALL_ROOT/install/nbstripout_notebooks.sh && \
     cp binder/kernel.json $CONDA_PREFIX/share/jupyter/kernels/python3/.
