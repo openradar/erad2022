@@ -10,7 +10,7 @@ USER ${NB_USER}
 RUN CONDA_DIR=/srv/conda && \
     RADARENV=notebook && \
     CONDA_PREFIX=$CONDA_DIR/envs/$RADARENV && \
-    PROJ_NETWORK=ON && \
+    export PROJ_NETWORK=ON && \
     export BALTRAD_INSTALL_ROOT=${PWD} && \
     echo "export CONDA_DIR=$CONDA_DIR" >> ~/.profile && \
     echo "export RADARENV=$RADARENV" >> ~/.profile && \
