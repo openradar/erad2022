@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LROSE Tutorial" href="../../lrose/README.html" />
+    <link rel="prev" title="BALTRAD parallel processing" href="BALTRAD%20parallel%20processing.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -175,7 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
   Tool Foundations
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../pyart/README.html">
    Py-ART Tutorial
@@ -215,14 +217,51 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../baltrad/README.html">
    BALTRAD Tutorial
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="BALTRAD%20Compositing.html">
+     Compositing with BALTRAD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="BALTRAD%20DRQC.html">
+     In this notebook, we will use the depolarization ratio to quality control a volume of data from the new radar at Radisson, Saskatchewan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="BALTRAD%20IO.html">
+     BALTRAD I/O model - making sense out of data and metadata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="BALTRAD%20parallel%20processing.html">
+     BALTRAD parallel processing
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     BALTRAD Quality Control
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../lrose/README.html">
    LROSE Tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../environment.html">
+   Environment overview
   </a>
  </li>
 </ul>
@@ -232,10 +271,32 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../workflows/README.html">
    Combining Radar Workflows
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../baltrad2wradlib/baltrad2wradlib.html">
+     Interaction of BALTRAD and wradlib via ODIM_H5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pyart2baltrad/baltrad_pyart_rain_rate_example.html">
+     In this notebook, an ODIM_H5 file is read using BALTRAD.  Then the rain rate is determined from the calculated specific attenuation using Py-ART.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pyart2baltrad/pyart_baltrad_dealias_example.html">
+     Doppler Velocity Dealiasing with Py-ART and BALTRAD
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -619,7 +680,7 @@ Populating the interactive namespace from numpy and matplotlib
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>beamb runtime = 26.86 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>beamb runtime = 8.76 seconds
 </pre></div>
 </div>
 </div>
@@ -785,7 +846,21 @@ Quality field 2 has identifier se.smhi.detector.poo
 
               </div>
               <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="BALTRAD%20parallel%20processing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">BALTRAD parallel processing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../lrose/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LROSE Tutorial</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </div>
           </div>
@@ -843,7 +918,7 @@ Quality field 2 has identifier se.smhi.detector.poo
         
           By The Open Radar Community.
         
-          Last updated on 17 August 2022.
+          Last updated on 18 August 2022.
         </p>
       </div>
     </div>
