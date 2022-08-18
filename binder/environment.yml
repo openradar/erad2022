@@ -10,7 +10,7 @@ dependencies:
   - cartopy
   - pandas
   - xarray
-  - wradlib
+  - wradlib=1.16.1
   - arm_pyart
   # this is needed for baltrad compilation
   - compilers

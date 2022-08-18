@@ -5,7 +5,7 @@ dependencies:
   - python=3.9
   - jupyter-book
   - pip
-  - wradlib
+  - wradlib=1.16.1
   - arm_pyart
   - cartopy
   - matplotlib

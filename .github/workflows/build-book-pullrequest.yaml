@@ -53,10 +53,14 @@ jobs:
         with:
           image: ghcr.io/openradar/erad2022:latest
           options: --user root -v ${{ github.workspace }}:/work
+          shell: bash -l {0}
           run: |
             # copy baltrad notebooks to book dir
             cp -rp /home/jovyan/notebooks/baltrad* /work/notebooks/.
+            cp -rp /home/jovyan/notebooks/pyart2baltrad* /work/notebooks/.
             /work/install/nbstripout_notebooks.sh
+            source /srv/conda/etc/profile.d/conda.sh
+            conda activate notebook
             jupyter-book build /work/${{ inputs.path_to_notebooks }}
       - name: Zip the book
         run: |
