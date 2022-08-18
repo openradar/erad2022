@@ -14,13 +14,23 @@ parts:
           - file: notebooks/pyart-gridding
       - file: wradlib/README.md
         sections:
-          - file: notebooks/wradlib_intro.ipynb
+          - file: notebooks/wradlib_intro
       - file: baltrad/README.md
+        sections:
+          - file: notebooks/baltrad_short_course/BALTRAD Compositing
+          - file: notebooks/baltrad_short_course/BALTRAD DRQC
+          - file: notebooks/baltrad_short_course/BALTRAD IO
+          - file: notebooks/baltrad_short_course/BALTRAD parallel processing
+          - file: notebooks/baltrad_short_course/BALTRAD QC
       - file: lrose/README.md
-      - file: notebooks/environment.ipynb
+      - file: notebooks/environment
   - caption: Open Radar Workflows
     chapters:
       - file: workflows/README.md
+        sections:
+          - file: notebooks/baltrad2wradlib/baltrad2wradlib
+          - file: notebooks/pyart2baltrad/baltrad_pyart_rain_rate_example
+          - file: notebooks/pyart2baltrad/pyart_baltrad_dealias_example
   - caption: Becoming a developer
     chapters:
       - file: package-development/README.md
