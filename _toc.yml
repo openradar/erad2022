@@ -14,7 +14,11 @@ parts:
           - file: notebooks/pyart-gridding
       - file: wradlib/README.md
         sections:
-          - file: notebooks/wradlib_intro
+          - file: notebooks/wradlib/wradlib_intro
+          - file: notebooks/wradlib/wradlib_radar_data_io_vis
+          - file: notebooks/wradlib/wradlib_data_quality
+          - file: notebooks/wradlib/wradlib_differential_phase
+          - file: notebooks/wradlib/wradlib_quasi_vertical_profiles
       - file: baltrad/README.md
         sections:
           - file: notebooks/baltrad_short_course/BALTRAD Compositing
