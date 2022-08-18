@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Developing Open Source Software Packages" href="../../package-development/README.html" />
+    <link rel="prev" title="Combining Radar Workflows" href="../../workflows/README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -215,10 +217,42 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../baltrad/README.html">
    BALTRAD Tutorial
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../baltrad_short_course/BALTRAD%20Compositing.html">
+     Compositing with BALTRAD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../baltrad_short_course/BALTRAD%20DRQC.html">
+     In this notebook, we will use the depolarization ratio to quality control a volume of data from the new radar at Radisson, Saskatchewan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../baltrad_short_course/BALTRAD%20IO.html">
+     BALTRAD I/O model - making sense out of data and metadata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../baltrad_short_course/BALTRAD%20parallel%20processing.html">
+     BALTRAD parallel processing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../baltrad_short_course/BALTRAD%20QC.html">
+     BALTRAD Quality Control
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../../lrose/README.html">
@@ -236,11 +270,23 @@ const thebe_selector_output = ".output, .cell_output"
   Open Radar Workflows
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../workflows/README.html">
    Combining Radar Workflows
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Interaction of BALTRAD and wradlib via ODIM_H5
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
@@ -479,14 +525,14 @@ const thebe_selector_output = ".output, .cell_output"
   if __name__ is &quot;__main__&quot;:
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7f6e7aee68b0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7ff8381188b0&gt;
 Traceback (most recent call last):
   File &quot;/srv/conda/envs/notebook/lib/python3.9/logging/__init__.py&quot;, line 255, in _after_at_fork_child_reinit_locks
     handler._at_fork_reinit()
   File &quot;/srv/conda/envs/notebook/lib/python3.9/logging/__init__.py&quot;, line 894, in _at_fork_reinit
     self.lock._at_fork_reinit()
 AttributeError: &#39;RLock&#39; object has no attribute &#39;_at_fork_reinit&#39;
-Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7f6e7aee68b0&gt;
+Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7ff8381188b0&gt;
 Traceback (most recent call last):
   File &quot;/srv/conda/envs/notebook/lib/python3.9/logging/__init__.py&quot;, line 255, in _after_at_fork_child_reinit_locks
     handler._at_fork_reinit()
@@ -952,7 +998,21 @@ dataset1/data1/what...
 
               </div>
               <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../workflows/README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Combining Radar Workflows</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../package-development/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Developing Open Source Software Packages</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </div>
           </div>
