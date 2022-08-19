@@ -7,7 +7,7 @@ dependencies:
   - pip
   - wradlib
   - arm_pyart
-  - pyrad_mch
+  - pyrad_arm
   - cartopy
   - matplotlib
   - numpy
