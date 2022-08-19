@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="In this notebook, we will use the depolarization ratio to quality control a volume of data from the new radar at Radisson, Saskatchewan" href="BALTRAD%20DRQC.html" />
@@ -211,8 +213,34 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../wradlib_intro.html">
-     wradlib introduction
+    <a class="reference internal" href="../wradlib/wradlib_intro.html">
+     <span class="math notranslate nohighlight">
+      \(\omega radlib\)
+     </span>
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_radar_data_io_vis.html">
+     <span class="math notranslate nohighlight">
+      \(\omega radlib\)
+     </span>
+     radar data io, visualisation, gridding and gis export
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_data_quality.html">
+     wradlib data quality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_differential_phase.html">
+     Phase Processing - System PhiDP - ZPHI-Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_quasi_vertical_profiles.html">
+     wradlib time series data and quasi vertical profiles
     </a>
    </li>
   </ul>
@@ -439,19 +467,16 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Rudimentary composite<a class="headerlink" href="#rudimentary-composite" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">glob</span><span class="o">,</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">_raveio</span><span class="o">,</span> <span class="nn">_rave</span>
 <span class="kn">import</span> <span class="nn">_pycomposite</span><span class="o">,</span> <span class="nn">compositing</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>  <span class="c1"># Suppress SyntaxWarning from Python2 code</span>
 
 <span class="n">generator</span> <span class="o">=</span> <span class="n">compositing</span><span class="o">.</span><span class="n">compositing</span><span class="p">()</span>
 <span class="n">generator</span><span class="o">.</span><span class="n">filenames</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;data/se*.h5&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%pylab is deprecated, use %matplotlib inline and import the required libraries.
-Populating the interactive namespace from numpy and matplotlib
 </pre></div>
 </div>
 </div>
@@ -473,7 +498,7 @@ Populating the interactive namespace from numpy and matplotlib
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compositing took 16.99 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compositing took 17.05 seconds
 </pre></div>
 </div>
 </div>
@@ -539,7 +564,7 @@ Populating the interactive namespace from numpy and matplotlib
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compositing took 99.25 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compositing took 168.45 seconds
 </pre></div>
 </div>
 </div>
@@ -585,7 +610,7 @@ Populating the interactive namespace from numpy and matplotlib
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compositing took 35.80 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compositing took 37.37 seconds
 </pre></div>
 </div>
 </div>
@@ -707,7 +732,7 @@ Populating the interactive namespace from numpy and matplotlib
         
           By The Open Radar Community.
         
-          Last updated on 18 August 2022.
+          Last updated on 19 August 2022.
         </p>
       </div>
     </div>

@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="BALTRAD parallel processing" href="BALTRAD%20parallel%20processing.html" />
@@ -211,8 +213,34 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../wradlib_intro.html">
-     wradlib introduction
+    <a class="reference internal" href="../wradlib/wradlib_intro.html">
+     <span class="math notranslate nohighlight">
+      \(\omega radlib\)
+     </span>
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_radar_data_io_vis.html">
+     <span class="math notranslate nohighlight">
+      \(\omega radlib\)
+     </span>
+     radar data io, visualisation, gridding and gis export
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_data_quality.html">
+     wradlib data quality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_differential_phase.html">
+     Phase Processing - System PhiDP - ZPHI-Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_quasi_vertical_profiles.html">
+     wradlib time series data and quasi vertical profiles
     </a>
    </li>
   </ul>
@@ -510,14 +538,8 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Import the file I/O module along with the main RAVE module containing useful constants<a class="headerlink" href="#import-the-file-i-o-module-along-with-the-main-rave-module-containing-useful-constants" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">_raveio</span><span class="o">,</span> <span class="nn">_rave</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%pylab is deprecated, use %matplotlib inline and import the required libraries.
-Populating the interactive namespace from numpy and matplotlib
 </pre></div>
 </div>
 </div>
@@ -662,6 +684,7 @@ NumPy array&#39;s dimensions = (360, 831) and type = uint8
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convenience functionality. First convert a palette from GoogleMapsPlugin for use with matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">from</span> <span class="nn">GmapColorMap</span> <span class="kn">import</span> <span class="n">dbzh</span> <span class="k">as</span> <span class="n">pal</span>
 <span class="n">colorlist</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pal</span><span class="p">),</span> <span class="mi">3</span><span class="p">):</span>
@@ -949,7 +972,7 @@ Optional attributes: Radar is a VAISWRM200 running IRIS
         
           By The Open Radar Community.
         
-          Last updated on 18 August 2022.
+          Last updated on 19 August 2022.
         </p>
       </div>
     </div>

@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="BALTRAD I/O model - making sense out of data and metadata" href="BALTRAD%20IO.html" />
@@ -211,8 +213,34 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../wradlib_intro.html">
-     wradlib introduction
+    <a class="reference internal" href="../wradlib/wradlib_intro.html">
+     <span class="math notranslate nohighlight">
+      \(\omega radlib\)
+     </span>
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_radar_data_io_vis.html">
+     <span class="math notranslate nohighlight">
+      \(\omega radlib\)
+     </span>
+     radar data io, visualisation, gridding and gis export
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_data_quality.html">
+     wradlib data quality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_differential_phase.html">
+     Phase Processing - System PhiDP - ZPHI-Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_quasi_vertical_profiles.html">
+     wradlib time series data and quasi vertical profiles
     </a>
    </li>
   </ul>
@@ -397,7 +425,12 @@ const thebe_selector_output = ".output, .cell_output"
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#we-will-also-visualize-the-data-using-some-openly-available-colour-tables">
-   We will also visualize the data using some openly-available colour tables
+   We will also visualize the data using some openly-available colour tables.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#this-notebook-was-originally-prepared-using-material-subsequently-published-in-https-doi-org-10-1002-met-1929">
+   This notebook was originally prepared using material subsequently published in https://doi.org/10.1002/met.1929
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -490,22 +523,19 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="in-this-notebook-we-will-use-the-depolarization-ratio-to-quality-control-a-volume-of-data-from-the-new-radar-at-radisson-saskatchewan">
 <h1>In this notebook, we will use the depolarization ratio to quality control a volume of data from the new radar at Radisson, Saskatchewan<a class="headerlink" href="#in-this-notebook-we-will-use-the-depolarization-ratio-to-quality-control-a-volume-of-data-from-the-new-radar-at-radisson-saskatchewan" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 <div class="section" id="we-will-also-visualize-the-data-using-some-openly-available-colour-tables">
-<h2>We will also visualize the data using some openly-available colour tables<a class="headerlink" href="#we-will-also-visualize-the-data-using-some-openly-available-colour-tables" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<h2>We will also visualize the data using some openly-available colour tables.<a class="headerlink" href="#we-will-also-visualize-the-data-using-some-openly-available-colour-tables" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</div>
+<div class="section" id="this-notebook-was-originally-prepared-using-material-subsequently-published-in-https-doi-org-10-1002-met-1929">
+<h2>This notebook was originally prepared using material subsequently published in https://doi.org/10.1002/met.1929<a class="headerlink" href="#this-notebook-was-originally-prepared-using-material-subsequently-published-in-https-doi-org-10-1002-met-1929" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">_raveio</span>
 <span class="kn">import</span> <span class="nn">ropo_realtime</span><span class="o">,</span> <span class="nn">ec_drqc</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">GmapColorMap</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%pylab is deprecated, use %matplotlib inline and import the required libraries.
-Populating the interactive namespace from numpy and matplotlib
 </pre></div>
 </div>
 </div>
@@ -898,7 +928,7 @@ Populating the interactive namespace from numpy and matplotlib
         
           By The Open Radar Community.
         
-          Last updated on 18 August 2022.
+          Last updated on 19 August 2022.
         </p>
       </div>
     </div>

@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Doppler Velocity Dealiasing with Py-ART and BALTRAD" href="pyart_baltrad_dealias_example.html" />
@@ -211,8 +213,34 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../wradlib_intro.html">
-     wradlib introduction
+    <a class="reference internal" href="../wradlib/wradlib_intro.html">
+     <span class="math notranslate nohighlight">
+      \(\omega radlib\)
+     </span>
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_radar_data_io_vis.html">
+     <span class="math notranslate nohighlight">
+      \(\omega radlib\)
+     </span>
+     radar data io, visualisation, gridding and gis export
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_data_quality.html">
+     wradlib data quality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_differential_phase.html">
+     Phase Processing - System PhiDP - ZPHI-Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_quasi_vertical_profiles.html">
+     wradlib time series data and quasi vertical profiles
     </a>
    </li>
   </ul>
@@ -458,13 +486,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>This is a severe flooding case from July 8, 2013 in Toronto, Canada, with radar data from the King City, Ontario, radar.<a class="headerlink" href="#this-is-a-severe-flooding-case-from-july-8-2013-in-toronto-canada-with-radar-data-from-the-king-city-ontario-radar" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pylab</span> inline
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>%pylab is deprecated, use %matplotlib inline and import the required libraries.
-Populating the interactive namespace from numpy and matplotlib
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
@@ -472,7 +494,8 @@ Populating the interactive namespace from numpy and matplotlib
 <p>Import the necessary modules.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyart</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pyart</span>
 <span class="kn">import</span> <span class="nn">baltrad_pyart_bridge</span> <span class="k">as</span> <span class="nn">bridge</span>  <span class="c1"># routines to pass data from Py-ART and BALTRAD</span>
 <span class="kn">import</span> <span class="nn">_raveio</span>   <span class="c1"># BALTRAD&#39;s input/output module</span>
 </pre></div>
@@ -840,7 +863,7 @@ Populating the interactive namespace from numpy and matplotlib
         
           By The Open Radar Community.
         
-          Last updated on 18 August 2022.
+          Last updated on 19 August 2022.
         </p>
       </div>
     </div>

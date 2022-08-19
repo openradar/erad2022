@@ -51,9 +51,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="wradlib introduction" href="../notebooks/wradlib_intro.html" />
+    <link rel="next" title="\(\omega radlib\) Introduction" href="../notebooks/wradlib/wradlib_intro.html" />
     <link rel="prev" title="Py-ART Gridding" href="../notebooks/pyart-gridding.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -211,8 +213,34 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../notebooks/wradlib_intro.html">
-     wradlib introduction
+    <a class="reference internal" href="../notebooks/wradlib/wradlib_intro.html">
+     <span class="math notranslate nohighlight">
+      \(\omega radlib\)
+     </span>
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/wradlib/wradlib_radar_data_io_vis.html">
+     <span class="math notranslate nohighlight">
+      \(\omega radlib\)
+     </span>
+     radar data io, visualisation, gridding and gis export
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/wradlib/wradlib_data_quality.html">
+     wradlib data quality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/wradlib/wradlib_differential_phase.html">
+     Phase Processing - System PhiDP - ZPHI-Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks/wradlib/wradlib_quasi_vertical_profiles.html">
+     wradlib time series data and quasi vertical profiles
     </a>
    </li>
   </ul>
@@ -396,13 +424,13 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reading-routines-based-on-xarray">
-   Reading routines based on xarray
+  <a class="reference internal nav-link" href="#radar-data-io-visualisation-gridding-and-gis-export">
+   Radar data IO, Visualisation, Gridding and GIS export
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-quality-processing">
-   Data Quality Processing
+  <a class="reference internal nav-link" href="#data-quality-processing-and-beamblockage">
+   Data Quality Processing and Beamblockage
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -411,13 +439,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rain-rate-retrieval">
-   Rain Rate Retrieval
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-gridding-and-export">
-   Data Gridding and Export
+  <a class="reference internal nav-link" href="#quasi-vertical-profiles-qvp">
+   Quasi Vertical Profiles (QVP)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -439,32 +462,30 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="wradlib-tutorial">
 <h1>Wradlib Tutorial<a class="headerlink" href="#wradlib-tutorial" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 <p>This is a short overview of wradlib capabilities in 45 minutes. Brace yourself.</p>
-<div class="section" id="reading-routines-based-on-xarray">
-<h2>Reading routines based on xarray<a class="headerlink" href="#reading-routines-based-on-xarray" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="section" id="radar-data-io-visualisation-gridding-and-gis-export">
+<h2>Radar data IO, Visualisation, Gridding and GIS export<a class="headerlink" href="#radar-data-io-visualisation-gridding-and-gis-export" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>Reading routines for several radar data formats based on xarray are shown.
 Data will be read into xarray datasets with easy access for quick analysis and
 visualisation. Datasets can be written to ODIM_H5 and CfRadial2-like files.
-Easy multiprocessing using DASK can be facilitated.</p>
+Easy multiprocessing using DASK can be facilitated. Data is gridded and
+exported to Geoinformation Systems (GIS) formats.</p>
 </div>
-<div class="section" id="data-quality-processing">
-<h2>Data Quality Processing<a class="headerlink" href="#data-quality-processing" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>A very short overview on the available data quality algorithms.</p>
+<div class="section" id="data-quality-processing-and-beamblockage">
+<h2>Data Quality Processing and Beamblockage<a class="headerlink" href="#data-quality-processing-and-beamblockage" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>A very short overview on the available data quality algorithms with clutter
+detection and beamblockage calculations.</p>
 </div>
 <div class="section" id="attenuation-correction-using-zphi-method">
 <h2>Attenuation Correction using ZPHI-Method<a class="headerlink" href="#attenuation-correction-using-zphi-method" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Already quite aged the attenuation correction based on the ZPHI-method
+<p>Already quite aged, the attenuation correction based on the ZPHI-method
 (see <a class="reference external" href="https://doi.org/10.1175/1520-0426(2000)017%3C0332:TRPAAT%3E2.0.CO;2">Testud et. al.</a>)
-is still one of the most used algorithms in weather radar. A quick walkthrough the
-necessary steps to derive specific attenuation is shown.</p>
+is still one of the most used algorithms in weather radar. A quick walk through
+the necessary steps to derive specific attenuation is shown. The benefits of
+specific attenuation derived KDP is shown.</p>
 </div>
-<div class="section" id="rain-rate-retrieval">
-<h2>Rain Rate Retrieval<a class="headerlink" href="#rain-rate-retrieval" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Different methods of rain rate retrieval, based eg. on ZH, ZDR, KDP, A, are described.</p>
-</div>
-<div class="section" id="data-gridding-and-export">
-<h2>Data Gridding and Export<a class="headerlink" href="#data-gridding-and-export" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Exporting cartesian, georeferenced rain retrievals in data format readable by
-Geoinformation Systems (GIS) is shown.</p>
+<div class="section" id="quasi-vertical-profiles-qvp">
+<h2>Quasi Vertical Profiles (QVP)<a class="headerlink" href="#quasi-vertical-profiles-qvp" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>A short introduction into QVPs is given.</p>
 </div>
 <div class="section" id="short-overview-over-wradlib-features">
 <h2>Short Overview over wradlib features<a class="headerlink" href="#short-overview-over-wradlib-features" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
@@ -505,10 +526,10 @@ enhancements in recent wradlib versions.</p>
             <p class="prev-next-title">Py-ART Gridding</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../notebooks/wradlib_intro.html" title="next page">
+    <a class='right-next' id="next-link" href="../notebooks/wradlib/wradlib_intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">wradlib introduction</p>
+        <p class="prev-next-title"><span class="math notranslate nohighlight">\(\omega radlib\)</span> Introduction</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -569,7 +590,7 @@ enhancements in recent wradlib versions.</p>
         
           By The Open Radar Community.
         
-          Last updated on 18 August 2022.
+          Last updated on 19 August 2022.
         </p>
       </div>
     </div>
