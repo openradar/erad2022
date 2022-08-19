@@ -12,6 +12,7 @@ dependencies:
   - rioxarray
   - datashader
   - arm_pyart
+  - pyrad_arm
   - cartopy
   - matplotlib
   - numpy

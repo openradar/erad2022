@@ -17,6 +17,7 @@ dependencies:
   - rioxarray
   - datashader
   - arm_pyart
+  - pyrad_arm
   # this is needed for baltrad compilation
   - compilers
   - make
