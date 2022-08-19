@@ -11,6 +11,11 @@ dependencies:
   - pandas
   - xarray
   - wradlib=1.16.1
+  - dask
+  - tqdm
+  - hvplot
+  - rioxarray
+  - datashader
   - arm_pyart
   # this is needed for baltrad compilation
   - compilers
