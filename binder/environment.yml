@@ -18,6 +18,7 @@ dependencies:
   - datashader
   - arm_pyart
   - pyrad_arm
+  - cookiecutter
   # this is needed for baltrad compilation
   - compilers
   - make

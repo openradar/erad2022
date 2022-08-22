@@ -19,6 +19,7 @@ dependencies:
   - xarray
   - metpy
   - nbstripout
+  - cookiecutter
   # this is needed for baltrad compilation
   - compilers
   - make
