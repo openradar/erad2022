@@ -10,6 +10,7 @@ dependencies:
   - tqdm
   - hvplot
   - rioxarray
+  - geopandas
   - datashader
   - arm_pyart
   - pyrad_arm
