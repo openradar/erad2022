@@ -10,8 +10,12 @@ parts:
     chapters:
       - file: pyart/README.md
         sections:
-          - file: notebooks/pyart-basics
-          - file: notebooks/pyart-gridding
+          - file: notebooks/pyart/pyart-basics
+          - file: notebooks/pyart/pyart-gridding
+          - file: notebooks/pyart/exercice1_swiss_thunderstorm
+          - file: notebooks/pyart/exercice2_swiss_doppler
+          - file: notebooks/pyart/question_pyart_meteoswiss
+          - file: notebooks/pyart/answer_question_pyart_meteoswiss
       - file: wradlib/README.md
         sections:
           - file: notebooks/wradlib/wradlib_intro
