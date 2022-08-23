@@ -10,7 +10,7 @@ dependencies:
   - cartopy
   - pandas
   - xarray
-  - wradlib=1.16.1
+  - wradlib=1.16.2
   - dask
   - tqdm
   - hvplot
