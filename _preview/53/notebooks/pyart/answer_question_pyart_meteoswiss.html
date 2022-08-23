@@ -427,6 +427,23 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://aws-uswest2-binder.pangeo.io/v2/gh/openradar/erad2022/main?urlpath=lab/tree/notebooks/pyart/answer_question_pyart_meteoswiss.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -559,20 +576,19 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_675/2553980288.py:6: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_670/2553980288.py:6: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
   plt.pcolormesh(cappi_qpe.point_longitude[&#39;data&#39;][0],
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff01d3ba4f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f6bb497c4f0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/answer_question_pyart_meteoswiss_12_2.png" src="../../_images/answer_question_pyart_meteoswiss_12_2.png" />
 </div>
 </div>
 <p>Now let’s compare this QPE with the operational QPE of MeteoSwiss at the same timestep:</p>
-<div>
-<img src="images/qpe_op.png" width="400">
-</div><p>The agreement near the radar is not too bad, even with such a simple aggregation method. In the south we see some large discrepancies. This is due to the fact that the operational QPE includes many additional steps. In this case, the difference is likely due to the correction for partial beam blocking that is performed by the operational QPE in this mountaineous region south of the radar.</p>
+<a class="reference internal image-reference" href="../../_images/qpe_op.png"><img alt="qpe_op.png" src="../../_images/qpe_op.png" style="width: 400px;" /></a>
+<p>The agreement near the radar is not too bad, even with such a simple aggregation method. In the south we see some large discrepancies. This is due to the fact that the operational QPE includes many additional steps. In this case, the difference is likely due to the correction for partial beam blocking that is performed by the operational QPE in this mountaineous region south of the radar.</p>
 </div>
 
     <script type="text/x-thebe-config">
