@@ -17,7 +17,6 @@ dependencies:
   - rioxarray
   - geopandas
   - datashader
-  - arm_pyart
   - pyrad_arm
   - cookiecutter
   # this is needed for baltrad compilation
@@ -38,4 +37,5 @@ dependencies:
   - nbstripout
   - zip
   - pip:
+      - git+https://github.com/ARM-DOE/pyart.git
       - sphinx-pythia-theme
