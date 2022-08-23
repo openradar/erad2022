@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Project Pythia Cookbook Template</title>
+    <title>Exercice Sample Solution &#8212; Project Pythia Cookbook Template</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -179,17 +179,17 @@ const thebe_selector_output = ".output, .cell_output"
   Tool Foundations
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../pyart/README.html">
    Py-ART Tutorial
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="pyart-basics.html">
      Py-ART Basics
@@ -213,6 +213,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="question_pyart_meteoswiss.html">
      Exercice
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Exercice Sample Solution
     </a>
    </li>
   </ul>
@@ -427,14 +432,6 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> On this page
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -443,7 +440,9 @@ const thebe_selector_output = ".output, .cell_output"
               
               <div>
                 
-  <p>Load required libraries</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="exercice-sample-solution">
+<h1>Exercice Sample Solution<a class="headerlink" href="#exercice-sample-solution" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<p>Load required libraries</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyart</span>
@@ -564,16 +563,17 @@ const thebe_selector_output = ".output, .cell_output"
   plt.pcolormesh(cappi_qpe.point_longitude[&#39;data&#39;][0],
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fa884f134f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff01d3ba4f0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/answer_question_pyart_meteoswiss_11_2.png" src="../../_images/answer_question_pyart_meteoswiss_11_2.png" />
+<img alt="../../_images/answer_question_pyart_meteoswiss_12_2.png" src="../../_images/answer_question_pyart_meteoswiss_12_2.png" />
 </div>
 </div>
 <p>Now let’s compare this QPE with the operational QPE of MeteoSwiss at the same timestep:</p>
 <div>
-<img src="./images/qpe_op.png" width="400">
+<img src="images/qpe_op.png" width="400">
 </div><p>The agreement near the radar is not too bad, even with such a simple aggregation method. In the south we see some large discrepancies. This is due to the fact that the operational QPE includes many additional steps. In this case, the difference is likely due to the correction for partial beam blocking that is performed by the operational QPE in this mountaineous region south of the radar.</p>
+</div>
 
     <script type="text/x-thebe-config">
     {
