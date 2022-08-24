@@ -31,6 +31,8 @@ parts:
           - file: notebooks/baltrad_short_course/BALTRAD parallel processing
           - file: notebooks/baltrad_short_course/BALTRAD QC
       - file: lrose/README.md
+        sections:
+          - file: notebooks/lrose/nexrad_mosaic.erad_tutorial.ipynb
       - file: notebooks/environment
   - caption: Open Radar Workflows
     chapters:
