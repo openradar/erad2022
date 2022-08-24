@@ -55,6 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Environment overview" href="../environment.html" />
+    <link rel="prev" title="LROSE Tutorial" href="../../lrose/README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -177,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
   Tool Foundations
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../pyart/README.html">
    Py-ART Tutorial
@@ -294,10 +296,22 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../lrose/README.html">
    LROSE Tutorial
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     ERAD 2022 Open Source Workshop
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../environment.html">
@@ -315,8 +329,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../../workflows/README.html">
    Combining Radar Workflows
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -776,7 +790,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====&gt;&gt; Downloading data tar files into dir:  /tmp/lrose_data/nexrad_mosaic
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2022-08-23 23:45:42--  http://front.eol.ucar.edu/data/notebooks/nexrad_mosaic/nexrad_mosaic.KGLD.20210706_220000.tgz
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2022-08-24 02:26:26--  http://front.eol.ucar.edu/data/notebooks/nexrad_mosaic/nexrad_mosaic.KGLD.20210706_220000.tgz
 Resolving front.eol.ucar.edu (front.eol.ucar.edu)... 
 </pre></div>
 </div>
@@ -785,7 +799,10 @@ Connecting to front.eol.ucar.edu (front.eol.ucar.edu)|128.117.43.125|:80...
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
-HTTP request sent, awaiting response... 200 OK
+HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
 Length: 74762580 (71M) [application/x-gzip]
 Saving to: ‘nexrad_mosaic.KGLD.20210706_220000.tgz’
 
@@ -793,23 +810,38 @@ Saving to: ‘nexrad_mosaic.KGLD.20210706_220000.tgz’
           nexrad_mo   0%[                    ]       0  --.-KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         nexrad_mos  14%[=&gt;                  ]  10.69M  52.2MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         nexrad_mos   0%[                    ] 226.08K   946KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        nexrad_mosa  56%[==========&gt;         ]  40.38M  99.4MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        nexrad_mosa   8%[&gt;                   ]   6.02M  13.1MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nexrad_mosaic.KGLD. 100%[===================&gt;]  71.30M   118MB/s    in 0.6s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       nexrad_mosai  27%[====&gt;               ]  19.26M  28.2MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      nexrad_mosaic  45%[========&gt;           ]  32.79M  36.2MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     nexrad_mosaic.  64%[===========&gt;        ]  46.19M  41.0MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    nexrad_mosaic.K  84%[===============&gt;    ]  60.18M  44.7MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nexrad_mosaic.KGLD. 100%[===================&gt;]  71.30M  47.9MB/s    in 1.5s    
 
-2022-08-23 23:45:43 (118 MB/s) - ‘nexrad_mosaic.KGLD.20210706_220000.tgz’ saved [74762580/74762580]
+2022-08-24 02:26:28 (47.9 MB/s) - ‘nexrad_mosaic.KGLD.20210706_220000.tgz’ saved [74762580/74762580]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2022-08-23 23:45:44--  http://front.eol.ucar.edu/data/notebooks/nexrad_mosaic/nexrad_mosaic.KDDC.20210706_220000.tgz
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2022-08-24 02:26:29--  http://front.eol.ucar.edu/data/notebooks/nexrad_mosaic/nexrad_mosaic.KDDC.20210706_220000.tgz
 Resolving front.eol.ucar.edu (front.eol.ucar.edu)... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>128.117.43.125
-Connecting to front.eol.ucar.edu (front.eol.ucar.edu)|128.117.43.125|:80... connected.
+Connecting to front.eol.ucar.edu (front.eol.ucar.edu)|128.117.43.125|:80... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
 HTTP request sent, awaiting response... 
 </pre></div>
 </div>
@@ -821,43 +853,30 @@ Saving to: ‘nexrad_mosaic.KDDC.20210706_220000.tgz’
           nexrad_mo   0%[                    ]       0  --.-KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         nexrad_mos  12%[=&gt;                  ]   8.55M  42.7MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         nexrad_mos   0%[                    ] 432.36K  1.85MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        nexrad_mosa  57%[==========&gt;         ]  38.15M  94.3MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        nexrad_mosa  13%[=&gt;                  ]   9.12M  20.3MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nexrad_mosaic.KDDC. 100%[===================&gt;]  66.62M   111MB/s    in 0.6s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       nexrad_mosai  34%[=====&gt;              ]  23.11M  34.0MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      nexrad_mosaic  54%[=========&gt;          ]  36.06M  40.8MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     nexrad_mosaic.  74%[=============&gt;      ]  49.49M  45.1MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    nexrad_mosaic.K  92%[=================&gt;  ]  61.93M  47.7MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nexrad_mosaic.KDDC. 100%[===================&gt;]  66.62M  48.9MB/s    in 1.4s    
 
-2022-08-23 23:45:45 (111 MB/s) - ‘nexrad_mosaic.KDDC.20210706_220000.tgz’ saved [69853288/69853288]
+2022-08-24 02:26:31 (48.9 MB/s) - ‘nexrad_mosaic.KDDC.20210706_220000.tgz’ saved [69853288/69853288]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2022-08-23 23:45:45--  http://front.eol.ucar.edu/data/notebooks/nexrad_mosaic/nexrad_mosaic.KUEX.20210706_220000.tgz
-Resolving front.eol.ucar.edu (front.eol.ucar.edu)... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>128.117.43.125
-Connecting to front.eol.ucar.edu (front.eol.ucar.edu)|128.117.43.125|:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 59062156 (56M) [application/x-gzip]
-Saving to: ‘nexrad_mosaic.KUEX.20210706_220000.tgz’
-
-
-          nexrad_mo   0%[                    ]       0  --.-KB/s               
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         nexrad_mos  14%[=&gt;                  ]   7.95M  39.4MB/s               
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        nexrad_mosa  64%[===========&gt;        ]  36.43M  88.5MB/s               
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nexrad_mosaic.KUEX. 100%[===================&gt;]  56.33M   103MB/s    in 0.5s    
-
-2022-08-23 23:45:46 (103 MB/s) - ‘nexrad_mosaic.KUEX.20210706_220000.tgz’ saved [59062156/59062156]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2022-08-23 23:45:47--  http://front.eol.ucar.edu/data/notebooks/nexrad_mosaic/nexrad_mosaic.ruc.20210706_220000.tgz
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2022-08-24 02:26:31--  http://front.eol.ucar.edu/data/notebooks/nexrad_mosaic/nexrad_mosaic.KUEX.20210706_220000.tgz
 Resolving front.eol.ucar.edu (front.eol.ucar.edu)... 
 </pre></div>
 </div>
@@ -866,7 +885,50 @@ Connecting to front.eol.ucar.edu (front.eol.ucar.edu)|128.117.43.125|:80...
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
-HTTP request sent, awaiting response... 200 OK
+HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+Length: 59062156 (56M) [application/x-gzip]
+Saving to: ‘nexrad_mosaic.KUEX.20210706_220000.tgz’
+
+
+          nexrad_mo   0%[                    ]       0  --.-KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         nexrad_mos   0%[                    ] 248.58K  1.04MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        nexrad_mosa  11%[=&gt;                  ]   6.65M  14.6MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       nexrad_mosai  36%[======&gt;             ]  20.61M  30.5MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      nexrad_mosaic  60%[===========&gt;        ]  33.93M  37.7MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     nexrad_mosaic.  85%[================&gt;   ]  48.24M  43.0MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nexrad_mosaic.KUEX. 100%[===================&gt;]  56.33M  46.1MB/s    in 1.2s    
+
+2022-08-24 02:26:33 (46.1 MB/s) - ‘nexrad_mosaic.KUEX.20210706_220000.tgz’ saved [59062156/59062156]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2022-08-24 02:26:34--  http://front.eol.ucar.edu/data/notebooks/nexrad_mosaic/nexrad_mosaic.ruc.20210706_220000.tgz
+Resolving front.eol.ucar.edu (front.eol.ucar.edu)... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>128.117.43.125
+Connecting to front.eol.ucar.edu (front.eol.ucar.edu)|128.117.43.125|:80... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
+HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
 Length: 4039462 (3.9M) [application/x-gzip]
 Saving to: ‘nexrad_mosaic.ruc.20210706_220000.tgz’
 
@@ -874,9 +936,12 @@ Saving to: ‘nexrad_mosaic.ruc.20210706_220000.tgz’
           nexrad_mo   0%[                    ]       0  --.-KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nexrad_mosaic.ruc.2 100%[===================&gt;]   3.85M  20.5MB/s    in 0.2s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         nexrad_mos   5%[&gt;                   ] 229.86K   963KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nexrad_mosaic.ruc.2 100%[===================&gt;]   3.85M  9.22MB/s    in 0.4s    
 
-2022-08-23 23:45:47 (20.5 MB/s) - ‘nexrad_mosaic.ruc.20210706_220000.tgz’ saved [4039462/4039462]
+2022-08-24 02:26:34 (9.22 MB/s) - ‘nexrad_mosaic.ruc.20210706_220000.tgz’ saved [4039462/4039462]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====&gt;&gt; The following data files are unpacked in dir:  /tmp/lrose_data/nexrad_mosaic
@@ -2392,7 +2457,7 @@ missing_field_si08 = -128;
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
 Program &#39;RadxConvert&#39;
-Run-time 2022/08/23 23:45:54.
+Run-time 2022/08/24 02:26:41.
 
 Copyright (c) 1992 - 2022
 University Corporation for Atmospheric Research (UCAR)
@@ -2434,7 +2499,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_220003.963_to_20210706_220439.770_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298359.201886.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308006.68520.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -2457,7 +2522,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298359.201886.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308006.68520.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_220003.963_to_20210706_220439.770_KGLD_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_220003.963_to_20210706_220439.770_KGLD_SUR.nc
@@ -2478,7 +2543,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_220448.793_to_20210706_220926.383_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298365.185584.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308012.30659.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -2501,7 +2566,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298365.185584.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308012.30659.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_220448.793_to_20210706_220926.383_KGLD_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_220448.793_to_20210706_220926.383_KGLD_SUR.nc
@@ -2522,7 +2587,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_220935.631_to_20210706_221411.627_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298371.173352.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308017.990754.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -2542,8 +2607,10 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RHOHV
-DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298371.173352.tmp
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308017.990754.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_220935.631_to_20210706_221411.627_KGLD_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_220935.631_to_20210706_221411.627_KGLD_SUR.nc
@@ -2564,7 +2631,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_221420.555_to_20210706_221857.324_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298377.138587.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308023.925639.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -2587,13 +2654,11 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298377.138587.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308023.925639.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_221420.555_to_20210706_221857.324_KGLD_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_221420.555_to_20210706_221857.324_KGLD_SUR.nc
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - RadxConvert::Run
+INFO - RadxConvert::Run
   Input path: /tmp/lrose_data/nexrad_mosaic/raw/KGLD/20210706/KGLD20210706_221906_V06
 </pre></div>
 </div>
@@ -2608,7 +2673,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_221906.199_to_20210706_222341.850_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298383.90304.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308029.861938.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -2631,7 +2696,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298383.90304.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308029.861938.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_221906.199_to_20210706_222341.850_KGLD_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_221906.199_to_20210706_222341.850_KGLD_SUR.nc
@@ -2652,7 +2717,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_222350.154_to_20210706_222826.584_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298389.55305.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308035.816616.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -2675,7 +2740,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298389.55305.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308035.816616.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_222350.154_to_20210706_222826.584_KGLD_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_222350.154_to_20210706_222826.584_KGLD_SUR.nc
@@ -2696,7 +2761,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_222834.963_to_20210706_223310.845_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298395.17270.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308041.764352.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -2716,8 +2781,10 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RHOHV
-DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661298395.17270.tmp
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/tmp.699.1661308041.764352.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_222834.963_to_20210706_223310.845_KGLD_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_222834.963_to_20210706_223310.845_KGLD_SUR.nc
@@ -2725,7 +2792,7 @@ INFO: RadxFile::writeToDir
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
 Program &#39;RadxConvert&#39;
-Run-time 2022/08/23 23:46:37.
+Run-time 2022/08/24 02:27:23.
 
 Copyright (c) 1992 - 2022
 University Corporation for Atmospheric Research (UCAR)
@@ -2767,7 +2834,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_220249.032_to_20210706_220715.866_KUEX_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661298401.769933.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661308048.480794.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -2790,7 +2857,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661298401.769933.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661308048.480794.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_220249.032_to_20210706_220715.866_KUEX_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_220249.032_to_20210706_220715.866_KUEX_SUR.nc
@@ -2811,7 +2878,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_220723.969_to_20210706_221157.362_KUEX_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661298407.726158.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661308054.407240.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -2834,7 +2901,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661298407.726158.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661308054.407240.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_220723.969_to_20210706_221157.362_KUEX_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_220723.969_to_20210706_221157.362_KUEX_SUR.nc
@@ -2855,7 +2922,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_221204.520_to_20210706_221625.502_KUEX_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661298413.652230.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661308060.304008.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -2878,7 +2945,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661298413.652230.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661308060.304008.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_221204.520_to_20210706_221625.502_KUEX_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_221204.520_to_20210706_221625.502_KUEX_SUR.nc
@@ -2899,7 +2966,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_221633.850_to_20210706_222054.868_KUEX_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661298419.556364.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661308066.178340.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -2919,10 +2986,8 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RHOHV
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661298419.556364.tmp
+DEBUG - NcfRadxFile::writeToPath
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661308066.178340.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_221633.850_to_20210706_222054.868_KUEX_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_221633.850_to_20210706_222054.868_KUEX_SUR.nc
@@ -2939,13 +3004,11 @@ INFO: RadxFile::writeToDir
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: RadxFile::writeToDir
   Writing CfRadial file to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToDir
+DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_222102.216_to_20210706_222523.504_KUEX_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661298425.468476.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661308072.61780.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -2965,10 +3028,8 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RHOHV
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661298425.468476.tmp
+DEBUG - NcfRadxFile::writeToPath
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661308072.61780.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_222102.216_to_20210706_222523.504_KUEX_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_222102.216_to_20210706_222523.504_KUEX_SUR.nc
@@ -2989,7 +3050,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_222531.244_to_20210706_222952.818_KUEX_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661298431.347283.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661308077.896503.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -3012,7 +3073,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661298431.347283.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/tmp.700.1661308077.896503.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_222531.244_to_20210706_222952.818_KUEX_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_222531.244_to_20210706_222952.818_KUEX_SUR.nc
@@ -3020,7 +3081,7 @@ INFO: RadxFile::writeToDir
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
 Program &#39;RadxConvert&#39;
-Run-time 2022/08/23 23:47:13.
+Run-time 2022/08/24 02:27:59.
 
 Copyright (c) 1992 - 2022
 University Corporation for Atmospheric Research (UCAR)
@@ -3062,7 +3123,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_220000.765_to_20210706_220422.888_KDDC_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661298438.469870.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661308084.973453.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -3085,7 +3146,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661298438.469870.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661308084.973453.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_220000.765_to_20210706_220422.888_KDDC_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_220000.765_to_20210706_220422.888_KDDC_SUR.nc
@@ -3104,11 +3165,9 @@ INFO: RadxFile::writeToDir
   Writing CfRadial file to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC
 DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
+DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_220430.757_to_20210706_220912.758_KDDC_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661298445.60116.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661308091.536327.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -3131,7 +3190,7 @@ DEBUG - NcfRadxFile::writeToDir
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661298445.60116.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661308091.536327.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_220430.757_to_20210706_220912.758_KDDC_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_220430.757_to_20210706_220912.758_KDDC_SUR.nc
@@ -3152,7 +3211,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_220921.610_to_20210706_221350.957_KDDC_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661298451.548949.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661308097.980241.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -3173,7 +3232,7 @@ DEBUG - NcfRadxFile::writeToPath
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RHOHV
 DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661298451.548949.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661308097.980241.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_220921.610_to_20210706_221350.957_KDDC_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_220921.610_to_20210706_221350.957_KDDC_SUR.nc
@@ -3192,9 +3251,11 @@ INFO: RadxFile::writeToDir
   Writing CfRadial file to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC
 DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC
-DEBUG - NcfRadxFile::writeToPath
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_221600.999_to_20210706_222043.450_KDDC_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661298458.135470.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661308104.528884.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -3217,7 +3278,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661298458.135470.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661308104.528884.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_221600.999_to_20210706_222043.450_KDDC_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_221600.999_to_20210706_222043.450_KDDC_SUR.nc
@@ -3238,7 +3299,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_222051.218_to_20210706_222526.565_KDDC_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661298464.742657.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661308111.106627.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -3261,7 +3322,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661298464.742657.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661308111.106627.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_222051.218_to_20210706_222526.565_KDDC_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_222051.218_to_20210706_222526.565_KDDC_SUR.nc
@@ -3282,7 +3343,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_222533.934_to_20210706_223025.212_KDDC_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661298471.358491.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661308117.690017.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -3305,7 +3366,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661298471.358491.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/tmp.701.1661308117.690017.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_222533.934_to_20210706_223025.212_KDDC_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KDDC/20210706/cfrad.20210706_222533.934_to_20210706_223025.212_KDDC_SUR.nc
@@ -3478,7 +3539,7 @@ metadata:
 	comment: 
 	original_format: NEXRAD
 	driver: RadxConvert(NCAR)
-	created: 2022/08/23 23:45:59.199
+	created: 2022/08/24 02:26:46.066
 	start_datetime: 2021-07-06T22:00:03Z
 	time_coverage_start: 2021-07-06T22:00:03Z
 	start_time: 2021-07-06 22:00:03.963
@@ -3722,7 +3783,7 @@ Model hts:  [ 1.2202008  1.4573147  1.7001446  1.9490081  2.2042506  2.4662497
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
 Program &#39;Mdv2SoundingSpdb&#39;
-Run-time 2022/08/23 23:47:57.
+Run-time 2022/08/24 02:28:44.
 
 Copyright (c) 1992 - 2022
 University Corporation for Atmospheric Research (UCAR)
@@ -3848,9 +3909,7 @@ Adding data field: Pressure
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ncf2MdvTrans::addDataFieldsTime elapsed = 0
 Adding chunk: NetCDF file global attributes
 Ncf2MdvTrans::addGlobalAttrXmlChunk()
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wrote spdb data, URL: /tmp/lrose_data/nexrad_mosaic/spdb/sounding/ruc
+Wrote spdb data, URL: /tmp/lrose_data/nexrad_mosaic/spdb/sounding/ruc
        Station name : KGLD
        Sounding time: 2021/07/06 23:00:00
 Mdvx::readVsection - reading file: /tmp/lrose_data/nexrad_mosaic/mdv/ruc/20210706/20210706_230000.mdv.cf.nc
@@ -3876,7 +3935,9 @@ Ncf2MdvTrans::_addOneField
   --&gt;&gt; adding field: TMP
 Adding data field: TMP
              time: 2021/07/06 23:00:00
-Ncf2MdvTrans::_shouldAddField
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ncf2MdvTrans::_shouldAddField
   --&gt;&gt; adding field: RH
 Ncf2MdvTrans::_shouldAddField
   Checking variable for field data: RH
@@ -3898,9 +3959,7 @@ Ncf2MdvTrans::_addOneField
   --&gt;&gt; adding field: UGRD
 Adding data field: UGRD
              time: 2021/07/06 23:00:00
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ncf2MdvTrans::_shouldAddField
+Ncf2MdvTrans::_shouldAddField
   --&gt;&gt; adding field: VGRD
 Ncf2MdvTrans::_shouldAddField
   Checking variable for field data: VGRD
@@ -3911,7 +3970,9 @@ Ncf2MdvTrans::_addOneField
   --&gt;&gt; adding field: VGRD
 Adding data field: VGRD
              time: 2021/07/06 23:00:00
-Ncf2MdvTrans::_shouldAddField
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ncf2MdvTrans::_shouldAddField
   --&gt;&gt; adding field: VVEL
 Ncf2MdvTrans::_shouldAddField
   Checking variable for field data: VVEL
@@ -3952,7 +4013,9 @@ Ncf2MdvTrans::addGlobalAttrXmlChunk()
 Wrote spdb data, URL: /tmp/lrose_data/nexrad_mosaic/spdb/sounding/ruc
        Station name : KDDC
        Sounding time: 2021/07/06 23:00:00
-Mdvx::readVsection - reading file: /tmp/lrose_data/nexrad_mosaic/mdv/ruc/20210706/20210706_230000.mdv.cf.nc
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mdvx::readVsection - reading file: /tmp/lrose_data/nexrad_mosaic/mdv/ruc/20210706/20210706_230000.mdv.cf.nc
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SUCCESS - opened file: /tmp/lrose_data/nexrad_mosaic/mdv/ruc/20210706/20210706_230000.mdv.cf.nc
@@ -3975,7 +4038,9 @@ Ncf2MdvTrans::_addOneField
   --&gt;&gt; adding field: TMP
 Adding data field: TMP
              time: 2021/07/06 23:00:00
-Ncf2MdvTrans::_shouldAddField
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ncf2MdvTrans::_shouldAddField
   --&gt;&gt; adding field: RH
 Ncf2MdvTrans::_shouldAddField
   Checking variable for field data: RH
@@ -3997,9 +4062,7 @@ Ncf2MdvTrans::_addOneField
   --&gt;&gt; adding field: UGRD
 Adding data field: UGRD
              time: 2021/07/06 23:00:00
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ncf2MdvTrans::_shouldAddField
+Ncf2MdvTrans::_shouldAddField
   --&gt;&gt; adding field: VGRD
 Ncf2MdvTrans::_shouldAddField
   Checking variable for field data: VGRD
@@ -4010,7 +4073,9 @@ Ncf2MdvTrans::_addOneField
   --&gt;&gt; adding field: VGRD
 Adding data field: VGRD
              time: 2021/07/06 23:00:00
-Ncf2MdvTrans::_shouldAddField
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ncf2MdvTrans::_shouldAddField
   --&gt;&gt; adding field: VVEL
 Ncf2MdvTrans::_shouldAddField
   Checking variable for field data: VVEL
@@ -4045,7 +4110,7 @@ Adding data field: Pressure
              time: 2021/07/06 23:00:00
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ncf2MdvTrans::addDataFieldsTime elapsed = 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ncf2MdvTrans::addDataFieldsTime elapsed = 1
 Adding chunk: NetCDF file global attributes
 Ncf2MdvTrans::addGlobalAttrXmlChunk()
 Wrote spdb data, URL: /tmp/lrose_data/nexrad_mosaic/spdb/sounding/ruc
@@ -4066,8 +4131,8 @@ Wrote spdb data, URL: /tmp/lrose_data/nexrad_mosaic/spdb/sounding/ruc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-r--r-- 1 root root 4704 Aug 23 23:47 /tmp/lrose_data/nexrad_mosaic/spdb/sounding/ruc/20210706.data
--rw-r--r-- 1 root root 6360 Aug 23 23:47 /tmp/lrose_data/nexrad_mosaic/spdb/sounding/ruc/20210706.indx
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-r--r-- 1 root root 4704 Aug 24 02:28 /tmp/lrose_data/nexrad_mosaic/spdb/sounding/ruc/20210706.data
+-rw-r--r-- 1 root root 6360 Aug 24 02:28 /tmp/lrose_data/nexrad_mosaic/spdb/sounding/ruc/20210706.indx
 </pre></div>
 </div>
 </div>
@@ -4121,9 +4186,11 @@ INFO - RadxRate::Run
   Writing CfRadial file to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
 DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
-DEBUG - NcfRadxFile::writeToPath
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_220003.963_to_20210706_220439.770_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298494.155342.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308140.372686.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4140,14 +4207,14 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: DBZ
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298494.155342.tmp
+DEBUG - NcfRadxFile::writeToPath
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308140.372686.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_220003.963_to_20210706_220439.770_KGLD_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_220003.963_to_20210706_220439.770_KGLD_SUR.nc
-INFO - RadxRate::Run
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - RadxRate::Run
   Input path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_220448.793_to_20210706_220926.383_KGLD_SUR.nc
 </pre></div>
 </div>
@@ -4161,7 +4228,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_220448.793_to_20210706_220926.383_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298508.62012.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308154.150053.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4181,7 +4248,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298508.62012.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308154.150053.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_220448.793_to_20210706_220926.383_KGLD_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_220448.793_to_20210706_220926.383_KGLD_SUR.nc
@@ -4199,7 +4266,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_220935.631_to_20210706_221411.627_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298521.866228.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308167.865674.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4219,7 +4286,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298521.866228.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308167.865674.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_220935.631_to_20210706_221411.627_KGLD_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_220935.631_to_20210706_221411.627_KGLD_SUR.nc
@@ -4237,7 +4304,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_221420.555_to_20210706_221857.324_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298535.676456.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308181.586137.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4257,7 +4324,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298535.676456.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308181.586137.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_221420.555_to_20210706_221857.324_KGLD_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_221420.555_to_20210706_221857.324_KGLD_SUR.nc
@@ -4275,81 +4342,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_221906.199_to_20210706_222341.850_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298549.482837.tmp
-  Writing fields and compressing ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RATE_ZH
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RATE_HYBRID
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: PID
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: KDP
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: DBZ
-DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298549.482837.tmp
-     to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_221906.199_to_20210706_222341.850_KGLD_SUR.nc
-INFO: RadxFile::writeToDir
-  Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_221906.199_to_20210706_222341.850_KGLD_SUR.nc
-INFO - RadxRate::Run
-  Input path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_222350.154_to_20210706_222826.584_KGLD_SUR.nc
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thread #: 0
-  Loading temp profile for time: 2021/07/06 22:23:50
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: RadxFile::writeToDir
-  Writing CfRadial file to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
-DEBUG - NcfRadxFile::writeToDir
-  Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
-DEBUG - NcfRadxFile::writeToPath
-  Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_222350.154_to_20210706_222826.584_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298563.206956.tmp
-  Writing fields and compressing ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RATE_ZH
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RATE_HYBRID
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: PID
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: KDP
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: DBZ
-DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298563.206956.tmp
-     to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_222350.154_to_20210706_222826.584_KGLD_SUR.nc
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: RadxFile::writeToDir
-  Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_222350.154_to_20210706_222826.584_KGLD_SUR.nc
-INFO - RadxRate::Run
-  Input path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_222834.963_to_20210706_223310.845_KGLD_SUR.nc
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thread #: 0
-  Loading temp profile for time: 2021/07/06 22:28:34
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: RadxFile::writeToDir
-  Writing CfRadial file to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
-DEBUG - NcfRadxFile::writeToDir
-  Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
-DEBUG - NcfRadxFile::writeToPath
-  Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_222834.963_to_20210706_223310.845_KGLD_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298576.919113.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308195.240536.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4369,7 +4362,85 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661298576.919113.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308195.240536.tmp
+     to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_221906.199_to_20210706_222341.850_KGLD_SUR.nc
+INFO: RadxFile::writeToDir
+  Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_221906.199_to_20210706_222341.850_KGLD_SUR.nc
+INFO - RadxRate::Run
+  Input path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_222350.154_to_20210706_222826.584_KGLD_SUR.nc
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thread #: 0
+  Loading temp profile for time: 2021/07/06 22:23:50
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: RadxFile::writeToDir
+  Writing CfRadial file to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
+DEBUG - NcfRadxFile::writeToDir
+  Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
+  Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_222350.154_to_20210706_222826.584_KGLD_SUR.nc
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308208.905688.tmp
+  Writing fields and compressing ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RATE_ZH
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RATE_HYBRID
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: PID
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: KDP
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: DBZ
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308208.905688.tmp
+     to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_222350.154_to_20210706_222826.584_KGLD_SUR.nc
+INFO: RadxFile::writeToDir
+  Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_222350.154_to_20210706_222826.584_KGLD_SUR.nc
+INFO - RadxRate::Run
+  Input path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KGLD/20210706/cfrad.20210706_222834.963_to_20210706_223310.845_KGLD_SUR.nc
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thread #: 0
+  Loading temp profile for time: 2021/07/06 22:28:34
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO: RadxFile::writeToDir
+  Writing CfRadial file to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
+DEBUG - NcfRadxFile::writeToDir
+  Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD
+DEBUG - NcfRadxFile::writeToPath
+  Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_222834.963_to_20210706_223310.845_KGLD_SUR.nc
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308222.532826.tmp
+  Writing fields and compressing ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RATE_ZH
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: RATE_HYBRID
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: PID
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: KDP
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: DBZ
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/tmp.708.1661308222.532826.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_222834.963_to_20210706_223310.845_KGLD_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KGLD/20210706/cfrad.20210706_222834.963_to_20210706_223310.845_KGLD_SUR.nc
@@ -4393,7 +4464,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_220249.032_to_20210706_220715.866_KUEX_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661298592.549019.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661308238.67573.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4413,13 +4484,11 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661298592.549019.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661308238.67573.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_220249.032_to_20210706_220715.866_KUEX_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_220249.032_to_20210706_220715.866_KUEX_SUR.nc
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - RadxRate::Run
+INFO - RadxRate::Run
   Input path: /tmp/lrose_data/nexrad_mosaic/cfradial/moments/KUEX/20210706/cfrad.20210706_220723.969_to_20210706_221157.362_KUEX_SUR.nc
 </pre></div>
 </div>
@@ -4431,11 +4500,9 @@ INFO: RadxFile::writeToDir
   Writing CfRadial file to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX
 DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
+DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_220723.969_to_20210706_221157.362_KUEX_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661298606.291625.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661308251.745161.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4455,7 +4522,7 @@ DEBUG - NcfRadxFile::writeToDir
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661298606.291625.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661308251.745161.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_220723.969_to_20210706_221157.362_KUEX_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_220723.969_to_20210706_221157.362_KUEX_SUR.nc
@@ -4473,7 +4540,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_221204.520_to_20210706_221625.502_KUEX_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661298620.21779.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661308265.502909.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4493,7 +4560,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661298620.21779.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661308265.502909.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_221204.520_to_20210706_221625.502_KUEX_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_221204.520_to_20210706_221625.502_KUEX_SUR.nc
@@ -4511,7 +4578,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_221633.850_to_20210706_222054.868_KUEX_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661298633.706458.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661308279.251445.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4531,7 +4598,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661298633.706458.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661308279.251445.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_221633.850_to_20210706_222054.868_KUEX_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_221633.850_to_20210706_222054.868_KUEX_SUR.nc
@@ -4549,7 +4616,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_222102.216_to_20210706_222523.504_KUEX_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661298647.379177.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661308292.946333.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4569,7 +4636,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661298647.379177.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661308292.946333.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_222102.216_to_20210706_222523.504_KUEX_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_222102.216_to_20210706_222523.504_KUEX_SUR.nc
@@ -4587,7 +4654,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_222531.244_to_20210706_222952.818_KUEX_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661298660.967079.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661308306.570343.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4607,7 +4674,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661298660.967079.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/tmp.715.1661308306.570343.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_222531.244_to_20210706_222952.818_KUEX_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_222531.244_to_20210706_222952.818_KUEX_SUR.nc
@@ -4631,7 +4698,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220000.765_to_20210706_220422.888_KDDC_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661298676.355342.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661308321.903622.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4651,7 +4718,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661298676.355342.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661308321.903622.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220000.765_to_20210706_220422.888_KDDC_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220000.765_to_20210706_220422.888_KDDC_SUR.nc
@@ -4669,7 +4736,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220430.757_to_20210706_220912.758_KDDC_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661298690.52511.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661308335.522892.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4689,7 +4756,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661298690.52511.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661308335.522892.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220430.757_to_20210706_220912.758_KDDC_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220430.757_to_20210706_220912.758_KDDC_SUR.nc
@@ -4707,7 +4774,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220921.610_to_20210706_221350.957_KDDC_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661298703.508690.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661308348.879704.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4727,7 +4794,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661298703.508690.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661308348.879704.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220921.610_to_20210706_221350.957_KDDC_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220921.610_to_20210706_221350.957_KDDC_SUR.nc
@@ -4745,7 +4812,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_221600.999_to_20210706_222043.450_KDDC_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661298717.248001.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661308362.582207.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4765,7 +4832,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661298717.248001.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661308362.582207.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_221600.999_to_20210706_222043.450_KDDC_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_221600.999_to_20210706_222043.450_KDDC_SUR.nc
@@ -4783,7 +4850,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_222051.218_to_20210706_222526.565_KDDC_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661298730.984166.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661308376.206322.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4803,7 +4870,7 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661298730.984166.tmp
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661308376.206322.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_222051.218_to_20210706_222526.565_KDDC_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_222051.218_to_20210706_222526.565_KDDC_SUR.nc
@@ -4821,7 +4888,7 @@ DEBUG - NcfRadxFile::writeToDir
   Writing to dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC
 DEBUG - NcfRadxFile::writeToPath
   Writing to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_222533.934_to_20210706_223025.212_KDDC_SUR.nc
-  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661298744.725312.tmp
+  Tmp path is: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661308389.921613.tmp
   Writing fields and compressing ...
 </pre></div>
 </div>
@@ -4838,8 +4905,10 @@ DEBUG - NcfRadxFile::writeToPath
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ... writing field: DBZ
-DEBUG - NcfRadxFile::writeToPath
-  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661298744.725312.tmp
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG - NcfRadxFile::writeToPath
+  Renamed tmp path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/tmp.722.1661308389.921613.tmp
      to final path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_222533.934_to_20210706_223025.212_KDDC_SUR.nc
 INFO: RadxFile::writeToDir
   Wrote CfRadial file to path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_222533.934_to_20210706_223025.212_KDDC_SUR.nc
@@ -5011,7 +5080,7 @@ metadata:
 	comment: 
 	original_format: NEXRAD
 	driver: RadxConvert(NCAR)
-	created: 2022/08/23 23:45:59.199
+	created: 2022/08/24 02:26:46.066
 	start_datetime: 2021-07-06T22:00:03Z
 	time_coverage_start: 2021-07-06T22:00:03Z
 	start_time: 2021-07-06 22:00:03.963
@@ -5111,7 +5180,7 @@ metadata:
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
 Program &#39;Radx2Grid&#39;
-Run-time 2022/08/23 23:52:30.
+Run-time 2022/08/24 02:33:15.
 
 Copyright (c) 1992 - 2022
 University Corporation for Atmospheric Research (UCAR)
@@ -5147,16 +5216,19 @@ INFO - Radx2Grid::_processFile
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.43887
-TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.000209
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.173307
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.431614
+TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.000208
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.17952
   _scanDeltaAz: 1
   _scanDeltaEl: 3.91113
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000369
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000407
   _searchRadiusEl: 5.80113
   _searchRadiusAz: 2.89
   _searchMinAz: 0
@@ -5164,21 +5236,21 @@ TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000369
   _searchMaxDistAz: 29
 TIMING, task: Computing search limits, secs used: 0.000107
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.4e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.3e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.351324
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.350488
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.3e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 6.3e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.06639
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.05619
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 6e-05
+TIMING, task: Cart interp - before doInterp, secs used: 5.6e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.19963
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 5.2e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.16949
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.8e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
 </pre></div>
@@ -5243,7 +5315,7 @@ Mdv2NcfTrans::_putFieldDataVariables()
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KGLD/20210706/ncf_20210706_220003.nc
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Writing output files, secs used: 2.13353
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Writing output files, secs used: 2.12886
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -5251,40 +5323,40 @@ Mdv2NcfTrans::_putFieldDataVariables()
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.781713
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.834951
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.259919
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.259442
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.143177
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.146934
   _scanDeltaAz: 1
   _scanDeltaEl: 3.91113
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000382
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000381
   _searchRadiusEl: 5.80113
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000106
+TIMING, task: Computing search limits, secs used: 9.9e-05
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.9e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.8e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.318919
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.369759
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.3e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.3e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.13393
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.06325
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 4.6e-05
+TIMING, task: Cart interp - before doInterp, secs used: 8.8e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.14269
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 5.2e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.16231
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.3e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
 </pre></div>
@@ -5347,7 +5419,7 @@ Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KGLD/20210706/ncf_20210706_220448.nc
-TIMING, task: Writing output files, secs used: 2.06241
+TIMING, task: Writing output files, secs used: 2.08668
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -5355,40 +5427,40 @@ TIMING, task: Writing output files, secs used: 2.06241
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.779016
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.766301
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.234179
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.234011
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.113383
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.12345
   _scanDeltaAz: 1
   _scanDeltaEl: 3.91113
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000373
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000381
   _searchRadiusEl: 5.80113
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000103
+TIMING, task: Computing search limits, secs used: 0.000116
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.6e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.244787
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.238949
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.7e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.6e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.05516
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.05964
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 5.8e-05
+TIMING, task: Cart interp - before doInterp, secs used: 8.7e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.17491
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 5e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.13956
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.9e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
 </pre></div>
@@ -5434,7 +5506,9 @@ NcfFieldData::_setChunking()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: range
-NcfFieldData::_setChunking()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NcfFieldData::_setChunking()
   Field: range
   nyChunk: 460
   nxChunk: 460
@@ -5451,7 +5525,7 @@ Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KGLD/20210706/ncf_20210706_220935.nc
-TIMING, task: Writing output files, secs used: 2.04688
+TIMING, task: Writing output files, secs used: 2.1029
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -5459,40 +5533,40 @@ TIMING, task: Writing output files, secs used: 2.04688
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.772884
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.780496
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.23306
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.232931
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.111843
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.121923
   _scanDeltaAz: 1
   _scanDeltaEl: 3.91113
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000384
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000372
   _searchRadiusEl: 5.80113
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000127
+TIMING, task: Computing search limits, secs used: 0.000114
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2.4e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2.1e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.222782
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.220506
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.3e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.6e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.05767
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.0421
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 9.5e-05
+TIMING, task: Cart interp - before doInterp, secs used: 4.5e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.1952
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.2e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.1862
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.6e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
 </pre></div>
@@ -5555,7 +5629,7 @@ Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KGLD/20210706/ncf_20210706_221420.nc
-TIMING, task: Writing output files, secs used: 2.00472
+TIMING, task: Writing output files, secs used: 1.9939
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -5563,40 +5637,40 @@ TIMING, task: Writing output files, secs used: 2.00472
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.75844
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.757287
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.232578
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.232755
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.111401
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.121889
   _scanDeltaAz: 1
   _scanDeltaEl: 3.91113
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000369
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000375
   _searchRadiusEl: 5.80113
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000107
+TIMING, task: Computing search limits, secs used: 0.000115
   Filling search matrix ... 
 TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.251264
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.247524
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.3e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.7e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.07458
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.04638
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 5e-05
+TIMING, task: Cart interp - before doInterp, secs used: 5.5e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.13536
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 5.1e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.11973
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.1e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
 </pre></div>
@@ -5659,7 +5733,7 @@ Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KGLD/20210706/ncf_20210706_221906.nc
-TIMING, task: Writing output files, secs used: 2.03733
+TIMING, task: Writing output files, secs used: 2.03548
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -5667,40 +5741,40 @@ TIMING, task: Writing output files, secs used: 2.03733
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.765071
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.759196
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.234326
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.232981
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.111457
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.122043
   _scanDeltaAz: 1
   _scanDeltaEl: 3.91113
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000371
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000382
   _searchRadiusEl: 5.80113
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000113
+TIMING, task: Computing search limits, secs used: 0.000117
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2.2e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.9e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.223616
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.222529
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.2e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 5e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.04572
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.0374
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 5.6e-05
+TIMING, task: Cart interp - before doInterp, secs used: 4.2e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.16821
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.2e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.1558
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.1e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
 </pre></div>
@@ -5763,9 +5837,7 @@ Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KGLD/20210706/ncf_20210706_222350.nc
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Writing output files, secs used: 2.01493
+TIMING, task: Writing output files, secs used: 2.01657
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -5773,18 +5845,18 @@ Mdv2NcfTrans::_putFieldDataVariables()
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.76468
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.769206
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.232267
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.233235
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.111402
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.122059
   _scanDeltaAz: 1
   _scanDeltaEl: 3.91113
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000373
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000375
   _searchRadiusEl: 5.80113
   _searchRadiusAz: 2.89
   _searchMinAz: 0
@@ -5792,21 +5864,21 @@ TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000373
   _searchMaxDistAz: 29
 TIMING, task: Computing search limits, secs used: 0.000111
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.7e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.255352
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.255724
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.9e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.6e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.0645
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.03042
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 4.6e-05
+TIMING, task: Cart interp - before doInterp, secs used: 5.7e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.17392
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.2e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.1666
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.3e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
 </pre></div>
@@ -5869,12 +5941,12 @@ Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KGLD/20210706/ncf_20210706_222834.nc
-TIMING, task: Writing output files, secs used: 2.02435
+TIMING, task: Writing output files, secs used: 2.0464
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
 Program &#39;Radx2Grid&#39;
-Run-time 2022/08/23 23:53:32.
+Run-time 2022/08/24 02:34:17.
 
 Copyright (c) 1992 - 2022
 University Corporation for Atmospheric Research (UCAR)
@@ -5910,38 +5982,38 @@ INFO - Radx2Grid::_processFile
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.412604
-TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.000202
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.411973
+TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.000214
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.13058
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.130626
   _scanDeltaAz: 1
   _scanDeltaEl: 3.91113
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000377
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000386
   _searchRadiusEl: 5.80113
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000116
+TIMING, task: Computing search limits, secs used: 0.000106
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2.1e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.9e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.283302
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.313934
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.8e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.6e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.05421
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.06321
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 4.6e-05
+TIMING, task: Cart interp - before doInterp, secs used: 6.1e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.24698
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 5e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.25733
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.7e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
 </pre></div>
@@ -5973,7 +6045,9 @@ NcfFieldData::_setChunking()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: PID
-NcfFieldData::_setChunking()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NcfFieldData::_setChunking()
   Field: PID
   nyChunk: 460
   nxChunk: 460
@@ -5999,12 +6073,14 @@ NcfFieldData::_setChunking()
   nyChunk: 460
   nxChunk: 460
 Mdv2NcfTrans::_putTimeVariables()
-Mdv2NcfTrans::_putCoordinateVariables()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mdv2NcfTrans::_putCoordinateVariables()
 Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KUEX/20210706/ncf_20210706_220249.nc
-TIMING, task: Writing output files, secs used: 2.10434
+TIMING, task: Writing output files, secs used: 2.11161
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -6012,40 +6088,40 @@ TIMING, task: Writing output files, secs used: 2.10434
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.779142
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.783154
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.246612
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.246676
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.131202
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.130987
   _scanDeltaAz: 1
   _scanDeltaEl: 3.91113
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000371
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.00037
   _searchRadiusEl: 5.80113
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000107
+TIMING, task: Computing search limits, secs used: 0.000103
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.8e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.3e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.260545
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.268461
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.9e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.6e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.04896
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.06496
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 5.7e-05
+TIMING, task: Cart interp - before doInterp, secs used: 5.6e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.22944
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.5e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.21984
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.3e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
 </pre></div>
@@ -6108,7 +6184,7 @@ Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KUEX/20210706/ncf_20210706_220723.nc
-TIMING, task: Writing output files, secs used: 2.09635
+TIMING, task: Writing output files, secs used: 2.10393
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -6116,39 +6192,39 @@ TIMING, task: Writing output files, secs used: 2.09635
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.779856
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.776587
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.233269
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.232546
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.109378
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.107147
   _scanDeltaAz: 1
   _scanDeltaEl: 3.91113
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000373
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000389
   _searchRadiusEl: 5.80113
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000109
+TIMING, task: Computing search limits, secs used: 0.000116
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.7e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.248515
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.241774
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.7e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.3e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.02667
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.05757
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 5.8e-05
+TIMING, task: Cart interp - before doInterp, secs used: 4.6e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.28505
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.28381
 TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.3e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
@@ -6212,7 +6288,7 @@ Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KUEX/20210706/ncf_20210706_221204.nc
-TIMING, task: Writing output files, secs used: 2.03358
+TIMING, task: Writing output files, secs used: 2.0345
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -6220,40 +6296,42 @@ TIMING, task: Writing output files, secs used: 2.03358
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.782159
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.775517
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.232498
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.232377
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.110184
-  _scanDeltaAz: 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.106297
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  _scanDeltaAz: 1
   _scanDeltaEl: 3.91113
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000371
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000375
   _searchRadiusEl: 5.80113
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000125
+TIMING, task: Computing search limits, secs used: 0.000117
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2.9e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.229507
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.221774
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.4e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.7e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.0361
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.03446
   Interpolating ... 
 TIMING, task: Cart interp - before doInterp, secs used: 4.7e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.28442
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.8e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.25162
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.4e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
 </pre></div>
@@ -6316,7 +6394,7 @@ Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KUEX/20210706/ncf_20210706_221633.nc
-TIMING, task: Writing output files, secs used: 2.01141
+TIMING, task: Writing output files, secs used: 2.03834
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -6324,490 +6402,39 @@ TIMING, task: Writing output files, secs used: 2.01141
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.780417
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.773855
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.23299
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.237665
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.109676
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.106497
   _scanDeltaAz: 1
   _scanDeltaEl: 3.91113
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000363
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000354
   _searchRadiusEl: 5.80113
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.00011
-  Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.8e-05
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.258017
-  Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 6.3e-05
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.04946
-  Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 4.8e-05
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.26691
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 5.1e-05
-  Writing output file ... 
-  Adding field: RATE_HYBRID
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: PID
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: DBZ
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: range
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: Coverage
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mdv2NcfTrans::addGlobalAttributes()
-Mdv2NcfTrans::addDimensions()
-Mdv2NetCDF::_addTimeVariables()
-Mdv2NcfTrans::addCoordinateVariables()
-Mdv2NcfTrans::addFieldVariables()
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: RATE_HYBRID
-NcfFieldData::_setChunking()
-  Field: RATE_HYBRID
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: PID
-NcfFieldData::_setChunking()
-  Field: PID
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: DBZ
-NcfFieldData::_setChunking()
-  Field: DBZ
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: range
-NcfFieldData::_setChunking()
-  Field: range
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: Coverage
-NcfFieldData::_setChunking()
-  Field: Coverage
-  nyChunk: 460
-  nxChunk: 460
-Mdv2NcfTrans::_putTimeVariables()
-Mdv2NcfTrans::_putCoordinateVariables()
-Mdv2NcfTrans::_putFieldDataVariables()
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KUEX/20210706/ncf_20210706_222102.nc
-TIMING, task: Writing output files, secs used: 2.04542
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
-  Input file path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_222531.244_to_20210706_222952.818_KUEX_SUR.nc
-  Reading in file ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.876231
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.23328
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.110186
-  _scanDeltaAz: 1
-  _scanDeltaEl: 3.91113
-  _isSector: 0
-  _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000365
-  _searchRadiusEl: 5.80113
-  _searchRadiusAz: 2.89
-  _searchMinAz: 0
-  _searchNAz: 3801
-  _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000107
-  Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.7e-05
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.220774
-  Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.8e-05
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.02964
-  Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 5.8e-05
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.32066
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 5e-05
-  Writing output file ... 
-  Adding field: RATE_HYBRID
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: PID
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: DBZ
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: range
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: Coverage
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mdv2NcfTrans::addGlobalAttributes()
-Mdv2NcfTrans::addDimensions()
-Mdv2NetCDF::_addTimeVariables()
-Mdv2NcfTrans::addCoordinateVariables()
-Mdv2NcfTrans::addFieldVariables()
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: RATE_HYBRID
-NcfFieldData::_setChunking()
-  Field: RATE_HYBRID
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: PID
-NcfFieldData::_setChunking()
-  Field: PID
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: DBZ
-NcfFieldData::_setChunking()
-  Field: DBZ
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: range
-NcfFieldData::_setChunking()
-  Field: range
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: Coverage
-NcfFieldData::_setChunking()
-  Field: Coverage
-  nyChunk: 460
-  nxChunk: 460
-Mdv2NcfTrans::_putTimeVariables()
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mdv2NcfTrans::_putCoordinateVariables()
-Mdv2NcfTrans::_putFieldDataVariables()
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KUEX/20210706/ncf_20210706_222531.nc
-TIMING, task: Writing output files, secs used: 2.02623
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
-Program &#39;Radx2Grid&#39;
-Run-time 2022/08/23 23:54:25.
-
-Copyright (c) 1992 - 2022
-University Corporation for Atmospheric Research (UCAR)
-National Center for Atmospheric Research (NCAR)
-Boulder, Colorado, USA.
-
-Redistribution and use in source and binary forms, with
-or without modification, are permitted provided that the following
-conditions are met:
-
-1) Redistributions of source code must retain the above copyright
-notice, this list of conditions and the following disclaimer.
-
-2) Redistributions in binary form must reproduce the above copyright
-notice, this list of conditions and the following disclaimer in the
-documentation and/or other materials provided with the distribution.
-
-3) Neither the name of UCAR, NCAR nor the names of its contributors, if
-any, may be used to endorse or promote products derived from this
-software without specific prior written permission.
-
-4) If the software is modified to produce derivative works, such modified
-software should be clearly marked, so as not to confuse it with the
-version available from UCAR.
-
-======================================================================
-Running Radx2Grid in ARCHIVE mode
-  Input dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC
-  Start time: 2021/07/06 22:00:00
-  End time: 2021/07/06 22:30:00
-INFO - Radx2Grid::_processFile
-  Input file path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220000.765_to_20210706_220422.888_KDDC_SUR.nc
-  Reading in file ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.416323
-TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.000214
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.13225
-  _scanDeltaAz: 0.6
-  _scanDeltaEl: 2.02148
-  _isSector: 0
-  _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000376
-  _searchRadiusEl: 3.91148
-  _searchRadiusAz: 2.49
-  _searchMinAz: 0
-  _searchNAz: 3801
-  _searchMaxDistAz: 25
-TIMING, task: Computing search limits, secs used: 0.000108
-  Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.7e-05
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.144327
-  Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.8e-05
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.06718
-  Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 5.8e-05
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.1133
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.9e-05
-  Writing output file ... 
-  Adding field: RATE_HYBRID
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: PID
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: DBZ
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: range
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: Coverage
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mdv2NcfTrans::addGlobalAttributes()
-Mdv2NcfTrans::addDimensions()
-Mdv2NetCDF::_addTimeVariables()
-Mdv2NcfTrans::addCoordinateVariables()
-Mdv2NcfTrans::addFieldVariables()
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: RATE_HYBRID
-NcfFieldData::_setChunking()
-  Field: RATE_HYBRID
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: PID
-NcfFieldData::_setChunking()
-  Field: PID
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: DBZ
-NcfFieldData::_setChunking()
-  Field: DBZ
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: range
-NcfFieldData::_setChunking()
-  Field: range
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: Coverage
-NcfFieldData::_setChunking()
-  Field: Coverage
-  nyChunk: 460
-  nxChunk: 460
-Mdv2NcfTrans::_putTimeVariables()
-Mdv2NcfTrans::_putCoordinateVariables()
-Mdv2NcfTrans::_putFieldDataVariables()
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KDDC/20210706/ncf_20210706_220000.nc
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Writing output files, secs used: 2.06498
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
-  Input file path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220430.757_to_20210706_220912.758_KDDC_SUR.nc
-  Reading in file ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.774122
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.258259
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.132278
-  _scanDeltaAz: 1
-  _scanDeltaEl: 2.46094
-  _isSector: 0
-  _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000383
-  _searchRadiusEl: 4.35094
-  _searchRadiusAz: 2.89
-  _searchMinAz: 0
-  _searchNAz: 3801
-  _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000117
-  Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.8e-05
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.175314
-  Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 6.1e-05
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.08462
-  Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 5.5e-05
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.1351
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 5.2e-05
-  Writing output file ... 
-  Adding field: RATE_HYBRID
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: PID
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: DBZ
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: range
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: Coverage
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mdv2NcfTrans::addGlobalAttributes()
-Mdv2NcfTrans::addDimensions()
-Mdv2NetCDF::_addTimeVariables()
-Mdv2NcfTrans::addCoordinateVariables()
-Mdv2NcfTrans::addFieldVariables()
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: RATE_HYBRID
-NcfFieldData::_setChunking()
-  Field: RATE_HYBRID
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: PID
-NcfFieldData::_setChunking()
-  Field: PID
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: DBZ
-NcfFieldData::_setChunking()
-  Field: DBZ
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: range
-NcfFieldData::_setChunking()
-  Field: range
-  nyChunk: 460
-  nxChunk: 460
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: Coverage
-NcfFieldData::_setChunking()
-  Field: Coverage
-  nyChunk: 460
-  nxChunk: 460
-Mdv2NcfTrans::_putTimeVariables()
-Mdv2NcfTrans::_putCoordinateVariables()
-Mdv2NcfTrans::_putFieldDataVariables()
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KDDC/20210706/ncf_20210706_220430.nc
-TIMING, task: Writing output files, secs used: 2.05311
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
-  Input file path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220921.610_to_20210706_221350.957_KDDC_SUR.nc
-  Reading in file ...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.754384
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.236328
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.110489
-  _scanDeltaAz: 0.6
-  _scanDeltaEl: 2.63672
-  _isSector: 0
-  _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000359
-  _searchRadiusEl: 4.52672
-  _searchRadiusAz: 2.49
-  _searchMinAz: 0
-  _searchNAz: 3801
-  _searchMaxDistAz: 25
 TIMING, task: Computing search limits, secs used: 0.000105
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.8e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2.2e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.134244
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.249224
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.1e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 6.4e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.0773
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.02754
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 4.9e-05
+TIMING, task: Cart interp - before doInterp, secs used: 4.6e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.12411
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.2598
 TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.8e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
@@ -6870,8 +6497,457 @@ Mdv2NcfTrans::_putCoordinateVariables()
 Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KUEX/20210706/ncf_20210706_222102.nc
+TIMING, task: Writing output files, secs used: 2.02759
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
+  Input file path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KUEX/20210706/cfrad.20210706_222531.244_to_20210706_222952.818_KUEX_SUR.nc
+  Reading in file ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.777839
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.232866
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.105226
+  _scanDeltaAz: 1
+  _scanDeltaEl: 3.91113
+  _isSector: 0
+  _spansNorth: N
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000363
+  _searchRadiusEl: 5.80113
+  _searchRadiusAz: 2.89
+  _searchMinAz: 0
+  _searchNAz: 3801
+  _searchMaxDistAz: 29
+TIMING, task: Computing search limits, secs used: 0.000106
+  Filling search matrix ... 
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.7e-05
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.217939
+  Computing grid relative to radar ... 
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 5e-05
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.02602
+  Interpolating ... 
+TIMING, task: Cart interp - before doInterp, secs used: 5.4e-05
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.26333
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.3e-05
+  Writing output file ... 
+  Adding field: RATE_HYBRID
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: PID
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: DBZ
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: range
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: Coverage
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mdv2NcfTrans::addGlobalAttributes()
+Mdv2NcfTrans::addDimensions()
+Mdv2NetCDF::_addTimeVariables()
+Mdv2NcfTrans::addCoordinateVariables()
+Mdv2NcfTrans::addFieldVariables()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: RATE_HYBRID
+NcfFieldData::_setChunking()
+  Field: RATE_HYBRID
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: PID
+NcfFieldData::_setChunking()
+  Field: PID
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: DBZ
+NcfFieldData::_setChunking()
+  Field: DBZ
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: range
+NcfFieldData::_setChunking()
+  Field: range
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: Coverage
+NcfFieldData::_setChunking()
+  Field: Coverage
+  nyChunk: 460
+  nxChunk: 460
+Mdv2NcfTrans::_putTimeVariables()
+Mdv2NcfTrans::_putCoordinateVariables()
+Mdv2NcfTrans::_putFieldDataVariables()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KUEX/20210706/ncf_20210706_222531.nc
+TIMING, task: Writing output files, secs used: 2.00581
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
+Program &#39;Radx2Grid&#39;
+Run-time 2022/08/24 02:35:10.
+
+Copyright (c) 1992 - 2022
+University Corporation for Atmospheric Research (UCAR)
+National Center for Atmospheric Research (NCAR)
+Boulder, Colorado, USA.
+
+Redistribution and use in source and binary forms, with
+or without modification, are permitted provided that the following
+conditions are met:
+
+1) Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+
+2) Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+
+3) Neither the name of UCAR, NCAR nor the names of its contributors, if
+any, may be used to endorse or promote products derived from this
+software without specific prior written permission.
+
+4) If the software is modified to produce derivative works, such modified
+software should be clearly marked, so as not to confuse it with the
+version available from UCAR.
+
+======================================================================
+Running Radx2Grid in ARCHIVE mode
+  Input dir: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC
+  Start time: 2021/07/06 22:00:00
+  End time: 2021/07/06 22:30:00
+INFO - Radx2Grid::_processFile
+  Input file path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220000.765_to_20210706_220422.888_KDDC_SUR.nc
+  Reading in file ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.412728
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.000205
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.132399
+  _scanDeltaAz: 0.6
+  _scanDeltaEl: 2.02148
+  _isSector: 0
+  _spansNorth: N
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000361
+  _searchRadiusEl: 3.91148
+  _searchRadiusAz: 2.49
+  _searchMinAz: 0
+  _searchNAz: 3801
+  _searchMaxDistAz: 25
+TIMING, task: Computing search limits, secs used: 0.000113
+  Filling search matrix ... 
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.8e-05
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.139215
+  Computing grid relative to radar ... 
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 6e-05
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.10771
+  Interpolating ... 
+TIMING, task: Cart interp - before doInterp, secs used: 4.6e-05
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.07104
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 5e-05
+  Writing output file ... 
+  Adding field: RATE_HYBRID
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: PID
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: DBZ
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: range
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: Coverage
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mdv2NcfTrans::addGlobalAttributes()
+Mdv2NcfTrans::addDimensions()
+Mdv2NetCDF::_addTimeVariables()
+Mdv2NcfTrans::addCoordinateVariables()
+Mdv2NcfTrans::addFieldVariables()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: RATE_HYBRID
+NcfFieldData::_setChunking()
+  Field: RATE_HYBRID
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: PID
+NcfFieldData::_setChunking()
+  Field: PID
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: DBZ
+NcfFieldData::_setChunking()
+  Field: DBZ
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: range
+NcfFieldData::_setChunking()
+  Field: range
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: Coverage
+NcfFieldData::_setChunking()
+  Field: Coverage
+  nyChunk: 460
+  nxChunk: 460
+Mdv2NcfTrans::_putTimeVariables()
+Mdv2NcfTrans::_putCoordinateVariables()
+Mdv2NcfTrans::_putFieldDataVariables()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KDDC/20210706/ncf_20210706_220000.nc
+TIMING, task: Writing output files, secs used: 2.08287
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
+  Input file path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220430.757_to_20210706_220912.758_KDDC_SUR.nc
+  Reading in file ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.76944
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.257147
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.132574
+  _scanDeltaAz: 1
+  _scanDeltaEl: 2.46094
+  _isSector: 0
+  _spansNorth: N
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000375
+  _searchRadiusEl: 4.35094
+  _searchRadiusAz: 2.89
+  _searchMinAz: 0
+  _searchNAz: 3801
+  _searchMaxDistAz: 29
+TIMING, task: Computing search limits, secs used: 0.000119
+  Filling search matrix ... 
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.8e-05
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.174741
+  Computing grid relative to radar ... 
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.3e-05
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.08076
+  Interpolating ... 
+TIMING, task: Cart interp - before doInterp, secs used: 4.9e-05
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.1076
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.5e-05
+  Writing output file ... 
+  Adding field: RATE_HYBRID
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: PID
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: DBZ
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: range
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: Coverage
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mdv2NcfTrans::addGlobalAttributes()
+Mdv2NcfTrans::addDimensions()
+Mdv2NetCDF::_addTimeVariables()
+Mdv2NcfTrans::addCoordinateVariables()
+Mdv2NcfTrans::addFieldVariables()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: RATE_HYBRID
+NcfFieldData::_setChunking()
+  Field: RATE_HYBRID
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: PID
+NcfFieldData::_setChunking()
+  Field: PID
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: DBZ
+NcfFieldData::_setChunking()
+  Field: DBZ
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: range
+NcfFieldData::_setChunking()
+  Field: range
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: Coverage
+NcfFieldData::_setChunking()
+  Field: Coverage
+  nyChunk: 460
+  nxChunk: 460
+Mdv2NcfTrans::_putTimeVariables()
+Mdv2NcfTrans::_putCoordinateVariables()
+Mdv2NcfTrans::_putFieldDataVariables()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KDDC/20210706/ncf_20210706_220430.nc
+TIMING, task: Writing output files, secs used: 2.07986
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
+  Input file path: /tmp/lrose_data/nexrad_mosaic/cfradial/rate/KDDC/20210706/cfrad.20210706_220921.610_to_20210706_221350.957_KDDC_SUR.nc
+  Reading in file ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.749218
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.234301
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.111492
+  _scanDeltaAz: 0.6
+  _scanDeltaEl: 2.63672
+  _isSector: 0
+  _spansNorth: N
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000354
+  _searchRadiusEl: 4.52672
+  _searchRadiusAz: 2.49
+  _searchMinAz: 0
+  _searchNAz: 3801
+  _searchMaxDistAz: 25
+TIMING, task: Computing search limits, secs used: 0.000104
+  Filling search matrix ... 
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.6e-05
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.132343
+  Computing grid relative to radar ... 
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.7e-05
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.05993
+  Interpolating ... 
+TIMING, task: Cart interp - before doInterp, secs used: 9e-05
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.10027
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.1e-05
+  Writing output file ... 
+  Adding field: RATE_HYBRID
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: PID
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: DBZ
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: range
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Adding field: Coverage
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mdv2NcfTrans::addGlobalAttributes()
+Mdv2NcfTrans::addDimensions()
+Mdv2NetCDF::_addTimeVariables()
+Mdv2NcfTrans::addCoordinateVariables()
+Mdv2NcfTrans::addFieldVariables()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: RATE_HYBRID
+NcfFieldData::_setChunking()
+  Field: RATE_HYBRID
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: PID
+NcfFieldData::_setChunking()
+  Field: PID
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: DBZ
+NcfFieldData::_setChunking()
+  Field: DBZ
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: range
+NcfFieldData::_setChunking()
+  Field: range
+  nyChunk: 460
+  nxChunk: 460
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>adding field: Coverage
+NcfFieldData::_setChunking()
+  Field: Coverage
+  nyChunk: 460
+  nxChunk: 460
+Mdv2NcfTrans::_putTimeVariables()
+Mdv2NcfTrans::_putCoordinateVariables()
+Mdv2NcfTrans::_putFieldDataVariables()
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KDDC/20210706/ncf_20210706_220921.nc
-TIMING, task: Writing output files, secs used: 2.00476
+TIMING, task: Writing output files, secs used: 2.01024
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -6879,40 +6955,40 @@ TIMING, task: Writing output files, secs used: 2.00476
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.773704
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.774354
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.237371
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.234068
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.110484
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.111014
   _scanDeltaAz: 1
   _scanDeltaEl: 2.46094
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000383
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000375
   _searchRadiusEl: 4.35094
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000115
+TIMING, task: Computing search limits, secs used: 0.000112
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.8e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.14082
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.139693
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.8e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 4e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.0906
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.07224
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 5.2e-05
+TIMING, task: Cart interp - before doInterp, secs used: 5.6e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.15064
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.6e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.13028
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.3e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
 </pre></div>
@@ -6975,7 +7051,7 @@ Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KDDC/20210706/ncf_20210706_221600.nc
-TIMING, task: Writing output files, secs used: 1.99238
+TIMING, task: Writing output files, secs used: 2.00273
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -6983,40 +7059,40 @@ TIMING, task: Writing output files, secs used: 1.99238
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.775789
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.77622
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.236816
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.234455
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.110709
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.111428
   _scanDeltaAz: 1
   _scanDeltaEl: 2.63672
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000369
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000377
   _searchRadiusEl: 4.52672
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000116
+TIMING, task: Computing search limits, secs used: 0.000117
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.6e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.9e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.14064
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.140167
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.8e-05
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 5.5e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.0807
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.05566
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 4.6e-05
+TIMING, task: Cart interp - before doInterp, secs used: 4.7e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.14148
-TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.2e-05
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.1253
+TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.6e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
 </pre></div>
@@ -7078,11 +7154,8 @@ Mdv2NcfTrans::_putCoordinateVariables()
 Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KDDC/20210706/ncf_20210706_222051.nc
-TIMING, task: Writing output files, secs used: 2.0216
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KDDC/20210706/ncf_20210706_222051.nc
+TIMING, task: Writing output files, secs used: 2.01461
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - Radx2Grid::_processFile
@@ -7090,39 +7163,39 @@ TIMING, task: Writing output files, secs used: 2.0216
   Reading in file ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 1.57669
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - reading data, secs used: 0.814796
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.237289
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - before _initOutputArrays, secs used: 0.234837
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.1104
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Cart interp - after _initOutputArrays, secs used: 0.111418
   _scanDeltaAz: 1
   _scanDeltaEl: 2.46094
   _isSector: 0
   _spansNorth: N
-TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000363
+TIMING, task: Cart interp - before computeSearchLimits, secs used: 0.000377
   _searchRadiusEl: 4.35094
   _searchRadiusAz: 2.89
   _searchMinAz: 0
   _searchNAz: 3801
   _searchMaxDistAz: 29
-TIMING, task: Computing search limits, secs used: 0.000119
+TIMING, task: Computing search limits, secs used: 0.000114
   Filling search matrix ... 
-TIMING, task: Cart interp - before fillSearchMatrix, secs used: 2.1e-05
+TIMING, task: Cart interp - before fillSearchMatrix, secs used: 1.9e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.149047
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Filling search matrix, secs used: 0.142396
   Computing grid relative to radar ... 
-TIMING, task: Cart interp - before _computeGridRelative, secs used: 0.000116
+TIMING, task: Cart interp - before _computeGridRelative, secs used: 4.9e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.0929
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Computing grid relative to radar, secs used: 3.06672
   Interpolating ... 
-TIMING, task: Cart interp - before doInterp, secs used: 4.8e-05
+TIMING, task: Cart interp - before doInterp, secs used: 5.6e-05
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.13392
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TIMING, task: Interpolating, secs used: 2.14209
 TIMING, task: Cart interp - before _writeOutputFile, secs used: 4.2e-05
   Writing output file ... 
   Adding field: RATE_HYBRID
@@ -7186,7 +7259,7 @@ Mdv2NcfTrans::_putFieldDataVariables()
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OutputMdv::_writeLdataInfo(): Data written to /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KDDC/20210706/ncf_20210706_222533.nc
-TIMING, task: Writing output files, secs used: 2.01981
+TIMING, task: Writing output files, secs used: 2.01203
 </pre></div>
 </div>
 </div>
@@ -7231,7 +7304,7 @@ ncf_20210706_220723.nc	ncf_20210706_221633.nc	ncf_20210706_222531.nc
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
 Program &#39;MdvMerge2&#39;
-Run-time 2022/08/23 23:55:19.
+Run-time 2022/08/24 02:36:03.
 
 Copyright (c) 1992 - 2022
 University Corporation for Atmospheric Research (UCAR)
@@ -7622,10 +7695,7 @@ Mdvx read request
   Scaling type: SCALING_ROUNDED
   Composite?: 0
   FillMissing?: 0
-  Field names: DBZ, RATE_HYBRID, 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PID, range
+  Field names: DBZ, RATE_HYBRID, PID, range
   FieldFileHeaders?: 0
   Search mode: READ_CLOSEST
   Search time: 2021/07/06 22:20:00
@@ -8047,7 +8117,7 @@ dbzVertNSMax.shape:  (31, 700)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fd65322e700&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f6e94a956a0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/nexrad_mosaic.erad_tutorial_45_1.png" src="../../_images/nexrad_mosaic.erad_tutorial_45_1.png" />
@@ -8861,7 +8931,7 @@ write_clumping_debug_fields = FALSE;
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>======================================================================
 Program &#39;Ecco&#39;
-Run-time 2022/08/23 23:56:59.
+Run-time 2022/08/24 02:37:44.
 
 Copyright (c) 1992 - 2022
 University Corporation for Atmospheric Research (UCAR)
@@ -8981,7 +9051,7 @@ version available from UCAR.
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;
 root group (NETCDF4 data model, file format HDF5):
     Conventions: CF-1.6
-    history: Converted from NetCDF to MDV, 2022/08/23 23:58:46
+    history: Converted from NetCDF to MDV, 2022/08/24 02:39:31
   Ncf:history: Data merged from following files:
   /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KGLD/20210706/ncf_20210706_221420.nc
   /tmp/lrose_data/nexrad_mosaic/mdv/radarCart/KUEX/20210706/ncf_20210706_221633.nc
@@ -9168,7 +9238,21 @@ eccoVertNSMax.shape:  (31, 700)
 
               </div>
               <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../lrose/README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">LROSE Tutorial</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../environment.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Environment overview</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </div>
           </div>
