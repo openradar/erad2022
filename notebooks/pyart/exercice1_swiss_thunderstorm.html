@@ -444,6 +444,44 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> On this page
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-the-data">
+   Reading the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ground-clutter-and-noise-removal">
+   Ground-clutter and noise removal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#attenuation-correction">
+   Attenuation correction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kdp-estimation">
+   KDP estimation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hydrometeor-classification">
+   Hydrometeor classification
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#qpe">
+   QPE
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -491,6 +529,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Note that you can create your own Py-ART configuration file, which defines default field names, default colormaps, limits, and much more. This is the one we use at MeteoSwiss. You can then either load it at startup in your python code or define the environment variable PYART_CONFIG to point to your file in your work environment.</p>
+<div class="section" id="reading-the-data">
+<h2>Reading the data<a class="headerlink" href="#reading-the-data" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>Let’s start by loading our radar file which is of the standard CFRadial type. It corresponds to the third sweep of the operational radar scans, which is a PPI at 1° elevation. It contains raw radar data (before pre-processing) at a resolution of 83 m. We then add the temperature obtained from the COSMO NWP model to our radar object (note that this temperature was previously interpolated from the model grid to the radar polar grid). Note that the freezing level is quite high in this example (around 4200 m.).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -505,6 +545,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="ground-clutter-and-noise-removal">
+<h2>Ground-clutter and noise removal<a class="headerlink" href="#ground-clutter-and-noise-removal" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>Py-ART uses gatefilters which are a kind of mask to filter out problematic measurements. Most processing routines can take a gatefilter as input and will ignore pixels that were filtered out.</p>
 <p>Here we create a gate <strong><a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.filters.moment_and_texture_based_gate_filter.html">filter</a></strong> based on the radar moments and their texture to filter out noise and ground clutter. Since we are interested in a strong thunderstorm we also extend this filter to remove all measurements with a SNR ratio of less than 10 dB.</p>
 <div class="cell docutils container">
@@ -535,6 +578,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Here it is clear that most ground clutter (mostly north west and east of the radar), as well as noise have been filtered out.</p>
+</div>
+<div class="section" id="attenuation-correction">
+<h2>Attenuation correction<a class="headerlink" href="#attenuation-correction" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>We can expect strong attenuation behind a thunderstorm like this. So it is a good idea to try to correct for it. Knowledge of the specific attenuation can also be very insightful.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -585,6 +631,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>We can clearly observe a strong specific attenuation within the thunderstorm as well as a significant difference in reflectivity before/after correction behind the thunderstorm to the west.</p>
+</div>
+<div class="section" id="kdp-estimation">
+<h2>KDP estimation<a class="headerlink" href="#kdp-estimation" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>Another very interesting radar variable is the specific differential phase shift KDP. Large KDP indicates the presence of large oblate drops and is linked to very strong precipitation. KDP is also needed for the hydrometeor classification algorithm. However KDP is not measured directly and needs to be estimated numerically from the raw differential phase shift (PHIDP). Py-ART provides three different retrieval methods. We will use the method by <strong><a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.retrieve.kdp_maesaka.html">Maesaka et al. (2012)</a></strong> which is fast and robust but assumes KDP to be positive and is therefore limited to rainfall below the melting layer and/or warm clouds.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,6 +661,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>A look at the KDP field shows clusters of very large KDP (&gt; 5 °/km) at the center of the thunderstorm.</p>
+</div>
+<div class="section" id="hydrometeor-classification">
+<h2>Hydrometeor classification<a class="headerlink" href="#hydrometeor-classification" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>The hydrometeor classification algorithm in Py-ART by <strong><a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.retrieve.kdp_maesaka.html">Besic et al. (2016)</a></strong> uses ZH, ZDR, RHOHV, KDP and the temperature to classify hydrometeors into one of 8 classes:</p>
 <ul class="simple">
 <li><p>Ice hail, high density Graupel</p></li>
@@ -672,6 +724,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Note that the plotting commands are slightly more complicated due to the categorical colormap.</p>
 <p>A look at the hydrometeor classification reveals the presence of wet hail in the center of the thunderstorm surrounded by rain and by light rain. A few isolated pixels (unfiltered ground clutter) are also classified as hail.
 There was indeed intense hail at the ground on that day.</p>
+</div>
+<div class="section" id="qpe">
+<h2>QPE<a class="headerlink" href="#qpe" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>Py-ART provides several QPE algorithms but the most refined relies on the hydrometeor classification and uses different relations between radar variables and precipitation intensities within the different hydrometeor classes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -737,7 +792,7 @@ There was indeed intense hail at the ground on that day.</p>
   warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fd0dddf5490&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f8ff071c460&gt;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/cartopy/io/__init__.py:241: DownloadWarning: Downloading: https://naturalearth.s3.amazonaws.com/10m_cultural/ne_10m_admin_0_countries.zip
@@ -756,6 +811,7 @@ There was indeed intense hail at the ground on that day.</p>
 </div>
 </div>
 <p>Note that we didn’t estimate precipitation intensity at the ground but only aloft. Within the thunderstorm precipitation intensity is extremely high. This is likely too high because QPE in wet hail is very uncertain. However, even the operational QPE algorithm at MeteoSwiss estimated precipitation intensities at the ground close to 120 mm/h.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -852,7 +908,7 @@ There was indeed intense hail at the ground on that day.</p>
         
           By The Open Radar Community.
         
-          Last updated on 24 August 2022.
+          Last updated on 26 August 2022.
         </p>
       </div>
     </div>

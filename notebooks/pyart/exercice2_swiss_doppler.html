@@ -444,6 +444,29 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> On this page
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-and-dealiasing-the-data">
+   Reading and dealiasing the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cappi-plots">
+   CAPPI plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#velocity-azimuth-display-vad">
+   Velocity azimuth display (VAD)
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -454,7 +477,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="processing-of-doppler-wind-data-from-a-swiss-volumetric-scan">
 <h1>Processing of Doppler wind data from a Swiss volumetric scan<a class="headerlink" href="#processing-of-doppler-wind-data-from-a-swiss-volumetric-scan" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
-<p>In this exercice we will load raw unfiltered Swiss C-band data during a thunderstorm event and process it to estimate at profile of horizontal wind aloft the radar. The following topics will be tackled.</p>
+<p>In this exercice we will load low-resolution filtered Swiss C-band data and process it to estimate a profile of horizontal wind aloft the radar. The following topics will be tackled.</p>
 <ul class="simple">
 <li><p>Dealiasing of radial velocity</p></li>
 <li><p>CAPPI plots and profiles</p></li>
@@ -490,10 +513,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<div class="section" id="reading-and-dealiasing-the-data">
+<h2>Reading and dealiasing the data<a class="headerlink" href="#reading-and-dealiasing-the-data" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>The Swiss operational C-band radar network performs 20 PPIs at 20 different elevations (from 0.2° to 40°) every 5 minutes. All PPIs are stored in separate files.</p>
 <p>We will thus read all 20 elevations one after the other for a given timestep and use the Py-ART function <strong><a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.util.join_radar.html?highlight=join_radar">join_radar</a></strong> to merge them all into a single radar object which containes 20 sweeps.</p>
 <p>To avoid using too much memory we will read the pre-processed MeteoSwiss radar data which has a resolution of 500 m in range.</p>
-<p>Every time we read a file we will also dealias the radial velocity field. Indeed, at lower elevations, low PRFs are used which result in low Nyquist velocities between 8-12 m/s. This means that a lot of raveling will occur, especially in strong winds. In this example we use the simplest dealiasing method of Py-ART which performs by finding regions of similar velocities and unfolding and merging pairs of regions until all regions are unfolded.</p>
+<p>At the end, we will also dealias the radial velocity field. Indeed, at lower elevations, low PRFs are used which result in low Nyquist velocities between 8-12 m/s. This means that a lot of folding will occur, especially in strong winds. In this example we use the simplest dealiasing method of Py-ART which performs by finding regions of similar velocities and unfolding and merging pairs of regions until all regions are unfolded.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read all 20 elevations for one timestep</span>
@@ -539,6 +564,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>Indeed the raw velocity shows alternating bands of negative and positive velocities which indicates aliasing. The dealiased velocity looks much less discontinuous. Note however that a major difficulty for these algorithms is the presence of isolated pixels, which tend to get arbitrary values as can be seen in the south of the radar.</p>
+</div>
+<div class="section" id="cappi-plots">
+<h2>CAPPI plots<a class="headerlink" href="#cappi-plots" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>We will now create a CAPPI (constant altitude PPI) of the reflectivity during this event. The idea is to interpolate the volumetric scan on a 3D Cartesian grid using the function <strong><a class="reference external" href="https://arm-doe.github.io/pyart/API/generated/pyart.map.grid_from_radars.html">grid_from_radars</a></strong>. Here we will create slices every 500 m from 500 m to 8000 m above the radar.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -618,6 +646,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>The convention at MeteoSwiss (which is different from the one used by Py-ART) is that positive velocities are moving away from the radar. In this example we see clearly the downdraft in the center of storm and the updraft in its surroundings.</p>
+</div>
+<div class="section" id="velocity-azimuth-display-vad">
+<h2>Velocity azimuth display (VAD)<a class="headerlink" href="#velocity-azimuth-display-vad" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>We will now make a VAD retrieval to estimate the horizontal wind profile above the radar. This technique requires to have measurements in as many azimuths as possible and works better for stratiform rain when the radar coverage is wider. We will load data from a cold front event on the 13th July 2021 near the Albis radar (south of Zürich), that showed widespread precipitation around the radar.</p>
 <p>Unfortunately the VAD estimation technique in Py-ART can process only one sweep at a time. So we will average the wind vectors obtained over all sweeps to obtain a more reliable estimate. Note that we skip the first four sweeps which are more prone to ground echoes and have a very low Nyquist velocity.</p>
 <div class="cell docutils container">
@@ -671,23 +702,25 @@ min height 32.0  meters
 min height 37.0  meters
 max height 17028.0  meters
 min height 41.0  meters
-max height 16966.0  meters
-min height 47.0  meters
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 17123.0  meters
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 16966.0  meters
+min height 47.0  meters
+max height 17123.0  meters
 min height 56.0  meters
 max height 17229.0  meters
 min height 69.0  meters
-max height 17135.0  meters
-min height 85.0  meters
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 17301.0  meters
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 17135.0  meters
+min height 85.0  meters
+max height 17301.0  meters
 min height 105.0  meters
 max height 16921.0  meters
 min height 124.0  meters
-max height 17097.0  meters
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 17097.0  meters
 min height 143.0  meters
 max height 17217.0  meters
 min height 160.0  meters
@@ -719,6 +752,7 @@ min height 160.0  meters
 <p>Now let’s compare this wind profile with the one recorded by the nearest radiosounding operated in Payerne (around 130 km west from the radar):</p>
 <a class="reference internal image-reference" href="../../_images/radiosounding_pay_20210713.png"><img alt="radiosounding_pay_20210713" src="../../_images/radiosounding_pay_20210713.png" style="width: 400px;" /></a>
 <p>Though there are some discrepancies the match is not bad, given the distance and the very different ways of measuring wind!</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -815,7 +849,7 @@ min height 160.0  meters
         
           By The Open Radar Community.
         
-          Last updated on 24 August 2022.
+          Last updated on 26 August 2022.
         </p>
       </div>
     </div>
