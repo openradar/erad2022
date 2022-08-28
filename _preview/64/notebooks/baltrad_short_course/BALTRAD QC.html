@@ -1,0 +1,986 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BALTRAD Quality Control &#8212; Project Pythia Cookbook Template</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LROSE Tutorial" href="../../lrose/README.html" />
+    <link rel="prev" title="BALTRAD parallel processing" href="BALTRAD%20parallel%20processing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="132">
+    <div class="container-fluid" id="shim"></div>
+    <div class="container-fluid" id="banner"></div>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar shadow" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="https://openradarscience.org/erad2022/README.html">
+  <img src="../../_static/erad_white_background.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class=" collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://www.erad2022.ch">Conference Home</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://openradarscience.org">Open Radar Community</a>
+  </li>
+  
+  
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/openradar/erad2022" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" rel="noopener" target="_blank" title="YouTube">
+            <span><i class="fab fa-youtube-square"></i></span>
+            <label class="sr-only">YouTube</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    <div class="container-xl">
+      <div class="row">
+        
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   ERAD 2022 Open Radar Science Shortcourse
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introductions + Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introductions/getting-started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introductions/open-science.html">
+   An Overview of Open Science
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introductions/open-radar.html">
+   Open Radar Community
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tool Foundations
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../pyart/README.html">
+   Py-ART Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pyart/pyart-basics.html">
+     Py-ART Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pyart/pyart-gridding.html">
+     Py-ART Gridding
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pyart/exercice1_swiss_thunderstorm.html">
+     Filtering and retrievals on raw Swiss C-band data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pyart/exercice2_swiss_doppler.html">
+     Processing of Doppler wind data from a Swiss volumetric scan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pyart/question_pyart_meteoswiss.html">
+     Exercice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pyart/answer_question_pyart_meteoswiss.html">
+     Exercice Sample Solution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../wradlib/README.html">
+   Wradlib Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_intro.html">
+     An Overview of wradlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_radar_data_io_vis.html">
+     wradlib radar data io, visualisation, gridding and gis export
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_data_quality.html">
+     wradlib data quality
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_differential_phase.html">
+     wradlib Phase Processing - System PhiDP - ZPHI-Method
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wradlib/wradlib_quasi_vertical_profiles.html">
+     wradlib time series data and quasi vertical profiles
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../baltrad/README.html">
+   BALTRAD Tutorial
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="BALTRAD%20Compositing.html">
+     Compositing with BALTRAD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="BALTRAD%20DRQC.html">
+     In this notebook, we will use the depolarization ratio to quality control a volume of data from the new radar at Radisson, Saskatchewan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="BALTRAD%20IO.html">
+     BALTRAD I/O model - making sense out of data and metadata
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="BALTRAD%20parallel%20processing.html">
+     BALTRAD parallel processing
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     BALTRAD Quality Control
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../lrose/README.html">
+   LROSE Tutorial
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../lrose/nexrad_mosaic.erad_tutorial.html">
+     ERAD 2022 Open Source Workshop
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../environment.html">
+   Environment overview
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Open Radar Workflows
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../workflows/README.html">
+   Combining Radar Workflows
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../baltrad2wradlib/baltrad2wradlib.html">
+     Interaction of BALTRAD and wradlib via ODIM_H5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pyart2baltrad/baltrad_pyart_rain_rate_example.html">
+     In this notebook, an ODIM_H5 file is read using BALTRAD.  Then the rain rate is determined from the calculated specific attenuation using Py-ART.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../pyart2baltrad/pyart_baltrad_dealias_example.html">
+     Doppler Velocity Dealiasing with Py-ART and BALTRAD
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Becoming a developer
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../package-development/README.html">
+   Developing Open Source Software Packages
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by <a href="https://projectpythia.org">Project Pythia</a>.<br><br>
+
+</div>
+
+</div>
+
+        
+
+        <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main"><div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/baltrad_short_course/BALTRAD QC.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/openradar/erad2022"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/openradar/erad2022/issues/new?title=Issue%20on%20page%20%2Fnotebooks/baltrad_short_course/BALTRAD QC.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/openradar/erad2022/edit/main/notebooks/baltrad_short_course/BALTRAD QC.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> On this page
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-the-file-i-o-module-along-with-the-main-rave-module-containing-useful-constants">
+   Import the file I/O module along with the main RAVE module containing useful constants
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-an-input-odim-h5-file">
+   Read an input ODIM_H5 file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-simple-plotter-for-b-scans-elaborating-the-example-from-the-i-o-exercise">
+   Create a simple plotter for B-scans, elaborating the example from the I/O exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-the-polar-volume-and-plot-vrad-data-from-the-lowest-scan">
+   Access the polar volume and plot VRAD data from the lowest scan
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dealias-the-volume">
+   Dealias the volume
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-whether-the-first-scans-been-dealiased">
+     Check whether the first scan’s been dealiased
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#replot-for-comparison">
+     Replot for comparison
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shift-gears-back-to-reflectivity">
+   Shift gears - back to reflectivity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-the-bropo-packages-quality-plugin-to-identify-and-remove-non-precipitation-echoes">
+   Use the bRopo package’s quality plugin to identify and remove non-precipitation echoes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-resulting-dbzh">
+     Plot the resulting DBZH
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#topographical-beam-blockage-qc-using-the-beamb-packages-quality-plugin">
+   Topographical beam-blockage QC using the beamb package’s quality plugin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-of-overshooting">
+   Probability of overshooting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accessing-and-manging-data-quality-fields">
+   Accessing and manging data quality fields
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-quality-fields">
+   Plot quality fields
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beam-blockage">
+     Beam blockage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probability-of-non-precipitation">
+     Probability of non-precipitation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Probability of overshooting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chaining-algorithms-new-data">
+   Chaining algorithms - new data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#total-quality">
+   “Total Quality”
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+          <div id="main-content" class="row">
+            <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+              
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="baltrad-quality-control">
+<h1>BALTRAD Quality Control<a class="headerlink" href="#baltrad-quality-control" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="import-the-file-i-o-module-along-with-the-main-rave-module-containing-useful-constants">
+<h2>Import the file I/O module along with the main RAVE module containing useful constants<a class="headerlink" href="#import-the-file-i-o-module-along-with-the-main-rave-module-containing-useful-constants" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">_raveio</span><span class="o">,</span> <span class="nn">_rave</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-an-input-odim-h5-file">
+<h2>Read an input ODIM_H5 file<a class="headerlink" href="#read-an-input-odim-h5-file" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rio</span> <span class="o">=</span> <span class="n">_raveio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;data/201405190715_SUR.h5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-simple-plotter-for-b-scans-elaborating-the-example-from-the-i-o-exercise">
+<h2>Create a simple plotter for B-scans, elaborating the example from the I/O exercise<a class="headerlink" href="#create-a-simple-plotter-for-b-scans-elaborating-the-example-from-the-i-o-exercise" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Two color palettes, one used in GoogleMapsPlugin, and the other from RAVE</span>
+<span class="kn">from</span> <span class="nn">GmapColorMap</span> <span class="kn">import</span> <span class="n">dbzh</span> <span class="k">as</span> <span class="n">dbzp</span>
+<span class="kn">from</span> <span class="nn">rave_win_colors</span> <span class="kn">import</span> <span class="n">continuous_MS</span> <span class="k">as</span> <span class="n">vradp</span>
+
+<span class="c1"># Convert a 768-list palette to a matplotlib colorlist</span>
+<span class="k">def</span> <span class="nf">make_colorlist</span><span class="p">(</span><span class="n">pal</span><span class="p">):</span>
+    <span class="n">colorlist</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">pal</span><span class="p">),</span> <span class="mi">3</span><span class="p">):</span>
+        <span class="n">colorlist</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">pal</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mf">255.0</span><span class="p">,</span> <span class="n">pal</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">255.0</span><span class="p">,</span> <span class="n">pal</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mf">255.0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">colorlist</span>
+
+<span class="c1"># Convert lists to colormaps</span>
+<span class="n">dbzcl</span> <span class="o">=</span> <span class="n">make_colorlist</span><span class="p">(</span><span class="n">dbzp</span><span class="p">)</span>
+<span class="n">vradcl</span> <span class="o">=</span> <span class="n">make_colorlist</span><span class="p">(</span><span class="n">vradp</span><span class="p">)</span>
+
+<span class="c1"># Then create a simple plotter</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1">#from types import StringType</span>
+<span class="n">StringType</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">colorlist</span><span class="o">=</span><span class="n">dbzcl</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;B-scan&quot;</span><span class="p">):</span>
+    <span class="n">mini</span><span class="p">,</span> <span class="n">maxi</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)),</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span> <span class="k">if</span> <span class="n">mini</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">clist</span><span class="o">=</span><span class="n">colorlist</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">colorlist</span><span class="p">)</span><span class="o">==</span><span class="n">StringType</span> <span class="k">else</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">(</span><span class="n">colorlist</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">clist</span><span class="p">,</span> <span class="n">clim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">shrink</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">mini</span><span class="p">])</span><span class="o">/</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">maxi</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="access-the-polar-volume-and-plot-vrad-data-from-the-lowest-scan">
+<h2>Access the polar volume and plot VRAD data from the lowest scan<a class="headerlink" href="#access-the-polar-volume-and-plot-vrad-data-from-the-lowest-scan" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pvol</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">object</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">pvol</span><span class="o">.</span><span class="n">getScan</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s2">&quot;VRADH&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getData</span><span class="p">(),</span> <span class="n">vradcl</span><span class="p">,</span> <span class="s2">&quot;Original VRAD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/BALTRAD QC_8_0.png" src="../../_images/BALTRAD QC_8_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="dealias-the-volume">
+<h2>Dealias the volume<a class="headerlink" href="#dealias-the-volume" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">_dealias</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">_dealias</span><span class="o">.</span><span class="n">dealias</span><span class="p">(</span><span class="n">pvol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="check-whether-the-first-scans-been-dealiased">
+<h3>Check whether the first scan’s been dealiased<a class="headerlink" href="#check-whether-the-first-scans-been-dealiased" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This first scan is dealiased: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="n">_dealias</span><span class="o">.</span><span class="n">dealiased</span><span class="p">(</span><span class="n">pvol</span><span class="o">.</span><span class="n">getScan</span><span class="p">(</span><span class="mi">0</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This first scan is dealiased: True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="replot-for-comparison">
+<h3>Replot for comparison<a class="headerlink" href="#replot-for-comparison" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">pvol</span><span class="o">.</span><span class="n">getScan</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s2">&quot;VRADH&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getData</span><span class="p">(),</span> <span class="n">vradcl</span><span class="p">,</span> <span class="s2">&quot;Dealiased VRAD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/BALTRAD QC_14_0.png" src="../../_images/BALTRAD QC_14_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="shift-gears-back-to-reflectivity">
+<h2>Shift gears - back to reflectivity<a class="headerlink" href="#shift-gears-back-to-reflectivity" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rio</span> <span class="o">=</span> <span class="n">_raveio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;data/plrze_pvol_20120205T0430Z.h5&quot;</span><span class="p">)</span>
+<span class="n">pvol</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">object</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">pvol</span><span class="o">.</span><span class="n">getScan</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s2">&quot;DBZH&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getData</span><span class="p">(),</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Original DBZH&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/BALTRAD QC_16_0.png" src="../../_images/BALTRAD QC_16_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="use-the-bropo-packages-quality-plugin-to-identify-and-remove-non-precipitation-echoes">
+<h2>Use the bRopo package’s quality plugin to identify and remove non-precipitation echoes<a class="headerlink" href="#use-the-bropo-packages-quality-plugin-to-identify-and-remove-non-precipitation-echoes" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">odc_polarQC</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>  <span class="c1"># Suppress SyntaxWarning from Python2 code</span>
+
+<span class="n">odc_polarQC</span><span class="o">.</span><span class="n">algorithm_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ropo&quot;</span><span class="p">]</span>
+<span class="n">pvol</span> <span class="o">=</span> <span class="n">odc_polarQC</span><span class="o">.</span><span class="n">QC</span><span class="p">(</span><span class="n">pvol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-the-resulting-dbzh">
+<h3>Plot the resulting DBZH<a class="headerlink" href="#plot-the-resulting-dbzh" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">pvol</span><span class="o">.</span><span class="n">getScan</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">getParameter</span><span class="p">(</span><span class="s2">&quot;DBZH&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">getData</span><span class="p">(),</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;DBZH after bRopo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/BALTRAD QC_20_0.png" src="../../_images/BALTRAD QC_20_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="topographical-beam-blockage-qc-using-the-beamb-packages-quality-plugin">
+<h2>Topographical beam-blockage QC using the beamb package’s quality plugin<a class="headerlink" href="#topographical-beam-blockage-qc-using-the-beamb-packages-quality-plugin" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">odc_polarQC</span><span class="o">.</span><span class="n">algorithm_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;beamb&quot;</span><span class="p">]</span>
+<span class="n">before</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">pvol</span> <span class="o">=</span> <span class="n">odc_polarQC</span><span class="o">.</span><span class="n">QC</span><span class="p">(</span><span class="n">pvol</span><span class="p">)</span>
+<span class="n">after</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;beamb runtime = </span><span class="si">%2.2f</span><span class="s2"> seconds&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">after</span><span class="o">-</span><span class="n">before</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>beamb runtime = 13.83 seconds
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="probability-of-overshooting">
+<h2>Probability of overshooting<a class="headerlink" href="#probability-of-overshooting" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">odc_polarQC</span><span class="o">.</span><span class="n">algorithm_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rave-overshooting&quot;</span><span class="p">]</span>
+<span class="n">pvol</span> <span class="o">=</span> <span class="n">odc_polarQC</span><span class="o">.</span><span class="n">QC</span><span class="p">(</span><span class="n">pvol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="accessing-and-manging-data-quality-fields">
+<h2>Accessing and manging data quality fields<a class="headerlink" href="#accessing-and-manging-data-quality-fields" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scan</span> <span class="o">=</span> <span class="n">pvol</span><span class="o">.</span><span class="n">getScan</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Scan contains </span><span class="si">%i</span><span class="s2"> quality fields&quot;</span> <span class="o">%</span> <span class="n">scan</span><span class="o">.</span><span class="n">getNumberOfQualityFields</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scan contains 3 quality fields
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">scan</span><span class="o">.</span><span class="n">getNumberOfQualityFields</span><span class="p">()):</span>
+    <span class="n">qf</span> <span class="o">=</span> <span class="n">scan</span><span class="o">.</span><span class="n">getQualityField</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quality field </span><span class="si">%i</span><span class="s2"> has identifier </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">qf</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s2">&quot;how/task&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quality field 0 has identifier fi.fmi.ropo.detector.classification
+Quality field 1 has identifier se.smhi.detector.beamblockage
+Quality field 2 has identifier se.smhi.detector.poo
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-quality-fields">
+<h2>Plot quality fields<a class="headerlink" href="#plot-quality-fields" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="section" id="beam-blockage">
+<h3>Beam blockage<a class="headerlink" href="#beam-blockage" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bb</span> <span class="o">=</span> <span class="n">scan</span><span class="o">.</span><span class="n">getQualityFieldByHowTask</span><span class="p">(</span><span class="s2">&quot;se.smhi.detector.beamblockage&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">bb</span><span class="o">.</span><span class="n">getData</span><span class="p">(),</span> <span class="s2">&quot;binary&quot;</span><span class="p">,</span> <span class="s2">&quot;Quality indicator for beam blockage&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/BALTRAD QC_30_0.png" src="../../_images/BALTRAD QC_30_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="probability-of-non-precipitation">
+<h3>Probability of non-precipitation<a class="headerlink" href="#probability-of-non-precipitation" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bb</span> <span class="o">=</span> <span class="n">scan</span><span class="o">.</span><span class="n">getQualityFieldByHowTask</span><span class="p">(</span><span class="s2">&quot;fi.fmi.ropo.detector.classification&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">bb</span><span class="o">.</span><span class="n">getData</span><span class="p">(),</span> <span class="s2">&quot;binary&quot;</span><span class="p">,</span> <span class="s2">&quot;Quality indicator for ropo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/BALTRAD QC_32_0.png" src="../../_images/BALTRAD QC_32_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Probability of overshooting<a class="headerlink" href="#id1" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bb</span> <span class="o">=</span> <span class="n">scan</span><span class="o">.</span><span class="n">getQualityFieldByHowTask</span><span class="p">(</span><span class="s2">&quot;se.smhi.detector.poo&quot;</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">bb</span><span class="o">.</span><span class="n">getData</span><span class="p">(),</span> <span class="s2">&quot;binary&quot;</span><span class="p">,</span> <span class="s2">&quot;Quality indicator for PoO&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/BALTRAD QC_34_0.png" src="../../_images/BALTRAD QC_34_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="chaining-algorithms-new-data">
+<h2>Chaining algorithms - new data<a class="headerlink" href="#chaining-algorithms-new-data" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rio</span> <span class="o">=</span> <span class="n">_raveio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;data/sekir.h5&quot;</span><span class="p">)</span>
+<span class="n">pvol</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">object</span>
+
+<span class="n">odc_polarQC</span><span class="o">.</span><span class="n">algorithm_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ropo&quot;</span><span class="p">,</span> <span class="s2">&quot;beamb&quot;</span><span class="p">,</span> <span class="s2">&quot;radvol-att&quot;</span><span class="p">,</span> <span class="s2">&quot;radvol-broad&quot;</span><span class="p">,</span> <span class="s2">&quot;rave-overshooting&quot;</span><span class="p">]</span>
+<span class="n">pvol</span> <span class="o">=</span> <span class="n">odc_polarQC</span><span class="o">.</span><span class="n">QC</span><span class="p">(</span><span class="n">pvol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scan</span> <span class="o">=</span> <span class="n">pvol</span><span class="o">.</span><span class="n">getScan</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">att</span> <span class="o">=</span> <span class="n">scan</span><span class="o">.</span><span class="n">getQualityField</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">att</span><span class="o">.</span><span class="n">getData</span><span class="p">(),</span> <span class="s2">&quot;binary&quot;</span><span class="p">,</span> <span class="s2">&quot;Attenuation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/BALTRAD QC_37_0.png" src="../../_images/BALTRAD QC_37_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="total-quality">
+<h2>“Total Quality”<a class="headerlink" href="#total-quality" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">odc_polarQC</span><span class="o">.</span><span class="n">algorithm_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;qi-total&quot;</span><span class="p">]</span>
+<span class="n">pvol</span> <span class="o">=</span> <span class="n">odc_polarQC</span><span class="o">.</span><span class="n">QC</span><span class="p">(</span><span class="n">pvol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qitot</span> <span class="o">=</span> <span class="n">scan</span><span class="o">.</span><span class="n">getQualityField</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">qitot</span><span class="o">.</span><span class="n">getData</span><span class="p">(),</span> <span class="s2">&quot;binary&quot;</span><span class="p">,</span> <span class="s2">&quot;Total quality index&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/BALTRAD QC_40_0.png" src="../../_images/BALTRAD QC_40_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/baltrad_short_course"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="BALTRAD%20parallel%20processing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">BALTRAD parallel processing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../lrose/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LROSE Tutorial</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </div>
+          </div>
+        </main>
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+<footer class="footer">
+  <div class="container-fluid m-0 p-0">
+  
+    <div class="footer-item">
+    
+  <div class="container-fluid footer-logos">
+    <div class="container-xl">
+      <div class="row d-flex flex-wrap align-items-center">
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="Meteoswiss" src="../../_images/meteoswiss_logo.svg" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="Meteofrance" src="../../_images/meteo-france.jpg" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="ARM" src="../../_images/arm_logo.png" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="Argonne" src="../../_images/argonne_logo.png" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="Bonne" src="../../_images/university_bonn.png" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="Canada" src="../../_images/environment_canada_logo.svg" style="width: 100%">
+        </div>
+        <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
+          <img alt="NCAR" src="../../_images/NCAR-contemp-logo-blue.svg" style="width: 100%">
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+  
+    <div class="footer-item">
+    
+    </div>
+  
+    <div class="footer-item">
+      <div class="container-fluid footer-info">
+    <div class="container-xl">
+      <div class="d-flex justify-content-center">
+        <p class="py-1 m-0">
+            &copy;&nbsp;2022.
+        
+          By The Open Radar Community.
+        
+          Last updated on 28 August 2022.
+        </p>
+      </div>
+    </div>
+  </div>
+    </div>
+  
+    <div class="footer-item">
+    
+    </div>
+  
+  </div>
+</footer>
+  </body>
+</html>
