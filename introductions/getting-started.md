@@ -1,30 +1,19 @@
 # Getting Started
 
-## 1. Make Sure You Have a Github Account
-The first step is to make sure you have a Github Account.
+## About
 
-Here is the link if you do have one already:
-- [Github account creation link](https://github.com/join)
+The repository was created from [a ProjectPythia cookbook template](https://github.com/ProjectPythiaCookbooks/cookbook-template).
+This template brings with it all machinery to enable full featured GitHub workflows, including building a docker image, running and rendering
+Jupyter Notebooks and compiling a website using Sphinx and the [JupyterBook](https://jupyterbook.org/intro.html) theme,
 
-## 2. Log into Pangeo Binder
-Next, sign in and authenticate the Pangeo Binder, which is the platform we will use for the workshop:
-- [Pangeo Binder Link](https://aws-uswest2-binder.pangeo.io)
+## Customizing
 
-## 3. Launch our Environment
-Now that we have our authentication set up, we can access our content!
+If there is a package missing for your use-case you can just add the package to [binder/environment.yml](https://github.com/openradar/erad2022/blob/main/binder/environment.yml) and activate a new build (see below).
+Notebooks might be added to the [notebooks-folder](https://github.com/openradar/erad2022/tree/main/notebooks).
 
-Use the following link to launch into the binder:
-- [Binder Link](https://aws-uswest2-binder.pangeo.io/v2/gh/openradar/erad2022/main?labpath=notebooks)
+## Build workflow
 
-If you are having issues with that (ex. it is taking a long time), try using the following link:
-```
-https://hub.aws-uswest2-binder.pangeo.io/user/{your_github_username}/lab
-```
-Where you replace `{your_github_username}` with your github username (ex. `mgrover1`)
-
-## Description of the build workflow
-
-### Build on GitHub on PullRequest
+### Build on GitHub - PullRequest
 
 1. [repo2docker-action](https://github.com/jupyterhub/repo2docker-action) is used to build the docker image 
     - docker layers will be cached from ghcr.io (https://github.com/openradar/erad2022/pkgs/container/erad2022)
@@ -32,7 +21,7 @@ Where you replace `{your_github_username}` with your github username (ex. `mgrov
 1. book is built in a second step using [docker-run-action](https://github.com/addnab/docker-run-action), zipped and uploaded as artifact
 1. book is deployed to gh-pages, link is added to pr comment
 
-### Build on GitHub on Push
+### Build on GitHub - Push
 
 1. repo2docker-action is used to build the docker image 
     - docker layers will be cached from ghcr.io (https://github.com/openradar/erad2022/pkgs/container/erad2022)
@@ -62,6 +51,9 @@ $ repo2docker .
 
 This will fetch the docker image from ghcr and fire up a container running jupyterlab.
 
+### Health check
+
+The complete build workflow is run as nightly build in GitHub CI to early detect problems.
 
 ### Conclusion
 
@@ -70,3 +62,34 @@ This will fetch the docker image from ghcr and fire up a container running jupyt
 - On GHA we are using our prebuild images as layer cache, but layers can't be updated on pull requests due to security reasons.
 - The erad2022 package on https://ghcr.io/openradar/erad2022:latest represents always the status of the most recent commit to the repo.
 - Running locally as well as building & running is easily possible.
+
+
+## Using the PANGEO Cloud with Binder
+
+### 1. Make Sure You Have a Github Account
+The first step is to make sure you have a Github Account.
+
+Here is the link if you do have one already:
+- [Github account creation link](https://github.com/join)
+
+### 2. Log into Pangeo Binder
+Next, sign in and authenticate the Pangeo Binder, which is the platform we will use for the workshop:
+- [Pangeo Binder Link](https://aws-uswest2-binder.pangeo.io)
+
+### 3. Launch our Environment
+Now that we have our authentication set up, we can access our content!
+
+Use the following link to launch into the binder:
+- [Binder Link](https://aws-uswest2-binder.pangeo.io/v2/gh/openradar/erad2022/main?labpath=notebooks)
+
+If you are having issues with that (ex. it is taking a long time), try using the following link:
+```
+https://hub.aws-uswest2-binder.pangeo.io/user/{your_github_username}/lab
+```
+Where you replace `{your_github_username}` with your github username (ex. `mgrover1`)
+
+## Running notebooks
+
+If you finally succeeded with the above procedure you will have a JupyterLab instance up and running.
+Then you can select the notebooks as usual from the right navigation and simply run through them. 
+If you encounter any problems please [raise an issue here](https://github.com/openradar/erad2022/issues). 
