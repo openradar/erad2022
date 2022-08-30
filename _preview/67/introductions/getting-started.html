@@ -450,33 +450,28 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#make-sure-you-have-a-github-account">
-   1. Make Sure You Have a Github Account
+  <a class="reference internal nav-link" href="#about">
+   About
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#log-into-pangeo-binder">
-   2. Log into Pangeo Binder
+  <a class="reference internal nav-link" href="#customizing">
+   Customizing
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#launch-our-environment">
-   3. Launch our Environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#description-of-the-build-workflow">
-   Description of the build workflow
+  <a class="reference internal nav-link" href="#build-workflow">
+   Build workflow
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-on-github-on-pullrequest">
-     Build on GitHub on PullRequest
+    <a class="reference internal nav-link" href="#build-on-github-pullrequest">
+     Build on GitHub - PullRequest
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#build-on-github-on-push">
-     Build on GitHub on Push
+    <a class="reference internal nav-link" href="#build-on-github-push">
+     Build on GitHub - Push
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -490,11 +485,43 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#health-check">
+     Health check
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#conclusion">
      Conclusion
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-pangeo-cloud-with-binder">
+   Using the PANGEO Cloud with Binder
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-sure-you-have-a-github-account">
+     1. Make Sure You Have a Github Account
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-into-pangeo-binder">
+     2. Log into Pangeo Binder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#launch-our-environment">
+     3. Launch our Environment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-notebooks">
+   Running notebooks
+  </a>
  </li>
 </ul>
 
@@ -509,38 +536,21 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
-<div class="section" id="make-sure-you-have-a-github-account">
-<h2>1. Make Sure You Have a Github Account<a class="headerlink" href="#make-sure-you-have-a-github-account" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>The first step is to make sure you have a Github Account.</p>
-<p>Here is the link if you do have one already:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/join">Github account creation link</a></p></li>
-</ul>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>The repository was created from <a class="reference external" href="https://github.com/ProjectPythiaCookbooks/cookbook-template">a ProjectPythia cookbook template</a>.
+This template brings with it all machinery to enable full featured GitHub workflows, including building a docker image, running and rendering
+Jupyter Notebooks and compiling a website using Sphinx and the <a class="reference external" href="https://jupyterbook.org/intro.html">JupyterBook</a> theme,</p>
 </div>
-<div class="section" id="log-into-pangeo-binder">
-<h2>2. Log into Pangeo Binder<a class="headerlink" href="#log-into-pangeo-binder" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Next, sign in and authenticate the Pangeo Binder, which is the platform we will use for the workshop:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://aws-uswest2-binder.pangeo.io">Pangeo Binder Link</a></p></li>
-</ul>
+<div class="section" id="customizing">
+<h2>Customizing<a class="headerlink" href="#customizing" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>If there is a package missing for your use-case you can just add the package to <a class="reference external" href="https://github.com/openradar/erad2022/blob/main/binder/environment.yml">binder/environment.yml</a> and activate a new build (see below).
+Notebooks might be added to the <a class="reference external" href="https://github.com/openradar/erad2022/tree/main/notebooks">notebooks-folder</a>.</p>
 </div>
-<div class="section" id="launch-our-environment">
-<h2>3. Launch our Environment<a class="headerlink" href="#launch-our-environment" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Now that we have our authentication set up, we can access our content!</p>
-<p>Use the following link to launch into the binder:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://aws-uswest2-binder.pangeo.io/v2/gh/openradar/erad2022/main?labpath=notebooks">Binder Link</a></p></li>
-</ul>
-<p>If you are having issues with that (ex. it is taking a long time), try using the following link:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">hub</span><span class="o">.</span><span class="n">aws</span><span class="o">-</span><span class="n">uswest2</span><span class="o">-</span><span class="n">binder</span><span class="o">.</span><span class="n">pangeo</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="p">{</span><span class="n">your_github_username</span><span class="p">}</span><span class="o">/</span><span class="n">lab</span>
-</pre></div>
-</div>
-<p>Where you replace <code class="docutils literal notranslate"><span class="pre">{your_github_username}</span></code> with your github username (ex. <code class="docutils literal notranslate"><span class="pre">mgrover1</span></code>)</p>
-</div>
-<div class="section" id="description-of-the-build-workflow">
-<h2>Description of the build workflow<a class="headerlink" href="#description-of-the-build-workflow" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<div class="section" id="build-on-github-on-pullrequest">
-<h3>Build on GitHub on PullRequest<a class="headerlink" href="#build-on-github-on-pullrequest" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="section" id="build-workflow">
+<h2>Build workflow<a class="headerlink" href="#build-workflow" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="section" id="build-on-github-pullrequest">
+<h3>Build on GitHub - PullRequest<a class="headerlink" href="#build-on-github-pullrequest" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <ol class="simple">
 <li><p><a class="reference external" href="https://github.com/jupyterhub/repo2docker-action">repo2docker-action</a> is used to build the docker image</p>
 <ul class="simple">
@@ -552,8 +562,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>book is deployed to gh-pages, link is added to pr comment</p></li>
 </ol>
 </div>
-<div class="section" id="build-on-github-on-push">
-<h3>Build on GitHub on Push<a class="headerlink" href="#build-on-github-on-push" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<div class="section" id="build-on-github-push">
+<h3>Build on GitHub - Push<a class="headerlink" href="#build-on-github-push" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <ol class="simple">
 <li><p>repo2docker-action is used to build the docker image</p>
 <ul class="simple">
@@ -582,6 +592,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>This will fetch the docker image from ghcr and fire up a container running jupyterlab.</p>
 </div>
+<div class="section" id="health-check">
+<h3>Health check<a class="headerlink" href="#health-check" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>The complete build workflow is run as nightly build in GitHub CI to early detect problems.</p>
+</div>
 <div class="section" id="conclusion">
 <h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <ul class="simple">
@@ -592,6 +606,43 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Running locally as well as building &amp; running is easily possible.</p></li>
 </ul>
 </div>
+</div>
+<div class="section" id="using-the-pangeo-cloud-with-binder">
+<h2>Using the PANGEO Cloud with Binder<a class="headerlink" href="#using-the-pangeo-cloud-with-binder" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<div class="section" id="make-sure-you-have-a-github-account">
+<h3>1. Make Sure You Have a Github Account<a class="headerlink" href="#make-sure-you-have-a-github-account" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>The first step is to make sure you have a Github Account.</p>
+<p>Here is the link if you do have one already:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/join">Github account creation link</a></p></li>
+</ul>
+</div>
+<div class="section" id="log-into-pangeo-binder">
+<h3>2. Log into Pangeo Binder<a class="headerlink" href="#log-into-pangeo-binder" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>Next, sign in and authenticate the Pangeo Binder, which is the platform we will use for the workshop:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://aws-uswest2-binder.pangeo.io">Pangeo Binder Link</a></p></li>
+</ul>
+</div>
+<div class="section" id="launch-our-environment">
+<h3>3. Launch our Environment<a class="headerlink" href="#launch-our-environment" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>Now that we have our authentication set up, we can access our content!</p>
+<p>Use the following link to launch into the binder:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://aws-uswest2-binder.pangeo.io/v2/gh/openradar/erad2022/main?labpath=notebooks">Binder Link</a></p></li>
+</ul>
+<p>If you are having issues with that (ex. it is taking a long time), try using the following link:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">hub</span><span class="o">.</span><span class="n">aws</span><span class="o">-</span><span class="n">uswest2</span><span class="o">-</span><span class="n">binder</span><span class="o">.</span><span class="n">pangeo</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="p">{</span><span class="n">your_github_username</span><span class="p">}</span><span class="o">/</span><span class="n">lab</span>
+</pre></div>
+</div>
+<p>Where you replace <code class="docutils literal notranslate"><span class="pre">{your_github_username}</span></code> with your github username (ex. <code class="docutils literal notranslate"><span class="pre">mgrover1</span></code>)</p>
+</div>
+</div>
+<div class="section" id="running-notebooks">
+<h2>Running notebooks<a class="headerlink" href="#running-notebooks" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>If you finally succeeded with the above procedure you will have a JupyterLab instance up and running.
+Then you can select the notebooks as usual from the right navigation and simply run through them.
+If you encounter any problems please <a class="reference external" href="https://github.com/openradar/erad2022/issues">raise an issue here</a>.</p>
 </div>
 </div>
 
@@ -689,7 +740,7 @@ const thebe_selector_output = ".output, .cell_output"
         
           By The Open Radar Community.
         
-          Last updated on 29 August 2022.
+          Last updated on 30 August 2022.
         </p>
       </div>
     </div>
