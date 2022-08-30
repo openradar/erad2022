@@ -13,6 +13,8 @@ Notebooks might be added to the [notebooks-folder](https://github.com/openradar/
 
 ## Build workflow
 
+We work on pre-building the environment and toolkit so you can deploy this on the platform of your choice! Making the Open Radar Science stack available across different environments is essential to ensure reproducibility. We take advantage of "containerization", which enables packaging all of these tools together so you can deploy it on the platform of your choice. In this case, we are deploying a software stack which includes a variety of different languages (ex. Python, C++, C) and deploy it on a cloud platform. We use Docker as our main containerization tool.
+
 ### Build on GitHub - PullRequest
 
 1. [repo2docker-action](https://github.com/jupyterhub/repo2docker-action) is used to build the docker image 
@@ -53,7 +55,12 @@ This will fetch the docker image from ghcr and fire up a container running jupyt
 
 ### Health check
 
-The complete build workflow is run as nightly build in GitHub CI to early detect problems.
+The complete build workflow is run as nightly build in GitHub CI to early detect problems. The Github action builds the environment, executes the notebooks, and checks the different links within the content. This ensures that the content is still executable, and we do not run into issues when building the environment or running the computational workflows.
+
+Running these health checks results in the following badge:
+[![nightly-build](https://github.com/openradar/erad2022/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/openradar/erad2022/actions/workflows/nightly-build.yaml)
+
+Which is included in our README, letting users know whether the content is still executable. If this workflow fails, it also notifies the developers of this repository that there is an issue.
 
 ### Conclusion
 
@@ -75,6 +82,8 @@ Here is the link if you do have one already:
 ### 2. Log into Pangeo Binder
 Next, sign in and authenticate the Pangeo Binder, which is the platform we will use for the workshop:
 - [Pangeo Binder Link](https://aws-uswest2-binder.pangeo.io)
+
+The JupyterHub instance we use for this course is relatively small in memory and compute power (~10 GB of memory, 2 CPU cores). For more information about all of the open computational resrouces available within the Pangeo community, check out the [Pangeo Cloud](https://pangeo.io/cloud.html) documentation.
 
 ### 3. Launch our Environment
 Now that we have our authentication set up, we can access our content!
