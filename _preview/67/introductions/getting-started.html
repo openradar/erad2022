@@ -540,7 +540,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>About<a class="headerlink" href="#about" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>The repository was created from <a class="reference external" href="https://github.com/ProjectPythiaCookbooks/cookbook-template">a ProjectPythia cookbook template</a>.
 This template brings with it all machinery to enable full featured GitHub workflows, including building a docker image, running and rendering
-Jupyter Notebooks and compiling a website using Sphinx and the <a class="reference external" href="https://jupyterbook.org/intro.html">JupyterBook</a> theme,</p>
+Jupyter Notebooks and compiling a website using Sphinx and the <a class="reference external" href="https://jupyterbook.org/intro.html">JupyterBook</a> theme.</p>
 </div>
 <div class="section" id="customizing">
 <h2>Customizing<a class="headerlink" href="#customizing" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
@@ -555,7 +555,7 @@ Notebooks might be added to the <a class="reference external" href="https://gith
 <ol class="simple">
 <li><p><a class="reference external" href="https://github.com/jupyterhub/repo2docker-action">repo2docker-action</a> is used to build the docker image</p>
 <ul class="simple">
-<li><p>docker layers will be cached from ghcr.io (https://github.com/openradar/erad2022/pkgs/container/erad2022)</p></li>
+<li><p>docker layers will be cached from <a class="reference external" href="https://github.com/openradar/erad2022/pkgs/container/erad2022">ghcr.io</a></p></li>
 <li><p>image is not pushed, since GITHUB_TOKEN <code class="docutils literal notranslate"><span class="pre">write</span></code> is not available as per security policy</p></li>
 </ul>
 </li>
@@ -568,12 +568,12 @@ Notebooks might be added to the <a class="reference external" href="https://gith
 <ol class="simple">
 <li><p>repo2docker-action is used to build the docker image</p>
 <ul class="simple">
-<li><p>docker layers will be cached from ghcr.io (https://github.com/openradar/erad2022/pkgs/container/erad2022)</p></li>
-<li><p>image is pushed to ghcr.io (https://github.com/openradar/erad2022/pkgs/container/erad2022)</p></li>
+<li><p>docker layers will be cached from <a class="reference external" href="https://github.com/openradar/erad2022/pkgs/container/erad2022">ghcr.io</a></p></li>
+<li><p>image is pushed to <a class="reference external" href="https://github.com/openradar/erad2022/pkgs/container/erad2022">ghcr.io</a></p></li>
 </ul>
 </li>
-<li><p>book is built in a second job directly inside ghcr.io (https://github.com/openradar/erad2022/pkgs/container/erad2022), zipped and uploaded as artifact</p></li>
-<li><p>book is deployed to gh-pages https://openradarscience.org/erad2022/</p></li>
+<li><p>book is built in a second job directly inside <a class="reference external" href="https://github.com/openradar/erad2022/pkgs/container/erad2022">ghcr.io</a>, zipped and uploaded as artifact</p></li>
+<li><p>book is deployed to <a class="reference external" href="https://openradarscience.org/erad2022/">gh-pages</a></p></li>
 </ol>
 <p>Depending on the changes in the repo the build times can be quite low as docker layer caching is facilitated.</p>
 </div>
@@ -604,9 +604,9 @@ Notebooks might be added to the <a class="reference external" href="https://gith
 <h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <ul class="simple">
 <li><p>Docker images are built using GHA with all essential components inside (and pushed to ghcr.io on push)</p></li>
-<li><p>On binder we are using now our prebuild images on ghcr.io https://github.com/openradar/erad2022/pkgs/container/erad2022. As we are using <code class="docutils literal notranslate"><span class="pre">appendix</span></code> instead of <code class="docutils literal notranslate"><span class="pre">postBuild</span></code> no compilations are necessary on the binder side, the images is used as is with some minor adaptions by binder.</p></li>
+<li><p>On binder we are using now our prebuild images on <a class="reference external" href="https://github.com/openradar/erad2022/pkgs/container/erad2022">ghcr.io</a>. As we are using <code class="docutils literal notranslate"><span class="pre">appendix</span></code> instead of <code class="docutils literal notranslate"><span class="pre">postBuild</span></code> no compilations are necessary on the binder side, the images is used as is with some minor adaptions by binder.</p></li>
 <li><p>On GHA we are using our prebuild images as layer cache, but layers can’t be updated on pull requests due to security reasons.</p></li>
-<li><p>The erad2022 package on https://ghcr.io/openradar/erad2022:latest represents always the status of the most recent commit to the repo.</p></li>
+<li><p>The erad2022 package on <a class="reference external" href="https://ghcr.io/openradar/erad2022:latest">ghcr.io</a> represents always the status of the most recent commit to the repo.</p></li>
 <li><p>Running locally as well as building &amp; running is easily possible.</p></li>
 </ul>
 </div>

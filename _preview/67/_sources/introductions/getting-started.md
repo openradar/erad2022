@@ -4,7 +4,7 @@
 
 The repository was created from [a ProjectPythia cookbook template](https://github.com/ProjectPythiaCookbooks/cookbook-template).
 This template brings with it all machinery to enable full featured GitHub workflows, including building a docker image, running and rendering
-Jupyter Notebooks and compiling a website using Sphinx and the [JupyterBook](https://jupyterbook.org/intro.html) theme,
+Jupyter Notebooks and compiling a website using Sphinx and the [JupyterBook](https://jupyterbook.org/intro.html) theme.
 
 ## Customizing
 
@@ -18,7 +18,7 @@ We work on pre-building the environment and toolkit so you can deploy this on th
 ### Build on GitHub - PullRequest
 
 1. [repo2docker-action](https://github.com/jupyterhub/repo2docker-action) is used to build the docker image 
-    - docker layers will be cached from ghcr.io (https://github.com/openradar/erad2022/pkgs/container/erad2022)
+    - docker layers will be cached from [ghcr.io](https://github.com/openradar/erad2022/pkgs/container/erad2022)
     - image is not pushed, since GITHUB_TOKEN `write` is not available as per security policy
 1. book is built in a second step using [docker-run-action](https://github.com/addnab/docker-run-action), zipped and uploaded as artifact
 1. book is deployed to gh-pages, link is added to pr comment
@@ -26,10 +26,10 @@ We work on pre-building the environment and toolkit so you can deploy this on th
 ### Build on GitHub - Push
 
 1. repo2docker-action is used to build the docker image 
-    - docker layers will be cached from ghcr.io (https://github.com/openradar/erad2022/pkgs/container/erad2022)
-    - image is pushed to ghcr.io (https://github.com/openradar/erad2022/pkgs/container/erad2022)
-1. book is built in a second job directly inside ghcr.io (https://github.com/openradar/erad2022/pkgs/container/erad2022), zipped and uploaded as artifact  
-1. book is deployed to gh-pages https://openradarscience.org/erad2022/  
+    - docker layers will be cached from [ghcr.io](https://github.com/openradar/erad2022/pkgs/container/erad2022)
+    - image is pushed to [ghcr.io](https://github.com/openradar/erad2022/pkgs/container/erad2022)
+1. book is built in a second job directly inside [ghcr.io](https://github.com/openradar/erad2022/pkgs/container/erad2022), zipped and uploaded as artifact  
+1. book is deployed to [gh-pages](https://openradarscience.org/erad2022/)  
 
 Depending on the changes in the repo the build times can be quite low as docker layer caching is facilitated. 
 
@@ -65,9 +65,9 @@ Which is included in our README, letting users know whether the content is still
 ### Conclusion
 
 - Docker images are built using GHA with all essential components inside (and pushed to ghcr.io on push)
-- On binder we are using now our prebuild images on ghcr.io https://github.com/openradar/erad2022/pkgs/container/erad2022. As we are using `appendix` instead of `postBuild` no compilations are necessary on the binder side, the images is used as is with some minor adaptions by binder.
+- On binder we are using now our prebuild images on [ghcr.io](https://github.com/openradar/erad2022/pkgs/container/erad2022). As we are using `appendix` instead of `postBuild` no compilations are necessary on the binder side, the images is used as is with some minor adaptions by binder.
 - On GHA we are using our prebuild images as layer cache, but layers can't be updated on pull requests due to security reasons.
-- The erad2022 package on https://ghcr.io/openradar/erad2022:latest represents always the status of the most recent commit to the repo.
+- The erad2022 package on [ghcr.io](https://ghcr.io/openradar/erad2022:latest) represents always the status of the most recent commit to the repo.
 - Running locally as well as building & running is easily possible.
 
 
