@@ -450,18 +450,77 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#make-sure-you-have-a-github-account">
-   1. Make Sure You Have a Github Account
+  <a class="reference internal nav-link" href="#about">
+   About
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#log-into-pangeo-binder">
-   2. Log into Pangeo Binder
+  <a class="reference internal nav-link" href="#customizing">
+   Customizing
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#launch-our-environment">
-   3. Launch our Environment
+  <a class="reference internal nav-link" href="#build-workflow">
+   Build workflow
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-on-github-pullrequest">
+     Build on GitHub - PullRequest
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-on-github-push">
+     Build on GitHub - Push
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-run-locally">
+     Build &amp; run locally
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-locally">
+     Run locally
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#health-check">
+     Health check
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusion">
+     Conclusion
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-the-pangeo-cloud-with-binder">
+   Using the PANGEO Cloud with Binder
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-sure-you-have-a-github-account">
+     1. Make Sure You Have a Github Account
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-into-pangeo-binder">
+     2. Log into Pangeo Binder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#launch-our-environment">
+     3. Launch our Environment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-notebooks">
+   Running notebooks
   </a>
  </li>
 </ul>
@@ -477,8 +536,85 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>The repository was created from <a class="reference external" href="https://github.com/ProjectPythiaCookbooks/cookbook-template">a ProjectPythia cookbook template</a>.
+This template brings with it all machinery to enable full featured GitHub workflows, including building a docker image, running and rendering
+Jupyter Notebooks and compiling a website using Sphinx and the <a class="reference external" href="https://jupyterbook.org/intro.html">JupyterBook</a> theme.</p>
+</div>
+<div class="section" id="customizing">
+<h2>Customizing<a class="headerlink" href="#customizing" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>If there is a package missing for your use-case you can just add the package to <a class="reference external" href="https://github.com/openradar/erad2022/blob/main/binder/environment.yml">binder/environment.yml</a> and activate a new build (see below).
+Notebooks might be added to the <a class="reference external" href="https://github.com/openradar/erad2022/tree/main/notebooks">notebooks-folder</a>.</p>
+</div>
+<div class="section" id="build-workflow">
+<h2>Build workflow<a class="headerlink" href="#build-workflow" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>We work on pre-building the environment and toolkit so you can deploy this on the platform of your choice! Making the Open Radar Science stack available across different environments is essential to ensure reproducibility. We take advantage of “containerization”, which enables packaging all of these tools together so you can deploy it on the platform of your choice. In this case, we are deploying a software stack which includes a variety of different languages (ex. Python, C++, C) and deploy it on a cloud platform. We use Docker as our main containerization tool.</p>
+<div class="section" id="build-on-github-pullrequest">
+<h3>Build on GitHub - PullRequest<a class="headerlink" href="#build-on-github-pullrequest" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<ol class="simple">
+<li><p><a class="reference external" href="https://github.com/jupyterhub/repo2docker-action">repo2docker-action</a> is used to build the docker image</p>
+<ul class="simple">
+<li><p>docker layers will be cached from <a class="reference external" href="https://github.com/openradar/erad2022/pkgs/container/erad2022">ghcr.io</a></p></li>
+<li><p>image is not pushed, since GITHUB_TOKEN <code class="docutils literal notranslate"><span class="pre">write</span></code> is not available as per security policy</p></li>
+</ul>
+</li>
+<li><p>book is built in a second step using <a class="reference external" href="https://github.com/addnab/docker-run-action">docker-run-action</a>, zipped and uploaded as artifact</p></li>
+<li><p>book is deployed to gh-pages, link is added to pr comment</p></li>
+</ol>
+</div>
+<div class="section" id="build-on-github-push">
+<h3>Build on GitHub - Push<a class="headerlink" href="#build-on-github-push" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<ol class="simple">
+<li><p>repo2docker-action is used to build the docker image</p>
+<ul class="simple">
+<li><p>docker layers will be cached from <a class="reference external" href="https://github.com/openradar/erad2022/pkgs/container/erad2022">ghcr.io</a></p></li>
+<li><p>image is pushed to <a class="reference external" href="https://github.com/openradar/erad2022/pkgs/container/erad2022">ghcr.io</a></p></li>
+</ul>
+</li>
+<li><p>book is built in a second job directly inside <a class="reference external" href="https://github.com/openradar/erad2022/pkgs/container/erad2022">ghcr.io</a>, zipped and uploaded as artifact</p></li>
+<li><p>book is deployed to <a class="reference external" href="https://openradarscience.org/erad2022/">gh-pages</a></p></li>
+</ol>
+<p>Depending on the changes in the repo the build times can be quite low as docker layer caching is facilitated.</p>
+</div>
+<div class="section" id="build-run-locally">
+<h3>Build &amp; run locally<a class="headerlink" href="#build-run-locally" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>If you want to build and run locally using <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> you would need to remove (temporarily) the <code class="docutils literal notranslate"><span class="pre">binder/Dockerfile</span></code>. Then you would need to invoke the build with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ repo2docker --appendix &quot;`cat binder/appendix.txt`&quot; .
+</pre></div>
+</div>
+<p>This will build the docker image locally and fire up a container running jupyterlab.</p>
+</div>
+<div class="section" id="run-locally">
+<h3>Run locally<a class="headerlink" href="#run-locally" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>If you want to just run locally using <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> you will just use the provided <code class="docutils literal notranslate"><span class="pre">binder/Dockerfile</span></code>. Then you would need to invoke the run with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ repo2docker .
+</pre></div>
+</div>
+<p>This will fetch the docker image from ghcr and fire up a container running jupyterlab.</p>
+</div>
+<div class="section" id="health-check">
+<h3>Health check<a class="headerlink" href="#health-check" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>The complete build workflow is run as nightly build in GitHub CI to early detect problems. The Github action builds the environment, executes the notebooks, and checks the different links within the content. This ensures that the content is still executable, and we do not run into issues when building the environment or running the computational workflows.</p>
+<p>Running these health checks results in the following badge:
+<a class="reference external" href="https://github.com/openradar/erad2022/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="https://github.com/openradar/erad2022/actions/workflows/nightly-build.yaml/badge.svg" /></a></p>
+<p>Which is included in our README, letting users know whether the content is still executable. If this workflow fails, it also notifies the developers of this repository that there is an issue.</p>
+</div>
+<div class="section" id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<ul class="simple">
+<li><p>Docker images are built using GHA with all essential components inside (and pushed to ghcr.io on push)</p></li>
+<li><p>On binder we are using now our prebuild images on <a class="reference external" href="https://github.com/openradar/erad2022/pkgs/container/erad2022">ghcr.io</a>. As we are using <code class="docutils literal notranslate"><span class="pre">appendix</span></code> instead of <code class="docutils literal notranslate"><span class="pre">postBuild</span></code> no compilations are necessary on the binder side, the images is used as is with some minor adaptions by binder.</p></li>
+<li><p>On GHA we are using our prebuild images as layer cache, but layers can’t be updated on pull requests due to security reasons.</p></li>
+<li><p>The erad2022 package on <a class="reference external" href="https://ghcr.io/openradar/erad2022:latest">ghcr.io</a> represents always the status of the most recent commit to the repo.</p></li>
+<li><p>Running locally as well as building &amp; running is easily possible.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="using-the-pangeo-cloud-with-binder">
+<h2>Using the PANGEO Cloud with Binder<a class="headerlink" href="#using-the-pangeo-cloud-with-binder" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <div class="section" id="make-sure-you-have-a-github-account">
-<h2>1. Make Sure You Have a Github Account<a class="headerlink" href="#make-sure-you-have-a-github-account" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<h3>1. Make Sure You Have a Github Account<a class="headerlink" href="#make-sure-you-have-a-github-account" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <p>The first step is to make sure you have a Github Account.</p>
 <p>Here is the link if you do have one already:</p>
 <ul class="simple">
@@ -486,14 +622,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="log-into-pangeo-binder">
-<h2>2. Log into Pangeo Binder<a class="headerlink" href="#log-into-pangeo-binder" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<h3>2. Log into Pangeo Binder<a class="headerlink" href="#log-into-pangeo-binder" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <p>Next, sign in and authenticate the Pangeo Binder, which is the platform we will use for the workshop:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://aws-uswest2-binder.pangeo.io">Pangeo Binder Link</a></p></li>
 </ul>
+<p>The JupyterHub instance we use for this course is relatively small in memory and compute power (~10 GB of memory, 2 CPU cores). For more information about all of the open computational resrouces available within the Pangeo community, check out the <a class="reference external" href="https://pangeo.io/cloud.html">Pangeo Cloud</a> documentation.</p>
 </div>
 <div class="section" id="launch-our-environment">
-<h2>3. Launch our Environment<a class="headerlink" href="#launch-our-environment" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<h3>3. Launch our Environment<a class="headerlink" href="#launch-our-environment" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <p>Now that we have our authentication set up, we can access our content!</p>
 <p>Use the following link to launch into the binder:</p>
 <ul class="simple">
@@ -504,6 +641,13 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <p>Where you replace <code class="docutils literal notranslate"><span class="pre">{your_github_username}</span></code> with your github username (ex. <code class="docutils literal notranslate"><span class="pre">mgrover1</span></code>)</p>
+</div>
+</div>
+<div class="section" id="running-notebooks">
+<h2>Running notebooks<a class="headerlink" href="#running-notebooks" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>If you finally succeeded with the above procedure you will have a JupyterLab instance up and running.
+Then you can select the notebooks as usual from the right navigation and simply run through them.
+If you encounter any problems please <a class="reference external" href="https://github.com/openradar/erad2022/issues">raise an issue here</a>.</p>
 </div>
 </div>
 
@@ -601,7 +745,7 @@ const thebe_selector_output = ".output, .cell_output"
         
           By The Open Radar Community.
         
-          Last updated on 29 August 2022.
+          Last updated on 30 August 2022.
         </p>
       </div>
     </div>
