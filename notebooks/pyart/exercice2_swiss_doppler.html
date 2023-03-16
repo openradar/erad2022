@@ -26,9 +26,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -42,7 +42,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Exercice" href="question_pyart_meteoswiss.html" />
@@ -560,7 +558,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/exercice2_swiss_doppler_5_0.png" src="../../_images/exercice2_swiss_doppler_5_0.png" />
+<img alt="../../_images/435390ce27922afb3bfda199ad1abf1ab0671e1bde5d7b5b53ebc4e9352e64a8.png" src="../../_images/435390ce27922afb3bfda199ad1abf1ab0671e1bde5d7b5b53ebc4e9352e64a8.png" />
 </div>
 </div>
 <p>Indeed the raw velocity shows alternating bands of negative and positive velocities which indicates aliasing. The dealiased velocity looks much less discontinuous. Note however that a major difficulty for these algorithms is the presence of isolated pixels, which tend to get arbitrary values as can be seen in the south of the radar.</p>
@@ -617,7 +615,7 @@ const thebe_selector_output = ".output, .cell_output"
   warnings.warn(f&#39;Downloading: {url}&#39;, DownloadWarning)
 </pre></div>
 </div>
-<img alt="../../_images/exercice2_swiss_doppler_10_1.png" src="../../_images/exercice2_swiss_doppler_10_1.png" />
+<img alt="../../_images/e4689fa5bfdf6a42d769c6bca0e36b34d0d1b4308e457e5fc7bbe9187b5f8203.png" src="../../_images/e4689fa5bfdf6a42d769c6bca0e36b34d0d1b4308e457e5fc7bbe9187b5f8203.png" />
 </div>
 </div>
 <p>We will now create a pseudo RHI (altitudinal cross-section through a set of PPIs) of the radial velocity and the reflectivity through the thunderstorm at azimuth 270° (to the west).</p>
@@ -635,14 +633,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/numpy/core/fromnumeric.py:758: UserWarning: Warning: &#39;partition&#39; will ignore the &#39;mask&#39; of the MaskedArray.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/numpy/core/fromnumeric.py:784: UserWarning: Warning: &#39;partition&#39; will ignore the &#39;mask&#39; of the MaskedArray.
   a.partition(kth, axis=axis, kind=kind, order=order)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 100.0)
 </pre></div>
 </div>
-<img alt="../../_images/exercice2_swiss_doppler_12_2.png" src="../../_images/exercice2_swiss_doppler_12_2.png" />
+<img alt="../../_images/4b35b030ed75abc7c4cad29db536c04aa3fd4ed5983d6d5bcd6dc581b3ff99da.png" src="../../_images/4b35b030ed75abc7c4cad29db536c04aa3fd4ed5983d6d5bcd6dc581b3ff99da.png" />
 </div>
 </div>
 <p>The convention at MeteoSwiss (which is different from the one used by Py-ART) is that positive velocities are moving away from the radar. In this example we see clearly the downdraft in the center of storm and the updraft in its surroundings.</p>
@@ -676,31 +674,33 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/retrieve/vad.py:340: RuntimeWarning: Mean of empty slice
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/pyart/retrieve/vad.py:336: RuntimeWarning: Mean of empty slice
   mean_velocity_per_gate = np.nanmean(velocities, axis=0).reshape(1, -1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 9929.0  meters
 min height 10.0  meters
-max height 11404.0  meters
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 11404.0  meters
 min height 15.0  meters
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 12673.0  meters
+max height 12673.0  meters
 min height 19.0  meters
-max height 17022.0  meters
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 17022.0  meters
 min height 24.0  meters
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 16949.0  meters
+max height 16949.0  meters
 min height 28.0  meters
-max height 16599.0  meters
-min height 32.0  meters
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 17070.0  meters
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 16599.0  meters
+min height 32.0  meters
+max height 17070.0  meters
 min height 37.0  meters
-max height 17028.0  meters
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max height 17028.0  meters
 min height 41.0  meters
 max height 16966.0  meters
 min height 47.0  meters
@@ -746,7 +746,7 @@ min height 160.0  meters
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Wind profile obtained from VAD&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/exercice2_swiss_doppler_18_1.png" src="../../_images/exercice2_swiss_doppler_18_1.png" />
+<img alt="../../_images/7ee368fef721b3b3823812a9d903cae64d38578999a91ed32f51d9644b265fb3.png" src="../../_images/7ee368fef721b3b3823812a9d903cae64d38578999a91ed32f51d9644b265fb3.png" />
 </div>
 </div>
 <p>Now let’s compare this wind profile with the one recorded by the nearest radiosounding operated in Payerne (around 130 km west from the radar):</p>
@@ -767,7 +767,7 @@ min height 160.0  meters
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks/pyart"
         },
         predefinedOutput: true
@@ -849,7 +849,7 @@ min height 160.0  meters
         
           By The Open Radar Community.
         
-          Last updated on 21 November 2022.
+          Last updated on 16 March 2023.
         </p>
       </div>
     </div>

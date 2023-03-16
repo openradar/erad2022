@@ -26,9 +26,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -42,7 +42,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="In this notebook, an ODIM_H5 file is read using BALTRAD. Then the rain rate is determined from the calculated specific attenuation using Py-ART." href="../pyart2baltrad/baltrad_pyart_rain_rate_example.html" />
@@ -558,7 +556,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p><strong>BALTRAD will not create output files if these already exist.</strong> You can check that via <code class="docutils literal notranslate"><span class="pre">!ls</span> <span class="pre">out</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>odc_toolbox -i <span class="k">in</span> -o out -q ropo,radvol-att
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>odc_toolbox<span class="w"> </span>-i<span class="w"> </span><span class="k">in</span><span class="w"> </span>-o<span class="w"> </span>out<span class="w"> </span>-q<span class="w"> </span>ropo,radvol-att
 </pre></div>
 </div>
 </div>
@@ -601,14 +599,14 @@ const thebe_selector_output = ".output, .cell_output"
   if __name__ is &quot;__main__&quot;:
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7f0c8e5ee940&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7fbaa3e7d940&gt;
 Traceback (most recent call last):
   File &quot;/srv/conda/envs/notebook/lib/python3.9/logging/__init__.py&quot;, line 255, in _after_at_fork_child_reinit_locks
     handler._at_fork_reinit()
   File &quot;/srv/conda/envs/notebook/lib/python3.9/logging/__init__.py&quot;, line 894, in _at_fork_reinit
     self.lock._at_fork_reinit()
 AttributeError: &#39;RLock&#39; object has no attribute &#39;_at_fork_reinit&#39;
-Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7f0c8e5ee940&gt;
+Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7fbaa3e7d940&gt;
 Traceback (most recent call last):
   File &quot;/srv/conda/envs/notebook/lib/python3.9/logging/__init__.py&quot;, line 255, in _after_at_fork_child_reinit_locks
     handler._at_fork_reinit()
@@ -626,7 +624,7 @@ Objects pending: 0
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls out
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>out
 </pre></div>
 </div>
 </div>
@@ -707,7 +705,7 @@ Objects pending: 0
 
 <span class="c1"># A little helper funciton to harmonize all plots</span>
 <span class="k">def</span> <span class="nf">plot_ppi_to_ax</span><span class="p">(</span><span class="n">ppi</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">cb</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cb_label</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">cb_shrink</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;This is the function that we use in this exercise to plot PPIs with uniform georeferencing and style.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is the function that we use in this exercise to plot PPIs with uniform georeferencing and style.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Read, project and plot country shapefile as background</span>
     <span class="n">sf</span><span class="o">.</span><span class="n">geo</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;lightgrey&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
@@ -797,7 +795,7 @@ Objects pending: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/baltrad2wradlib_18_0.png" src="../../_images/baltrad2wradlib_18_0.png" />
+<img alt="../../_images/225d64d49d79c6ac6575185ef33c8dbc8065f202aabb49574a79e805b80fc37e.png" src="../../_images/225d64d49d79c6ac6575185ef33c8dbc8065f202aabb49574a79e805b80fc37e.png" />
 </div>
 </div>
 </div>
@@ -824,7 +822,7 @@ Objects pending: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/baltrad2wradlib_20_0.png" src="../../_images/baltrad2wradlib_20_0.png" />
+<img alt="../../_images/42db0efd8ae5d703ca7f004759a0309579dd4d4a9de4c3cfebc8c074afed7ff9.png" src="../../_images/42db0efd8ae5d703ca7f004759a0309579dd4d4a9de4c3cfebc8c074afed7ff9.png" />
 </div>
 </div>
 </div>
@@ -849,6 +847,8 @@ Objects pending: 0
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/wradlib/trafo.py:261: RuntimeWarning: overflow encountered in power
   return 10.0 ** (x / 10.0)
+/srv/conda/envs/notebook/lib/python3.9/site-packages/wradlib/atten.py:521: RuntimeWarning: overflow encountered in cast
+  pia[beams2correct] = sub_pia
 </pre></div>
 </div>
 </div>
@@ -879,7 +879,7 @@ Objects pending: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/baltrad2wradlib_24_0.png" src="../../_images/baltrad2wradlib_24_0.png" />
+<img alt="../../_images/e1657a96ce8bf49647c681fc5c9b74e6aa38ece192b906c56e719e30308b02f1.png" src="../../_images/e1657a96ce8bf49647c681fc5c9b74e6aa38ece192b906c56e719e30308b02f1.png" />
 </div>
 </div>
 </div>
@@ -897,7 +897,7 @@ Objects pending: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/baltrad2wradlib_26_0.png" src="../../_images/baltrad2wradlib_26_0.png" />
+<img alt="../../_images/525abcd67218fdb35d98da5690e7b732943e8e0ead84996a2526b4fbe37e1bf8.png" src="../../_images/525abcd67218fdb35d98da5690e7b732943e8e0ead84996a2526b4fbe37e1bf8.png" />
 </div>
 </div>
 </div>
@@ -915,7 +915,7 @@ Objects pending: 0
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks/baltrad2wradlib"
         },
         predefinedOutput: true
@@ -997,7 +997,7 @@ Objects pending: 0
         
           By The Open Radar Community.
         
-          Last updated on 21 November 2022.
+          Last updated on 16 March 2023.
         </p>
       </div>
     </div>
