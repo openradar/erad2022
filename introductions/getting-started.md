@@ -8,13 +8,13 @@ Here is the link if you do have one already:
 
 ## 2. Log into Pangeo Binder
 Next, sign in and authenticate the Pangeo Binder, which is the platform we will use for the workshop:
-- [Pangeo Binder Link](https://aws-uswest2-binder.pangeo.io)
+- [Pythia Binder Link](http://binder.mypythia.org)
 
 ## 3. Launch our Environment
 Now that we have our authentication set up, we can access our content!
 
 Use the following link to launch into the binder:
-- [Binder Link](https://aws-uswest2-binder.pangeo.io/v2/gh/openradar/erad2022/main?labpath=notebooks)
+- [Binder Link](http://binder.mypythia.org/v2/gh/openradar/erad2022/main?labpath=notebooks)
 
 If you are having issues with that (ex. it is taking a long time), try using the following link:
 ```
