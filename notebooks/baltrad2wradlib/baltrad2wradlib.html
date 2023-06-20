@@ -599,14 +599,14 @@ const thebe_selector_output = ".output, .cell_output"
   if __name__ is &quot;__main__&quot;:
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7fd837fc6940&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7f01acc50940&gt;
 Traceback (most recent call last):
   File &quot;/srv/conda/envs/notebook/lib/python3.9/logging/__init__.py&quot;, line 255, in _after_at_fork_child_reinit_locks
-Exception ignored in:     handler._at_fork_reinit()
+    handler._at_fork_reinit()
   File &quot;/srv/conda/envs/notebook/lib/python3.9/logging/__init__.py&quot;, line 894, in _at_fork_reinit
     self.lock._at_fork_reinit()
 AttributeError: &#39;RLock&#39; object has no attribute &#39;_at_fork_reinit&#39;
-&lt;function _after_at_fork_child_reinit_locks at 0x7fd837fc6940&gt;
+Exception ignored in: &lt;function _after_at_fork_child_reinit_locks at 0x7f01acc50940&gt;
 Traceback (most recent call last):
   File &quot;/srv/conda/envs/notebook/lib/python3.9/logging/__init__.py&quot;, line 255, in _after_at_fork_child_reinit_locks
     handler._at_fork_reinit()
@@ -651,6 +651,92 @@ Objects pending: 0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/backends/plugins.py:43: RuntimeWarning: Found 2 entrypoints for the engine name cfradial1:
+ [&#39;xradar.io.backends&#39;, &#39;wradlib.io.backends&#39;].
+ The entrypoint xradar.io.backends will be used.
+  warnings.warn(
+/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/backends/plugins.py:43: RuntimeWarning: Found 2 entrypoints for the engine name furuno:
+ [&#39;wradlib.io.backends&#39;, &#39;xradar.io.backends&#39;].
+ The entrypoint wradlib.io.backends will be used.
+  warnings.warn(
+/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/backends/plugins.py:43: RuntimeWarning: Found 2 entrypoints for the engine name gamic:
+ [&#39;xradar.io.backends&#39;, &#39;wradlib.io.backends&#39;].
+ The entrypoint xradar.io.backends will be used.
+  warnings.warn(
+/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/backends/plugins.py:43: RuntimeWarning: Found 2 entrypoints for the engine name iris:
+ [&#39;wradlib.io.backends&#39;, &#39;xradar.io.backends&#39;].
+ The entrypoint wradlib.io.backends will be used.
+  warnings.warn(
+/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/backends/plugins.py:43: RuntimeWarning: Found 2 entrypoints for the engine name odim:
+ [&#39;xradar.io.backends&#39;, &#39;wradlib.io.backends&#39;].
+ The entrypoint xradar.io.backends will be used.
+  warnings.warn(
+/srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/backends/plugins.py:43: RuntimeWarning: Found 2 entrypoints for the engine name rainbow:
+ [&#39;xradar.io.backends&#39;, &#39;wradlib.io.backends&#39;].
+ The entrypoint xradar.io.backends will be used.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">inp</span> <span class="o">=</span> <span class="n">wradlib</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">open_odim_dataset</span><span class="p">(</span><span class="s2">&quot;in/201405190715_SUR.h5&quot;</span><span class="p">,</span> <span class="n">decode_cf</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">out</span> <span class="o">=</span> <span class="n">wradlib</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">open_odim_dataset</span><span class="p">(</span><span class="s2">&quot;out/201405190715_SUR.h5&quot;</span><span class="p">,</span> <span class="n">decode_cf</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/wradlib/io/hdf.py:88,</span> in <span class="ni">open_odim_dataset</span><span class="nt">(filename_or_obj, group, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span> <span class="n">raise_on_missing_xarray_backend</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">group</span>
+<span class="ne">---&gt; </span><span class="mi">88</span> <span class="k">return</span> <span class="n">open_radar_dataset</span><span class="p">(</span><span class="n">filename_or_obj</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;odim&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/wradlib/io/xarray.py:1718,</span> in <span class="ni">open_radar_dataset</span><span class="nt">(filename_or_obj, engine, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1714</span>     <span class="n">backend_kwargs</span><span class="p">[</span><span class="s2">&quot;keep_azimuth&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">keep_azimuth</span>
+<span class="g g-Whitespace">   </span><span class="mi">1716</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;backend_kwargs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">backend_kwargs</span>
+<span class="ne">-&gt; </span><span class="mi">1718</span> <span class="n">ds</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">   </span><span class="mi">1719</span>     <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">filename_or_obj</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">grp</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1720</span>     <span class="k">for</span> <span class="n">grp</span> <span class="ow">in</span> <span class="n">groups</span>
+<span class="g g-Whitespace">   </span><span class="mi">1721</span> <span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1723</span> <span class="c1"># cfradial1 backend always returns single group or root-object,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1724</span> <span class="c1"># from above we get back root-object in any case</span>
+<span class="g g-Whitespace">   </span><span class="mi">1725</span> <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;cfradial1&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/wradlib/io/xarray.py:1719,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1714</span>     <span class="n">backend_kwargs</span><span class="p">[</span><span class="s2">&quot;keep_azimuth&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">keep_azimuth</span>
+<span class="g g-Whitespace">   </span><span class="mi">1716</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;backend_kwargs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">backend_kwargs</span>
+<span class="g g-Whitespace">   </span><span class="mi">1718</span> <span class="n">ds</span> <span class="o">=</span> <span class="p">[</span>
+<span class="ne">-&gt; </span><span class="mi">1719</span>     <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">filename_or_obj</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">grp</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1720</span>     <span class="k">for</span> <span class="n">grp</span> <span class="ow">in</span> <span class="n">groups</span>
+<span class="g g-Whitespace">   </span><span class="mi">1721</span> <span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1723</span> <span class="c1"># cfradial1 backend always returns single group or root-object,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1724</span> <span class="c1"># from above we get back root-object in any case</span>
+<span class="g g-Whitespace">   </span><span class="mi">1725</span> <span class="k">if</span> <span class="n">engine</span> <span class="o">==</span> <span class="s2">&quot;cfradial1&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.9/site-packages/xarray/backends/api.py:566,</span> in <span class="ni">open_dataset</span><span class="nt">(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, chunked_array_type, from_array_kwargs, backend_kwargs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span> <span class="n">decoders</span> <span class="o">=</span> <span class="n">_resolve_decoders_kwargs</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">555</span>     <span class="n">decode_cf</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span>     <span class="n">open_backend_dataset_parameters</span><span class="o">=</span><span class="n">backend</span><span class="o">.</span><span class="n">open_dataset_parameters</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">562</span>     <span class="n">decode_coords</span><span class="o">=</span><span class="n">decode_coords</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">563</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">565</span> <span class="n">overwrite_encoded_chunks</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;overwrite_encoded_chunks&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">566</span> <span class="n">backend_ds</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">567</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">568</span>     <span class="n">drop_variables</span><span class="o">=</span><span class="n">drop_variables</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">569</span>     <span class="o">**</span><span class="n">decoders</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">570</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">571</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">572</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">_dataset_from_backend_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span>     <span class="n">backend_ds</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">584</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">585</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">586</span> <span class="k">return</span> <span class="n">ds</span>
+
+<span class="ne">TypeError</span>: open_dataset() got an unexpected keyword argument &#39;keep_azimuth&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="fix-some-odim-h5-inconsistencies">
 <h3>fix some ODIM_H5 inconsistencies<a class="headerlink" href="#fix-some-odim-h5-inconsistencies" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
@@ -675,6 +761,18 @@ Objects pending: 0
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">swp_in</span> <span class="o">=</span> <span class="n">inp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ds</span> <span class="ow">in</span> <span class="n">swp_in</span><span class="o">.</span><span class="n">data_vars</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;rtime&quot;</span><span class="p">,</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;sweep_mode&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;altitude&quot;</span><span class="p">]:</span>
+
+<span class="ne">NameError</span>: name &#39;inp&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -692,6 +790,19 @@ Objects pending: 0
 <span class="n">after</span> <span class="o">=</span> <span class="n">swp_out</span><span class="o">.</span><span class="n">DBZH</span>
 <span class="n">qual1</span> <span class="o">=</span> <span class="n">swp_out</span><span class="o">.</span><span class="n">quality1</span>
 <span class="n">qual2</span> <span class="o">=</span> <span class="n">swp_out</span><span class="o">.</span><span class="n">QIND</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">proj</span> <span class="o">=</span> <span class="n">wradlib</span><span class="o">.</span><span class="n">georef</span><span class="o">.</span><span class="n">epsg_to_osr</span><span class="p">(</span><span class="mi">4326</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">swp_in</span> <span class="o">=</span> <span class="n">swp_in</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">wradlib</span><span class="o">.</span><span class="n">georef</span><span class="o">.</span><span class="n">georeference_dataset</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># fix range in out file, since it&#39;s terribly broken</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">swp_out</span> <span class="o">=</span> <span class="n">swp_out</span><span class="o">.</span><span class="n">assign</span><span class="p">({</span><span class="s2">&quot;range&quot;</span><span class="p">:</span> <span class="n">swp_in</span><span class="o">.</span><span class="n">range</span><span class="p">})</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">wradlib</span><span class="o">.</span><span class="n">georef</span><span class="o">.</span><span class="n">georeference_dataset</span><span class="p">,</span> <span class="n">proj</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;swp_in&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -795,7 +906,19 @@ Objects pending: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/225d64d49d79c6ac6575185ef33c8dbc8065f202aabb49574a79e805b80fc37e.png" src="../../_images/225d64d49d79c6ac6575185ef33c8dbc8065f202aabb49574a79e805b80fc37e.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">(</span><span class="n">before</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">before</span><span class="o">&gt;-</span><span class="mi">10</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Before QC&quot;</span><span class="p">,</span> <span class="n">cb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">65</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">(</span><span class="n">after</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">after</span><span class="o">&gt;-</span><span class="mi">10</span><span class="p">),</span>  <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;After QC&quot;</span><span class="p">,</span>  <span class="n">cb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">65</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;before&#39; is not defined
+</pre></div>
+</div>
+<img alt="../../_images/febfea77e5ae50386940b1c45d957cb7cf16a260a47ed56a745bb687b56134f1.png" src="../../_images/febfea77e5ae50386940b1c45d957cb7cf16a260a47ed56a745bb687b56134f1.png" />
 </div>
 </div>
 </div>
@@ -822,7 +945,19 @@ Objects pending: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/42db0efd8ae5d703ca7f004759a0309579dd4d4a9de4c3cfebc8c074afed7ff9.png" src="../../_images/42db0efd8ae5d703ca7f004759a0309579dd4d4a9de4c3cfebc8c074afed7ff9.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">(</span><span class="n">swp_in</span><span class="o">.</span><span class="n">RHOHV</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">swp_in</span><span class="o">.</span><span class="n">RHOHV</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;RhoHV&quot;</span><span class="p">,</span> <span class="n">cb_label</span><span class="o">=</span><span class="s2">&quot;(-)&quot;</span><span class="p">,</span> <span class="n">cb_shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s2">&quot;neither&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">(</span><span class="n">swp_in</span><span class="o">.</span><span class="n">PHIDP</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">swp_in</span><span class="o">.</span><span class="n">PHIDP</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;PhiDP&quot;</span><span class="p">,</span> <span class="n">cb_label</span><span class="o">=</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span> <span class="n">cb_shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s2">&quot;neither&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;swp_in&#39; is not defined
+</pre></div>
+</div>
+<img alt="../../_images/887641965f2698b42f477eab176f46d72ada97782bd0debe68161b5f0f0ad334.png" src="../../_images/887641965f2698b42f477eab176f46d72ada97782bd0debe68161b5f0f0ad334.png" />
 </div>
 </div>
 </div>
@@ -845,10 +980,19 @@ Objects pending: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/wradlib/trafo.py:261: RuntimeWarning: overflow encountered in power
-  return 10.0 ** (x / 10.0)
-/srv/conda/envs/notebook/lib/python3.9/site-packages/wradlib/atten.py:521: RuntimeWarning: overflow encountered in cast
-  pia[beams2correct] = sub_pia
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Set ZH to a very low value where we do not expect valid data</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">zh_filtered</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">before</span><span class="p">),</span> <span class="o">-</span><span class="mf">32.</span><span class="p">,</span> <span class="n">before</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">pia</span> <span class="o">=</span> <span class="n">wradlib</span><span class="o">.</span><span class="n">atten</span><span class="o">.</span><span class="n">correct_attenuation_constrained</span><span class="p">(</span><span class="n">before</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="o">-</span><span class="mi">32</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                                                   <span class="n">constraints</span><span class="o">=</span><span class="p">[</span><span class="n">wradlib</span><span class="o">.</span><span class="n">atten</span><span class="o">.</span><span class="n">constraint_dbz</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                                                                <span class="n">wradlib</span><span class="o">.</span><span class="n">atten</span><span class="o">.</span><span class="n">constraint_pia</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                                                   <span class="n">constraint_args</span><span class="o">=</span><span class="p">[[</span><span class="mf">64.0</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                                                                    <span class="p">[</span><span class="mf">20.0</span><span class="p">]])</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Correct reflectivity by PIA</span>
+
+<span class="ne">NameError</span>: name &#39;before&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -879,7 +1023,21 @@ Objects pending: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e1657a96ce8bf49647c681fc5c9b74e6aa38ece192b906c56e719e30308b02f1.png" src="../../_images/e1657a96ce8bf49647c681fc5c9b74e6aa38ece192b906c56e719e30308b02f1.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">shrink</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">131</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">(</span><span class="n">before</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">before</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">32</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Before QC&quot;</span><span class="p">,</span> <span class="n">cb_label</span><span class="o">=</span><span class="s2">&quot;Horizontal reflectivity (dBZ)&quot;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                         <span class="n">cb_shrink</span><span class="o">=</span><span class="n">shrink</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">65</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">132</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">(</span><span class="n">after</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">before</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">32</span><span class="p">),</span>  <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;After QC using BALTRAD Toolbox&quot;</span><span class="p">,</span> <span class="n">cb_label</span><span class="o">=</span><span class="s2">&quot;Horizontal reflectivity (dBZ)&quot;</span><span class="p">,</span> 
+<span class="g g-Whitespace">     </span><span class="mi">12</span>                         <span class="n">cb_shrink</span><span class="o">=</span><span class="n">shrink</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">65</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;before&#39; is not defined
+</pre></div>
+</div>
+<img alt="../../_images/e089466be4350cf8c940812e559e4220d3f2097e5606cd5665e9931245e3c95b.png" src="../../_images/e089466be4350cf8c940812e559e4220d3f2097e5606cd5665e9931245e3c95b.png" />
 </div>
 </div>
 </div>
@@ -897,7 +1055,18 @@ Objects pending: 0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/525abcd67218fdb35d98da5690e7b732943e8e0ead84996a2526b4fbe37e1bf8.png" src="../../_images/525abcd67218fdb35d98da5690e7b732943e8e0ead84996a2526b4fbe37e1bf8.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">shrink</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;equal&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">ax</span><span class="p">,</span> <span class="n">pm</span> <span class="o">=</span> <span class="n">plot_ppi_to_ax</span><span class="p">((</span><span class="n">after2</span><span class="o">-</span><span class="n">after</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">before</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">32</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;QC Wradlib - QC Baltrad&quot;</span><span class="p">,</span> <span class="n">cb_label</span><span class="o">=</span><span class="s2">&quot;Reflectivity Difference&quot;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                         <span class="n">cb_shrink</span><span class="o">=</span><span class="n">shrink</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="n">bbox</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdBu&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;after2&#39; is not defined
+</pre></div>
+</div>
+<img alt="../../_images/f005726068941306420230152db0e17425a48f0ffaad71c80d4838f973d66fcd.png" src="../../_images/f005726068941306420230152db0e17425a48f0ffaad71c80d4838f973d66fcd.png" />
 </div>
 </div>
 </div>
@@ -997,7 +1166,7 @@ Objects pending: 0
         
           By The Open Radar Community.
         
-          Last updated on 26 April 2023.
+          Last updated on 20 June 2023.
         </p>
       </div>
     </div>
