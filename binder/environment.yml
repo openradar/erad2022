@@ -3,20 +3,20 @@ channels:
   - conda-forge
 dependencies:
   - python=3.9
-  - jupyter-book
-  - numpy
-  - scipy
-  - matplotlib
-  - cartopy
-  - pandas
-  - xarray
+  - jupyter-book=0.12.3
+  - numpy<=1.23.2
+  - scipy<=1.9.1
+  - matplotlib<=3.5.3
+  - cartopy<=0.20.3
+  - pandas<=1.4.3
+  - xarray<=2022.6.0
   - wradlib=1.16.2
-  - dask
+  - dask<=2022.8.1
   - tqdm
   - hvplot
-  - rioxarray
-  - geopandas
-  - datashader
+  - rioxarray<=0.12.0
+  - geopandas<=0.11.1
+  - datashader<=0.14.2
   - arm_pyart=1.12.7
   - pyrad_arm
   - cookiecutter
@@ -37,7 +37,5 @@ dependencies:
   - pyviz_comms>=2.0
   - nbstripout
   - zip
-  # pythia dependencies
-  - jupyter-book=0.12.3
   - pip:
       - sphinx-pythia-theme
