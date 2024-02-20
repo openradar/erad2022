@@ -32,7 +32,7 @@ jobs:
         shell: bash -l {0}
     steps:
       - name: checkout files in repo
-        uses: actions/checkout@main
+        uses: actions/checkout@v3
       - name: remove Dockerfile
         run: |
           rm binder/Dockerfile
@@ -45,6 +45,7 @@ jobs:
           DOCKER_REGISTRY: "ghcr.io"
           PUBLIC_REGISTRY_CHECK: true
           APPENDIX_FILE: "binder/appendix.txt"
+          REPO2DOCKER_EXTRA_ARGS: --Repo2Docker.base_image=docker.io/library/buildpack-deps:bionic
       - name: list docker images
         run: |
           docker image ls -a
