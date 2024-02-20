@@ -12,7 +12,7 @@ dependencies:
   - rioxarray
   - geopandas
   - datashader
-  - arm_pyart
+  - arm_pyart=1.12.7
   - pyrad_arm
   - cartopy
   - matplotlib

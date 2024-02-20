@@ -17,7 +17,7 @@ dependencies:
   - rioxarray
   - geopandas
   - datashader
-  - pyart=1.12.7
+  - arm_pyart=1.12.7
   - pyrad_arm
   - cookiecutter
   # this is needed for baltrad compilation
