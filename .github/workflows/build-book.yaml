@@ -41,6 +41,8 @@ jobs:
           DOCKER_REGISTRY: "ghcr.io"
           PUBLIC_REGISTRY_CHECK: true
           APPENDIX_FILE: "binder/appendix.txt"
+          REPO2DOCKER_EXTRA_ARGS: "--Repo2Docker.base_image=docker.io/library/buildpack-deps:bionic"
+          FORCE_REPO2DOCKER_VERSION: "2023.6.0"
 
   build-book:
     runs-on: ubuntu-latest
