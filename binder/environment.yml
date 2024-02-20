@@ -37,5 +37,7 @@ dependencies:
   - pyviz_comms>=2.0
   - nbstripout
   - zip
+  # pythia dependencies
+  - jupyter-book=0.12.3
   - pip:
       - sphinx-pythia-theme
