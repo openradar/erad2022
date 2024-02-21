@@ -12,14 +12,14 @@ dependencies:
   - xarray<=2022.6.0
   - wradlib=1.16.2
   - dask<=2022.8.1
-  - tqdm
-  - hvplot
+  - tqdm<=4.64.0
+  - hvplot<=0.8.0
   - rioxarray<=0.12.0
   - geopandas<=0.11.1
   - datashader<=0.14.2
   - arm_pyart=1.12.7
-  - pyrad_arm
-  - cookiecutter
+  - pyrad_arm<=0.6.0
+  - cookiecutter<=2.1.1
   # this is needed for baltrad compilation
   - compilers
   - make
@@ -33,9 +33,9 @@ dependencies:
   - libblas=*=*netlib
   - liblapacke=*=*netlib
   # this is needed for notebooks
-  - pip
-  - pyviz_comms>=2.0
-  - nbstripout
-  - zip
+  - pip<=22.2.2
+  - pyviz_comms>=2.0,<3
+  - nbstripout<=0.6.0
+  - zip<=
   - pip:
       - sphinx-pythia-theme
