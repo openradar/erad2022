@@ -36,6 +36,6 @@ dependencies:
   - pip<=22.2.2
   - pyviz_comms>=2.0,<3
   - nbstripout<=0.6.0
-  - zip<=
+  - zip
   - pip:
       - sphinx-pythia-theme
