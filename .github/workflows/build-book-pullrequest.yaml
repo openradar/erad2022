@@ -46,7 +46,7 @@ jobs:
           PUBLIC_REGISTRY_CHECK: true
           APPENDIX_FILE: "binder/appendix.txt"
           REPO2DOCKER_EXTRA_ARGS: --Repo2Docker.base_image=docker.io/library/buildpack-deps:bionic
-          FORCE_REPO2DOCKER_VERSION: 2022.02.0
+          FORCE_REPO2DOCKER_VERSION: 2022.2.0
 
       - name: list docker images
         run: |
