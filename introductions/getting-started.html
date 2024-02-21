@@ -26,9 +26,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-pythia-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -42,8 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="An Overview of Open Science" href="open-science.html" />
@@ -550,7 +552,7 @@ Notebooks might be added to the <a class="reference external" href="https://gith
 <p>We work on pre-building the environment and toolkit so you can deploy this on the platform of your choice! Making the Open Radar Science stack available across different environments is essential to ensure reproducibility. We take advantage of “containerization”, which enables packaging all of these tools together so you can deploy it on the platform of your choice. In this case, we are deploying a software stack which includes a variety of different languages (ex. Python, C++, C) and deploy it on a cloud platform. We use Docker as our main containerization tool.</p>
 <div class="section" id="build-on-github-pullrequest">
 <h3>Build on GitHub - PullRequest<a class="headerlink" href="#build-on-github-pullrequest" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p><a class="reference external" href="https://github.com/jupyterhub/repo2docker-action">repo2docker-action</a> is used to build the docker image</p>
 <ul class="simple">
 <li><p>docker layers will be cached from <a class="reference external" href="https://github.com/openradar/erad2022/pkgs/container/erad2022">ghcr.io</a></p></li>
@@ -563,7 +565,7 @@ Notebooks might be added to the <a class="reference external" href="https://gith
 </div>
 <div class="section" id="build-on-github-push">
 <h3>Build on GitHub - Push<a class="headerlink" href="#build-on-github-push" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>repo2docker-action is used to build the docker image</p>
 <ul class="simple">
 <li><p>docker layers will be cached from <a class="reference external" href="https://github.com/openradar/erad2022/pkgs/container/erad2022">ghcr.io</a></p></li>
@@ -661,7 +663,7 @@ If you encounter any problems please <a class="reference external" href="https:/
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./introductions"
         },
         predefinedOutput: true
@@ -743,7 +745,7 @@ If you encounter any problems please <a class="reference external" href="https:/
         
           By The Open Radar Community.
         
-          Last updated on 20 June 2023.
+          Last updated on 21 February 2024.
         </p>
       </div>
     </div>

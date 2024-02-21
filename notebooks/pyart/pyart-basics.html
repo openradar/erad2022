@@ -26,9 +26,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -42,8 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Py-ART Gridding" href="pyart-gridding.html" />
@@ -565,7 +567,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>Within this notebook, we will cover:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>General overview of Py-ART and its functionality</p></li>
 <li><p>Reading data using Py-ART</p></li>
 <li><p>An overview of the <code class="docutils literal notranslate"><span class="pre">pyart.Radar</span></code> object</p></li>
@@ -629,6 +631,10 @@ const thebe_selector_output = ".output, .cell_output"
 ## If you use this software to prepare a publication, please cite:
 ##
 ##     JJ Helmus and SM Collis, JORS 2016, doi: 10.5334/jors.119
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/requests/__init__.py:102: RequestsDependencyWarning: urllib3 (1.26.8) or chardet (5.2.0)/charset_normalizer (2.0.10) doesn&#39;t match a supported version!
+  warnings.warn(&quot;urllib3 ({}) or chardet ({})/charset_normalizer ({}) doesn&#39;t match a supported &quot;
 </pre></div>
 </div>
 </div>
@@ -700,7 +706,7 @@ The documentation on what formats can be read by Py-ART can be found here:</p>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading file &#39;swx_20120520_0641.nc&#39; from &#39;https://adc.arm.gov/pyart/example_data/swx_20120520_0641.nc&#39; to &#39;/github/home/.cache/pyart-datasets&#39;.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyart.core.radar.Radar at 0x7feb44fcbcd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyart.core.radar.Radar at 0x7f8b89092f70&gt;
 </pre></div>
 </div>
 </div>
@@ -853,7 +859,7 @@ the contents of that field.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1000 with 0 Axes&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 720x720 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -867,7 +873,7 @@ the contents of that field.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1000x1000 with 0 Axes&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 720x720 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -880,7 +886,7 @@ the contents of that field.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/88765f322ed9e63322229376c54e9f9440ad3d08f1b97dd8572d7b1ba85080eb.png" src="../../_images/88765f322ed9e63322229376c54e9f9440ad3d08f1b97dd8572d7b1ba85080eb.png" />
+<img alt="../../_images/pyart-basics_33_0.png" src="../../_images/pyart-basics_33_0.png" />
 </div>
 </div>
 <p>By default, it will plot the elevation scan, the the default colormap from <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>… let’s customize!</p>
@@ -907,7 +913,7 @@ the contents of that field.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ae384cc843d277b8982dd73d019553efd1c1fa0e3bcb9271fd09a23253ae7ada.png" src="../../_images/ae384cc843d277b8982dd73d019553efd1c1fa0e3bcb9271fd09a23253ae7ada.png" />
+<img alt="../../_images/pyart-basics_35_0.png" src="../../_images/pyart-basics_35_0.png" />
 </div>
 </div>
 <p>You can change many parameters in the graph by changing the arguments to plot_ppi_map. As you can recall from earlier. simply view these arguments in a Jupyter notebook by typing:</p>
@@ -934,7 +940,7 @@ the contents of that field.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7cd85b9bec29c74405b1955cad21549f0a71d69e55cbada70ea2d177c0a4a3d8.png" src="../../_images/7cd85b9bec29c74405b1955cad21549f0a71d69e55cbada70ea2d177c0a4a3d8.png" />
+<img alt="../../_images/pyart-basics_39_0.png" src="../../_images/pyart-basics_39_0.png" />
 </div>
 </div>
 <p>Or, let’s view a different elevation scan! To do this, change the sweep parameter in the plot_ppi_map function.</p>
@@ -953,7 +959,7 @@ the contents of that field.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/50cde23b4433a254520eb4ba9683547d58befd220ca4578d7cbf26b8a9ad5065.png" src="../../_images/50cde23b4433a254520eb4ba9683547d58befd220ca4578d7cbf26b8a9ad5065.png" />
+<img alt="../../_images/pyart-basics_41_0.png" src="../../_images/pyart-basics_41_0.png" />
 </div>
 </div>
 <p>Let’s take a look at a different field - for example, correlation coefficient (<code class="docutils literal notranslate"><span class="pre">corr_coeff</span></code>)</p>
@@ -972,7 +978,7 @@ the contents of that field.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/da2a954ec7c72a241ea945ddf5848f24848746940d529f2870ea9400ac947ba8.png" src="../../_images/da2a954ec7c72a241ea945ddf5848f24848746940d529f2870ea9400ac947ba8.png" />
+<img alt="../../_images/pyart-basics_43_0.png" src="../../_images/pyart-basics_43_0.png" />
 </div>
 </div>
 </div>
@@ -1016,7 +1022,7 @@ the contents of that field.</p>
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./notebooks/pyart"
         },
         predefinedOutput: true
@@ -1098,7 +1104,7 @@ the contents of that field.</p>
         
           By The Open Radar Community.
         
-          Last updated on 20 June 2023.
+          Last updated on 21 February 2024.
         </p>
       </div>
     </div>

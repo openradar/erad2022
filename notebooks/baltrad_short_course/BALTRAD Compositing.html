@@ -26,9 +26,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -42,8 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="In this notebook, we will use the depolarization ratio to quality control a volume of data from the new radar at Radisson, Saskatchewan" href="BALTRAD%20DRQC.html" />
@@ -522,7 +524,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compositing took 22.45 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compositing took 12.72 seconds
 </pre></div>
 </div>
 </div>
@@ -567,7 +569,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c2e56103a7ccded03ff345ce66a97ee8840dc1c5199c5b3cb655590d348eb71b.png" src="../../_images/c2e56103a7ccded03ff345ce66a97ee8840dc1c5199c5b3cb655590d348eb71b.png" />
+<img alt="../../_images/BALTRAD Compositing_7_0.png" src="../../_images/BALTRAD Compositing_7_0.png" />
 </div>
 </div>
 </div>
@@ -588,7 +590,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compositing took 201.98 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compositing took 76.52 seconds
 </pre></div>
 </div>
 </div>
@@ -600,7 +602,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2808d35f844d53e0ba4edb67eae2b53437b4a1e9861d512b33cd8535bd5114a3.png" src="../../_images/2808d35f844d53e0ba4edb67eae2b53437b4a1e9861d512b33cd8535bd5114a3.png" />
+<img alt="../../_images/BALTRAD Compositing_10_0.png" src="../../_images/BALTRAD Compositing_10_0.png" />
 </div>
 </div>
 </div>
@@ -615,7 +617,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/19c49db2eb63e402bdc166fd464321deabd7021fb81b0cc992b065b24ed637d7.png" src="../../_images/19c49db2eb63e402bdc166fd464321deabd7021fb81b0cc992b065b24ed637d7.png" />
+<img alt="../../_images/BALTRAD Compositing_12_0.png" src="../../_images/BALTRAD Compositing_12_0.png" />
 </div>
 </div>
 </div>
@@ -634,7 +636,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compositing took 46.20 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Compositing took 26.95 seconds
 </pre></div>
 </div>
 </div>
@@ -646,7 +648,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/99307c7fff17a70cac15a37363a54d9496ae2c3a6f2671e9cb37a9b9e97ddee1.png" src="../../_images/99307c7fff17a70cac15a37363a54d9496ae2c3a6f2671e9cb37a9b9e97ddee1.png" />
+<img alt="../../_images/BALTRAD Compositing_15_0.png" src="../../_images/BALTRAD Compositing_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -656,7 +658,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bd79b05fef71493d156e891da92298a96a206fb68f0699d5247533dbeb4cb5eb.png" src="../../_images/bd79b05fef71493d156e891da92298a96a206fb68f0699d5247533dbeb4cb5eb.png" />
+<img alt="../../_images/BALTRAD Compositing_16_0.png" src="../../_images/BALTRAD Compositing_16_0.png" />
 </div>
 </div>
 </div>
@@ -674,7 +676,7 @@ const thebe_selector_output = ".output, .cell_output"
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./notebooks/baltrad_short_course"
         },
         predefinedOutput: true
@@ -756,7 +758,7 @@ const thebe_selector_output = ".output, .cell_output"
         
           By The Open Radar Community.
         
-          Last updated on 20 June 2023.
+          Last updated on 21 February 2024.
         </p>
       </div>
     </div>

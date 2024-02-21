@@ -26,9 +26,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -42,8 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Wradlib Tutorial" href="../../wradlib/README.html" />
@@ -477,9 +479,13 @@ const thebe_selector_output = ".output, .cell_output"
 ##     JJ Helmus and SM Collis, JORS 2016, doi: 10.5334/jors.119
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.9/site-packages/requests/__init__.py:102: RequestsDependencyWarning: urllib3 (1.26.8) or chardet (5.2.0)/charset_normalizer (2.0.10) doesn&#39;t match a supported version!
+  warnings.warn(&quot;urllib3 ({}) or chardet ({})/charset_normalizer ({}) doesn&#39;t match a supported &quot;
+</pre></div>
 </div>
 </div>
-<ol class="arabic simple">
+</div>
+<ol class="simple">
 <li><p>Load all radar files in /data/question_pyart_meteoswiss and merge them into one single radar object</p></li>
 </ol>
 <div class="cell docutils container">
@@ -497,7 +503,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<ol class="arabic simple" start="2">
+<ol class="simple">
 <li><p>Perform attenuation correction of ZH, using a constant freezing level height of 2700 m.</p></li>
 </ol>
 <div class="cell docutils container">
@@ -512,7 +518,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<ol class="arabic simple" start="3">
+<ol class="simple">
 <li><p>Estimate the QPE with a <strong><a class="reference external" href="https://arm-doe.github.io/pyart/_modules/pyart/retrieve/qpe.html#est_rain_rate_za">a polynomial Z-R relation</a></strong>.</p></li>
 </ol>
 <div class="cell docutils container">
@@ -524,7 +530,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<ol class="arabic simple" start="4">
+<ol class="simple">
 <li><p>Compute a CAPPI of the resulting radar estimate rain rate from 500 to 8000 m above the radar  using a vertical resolution of 100 m and a horizontal resolution of 500 m at a x and y distance of up to 100 km to the radar.</p></li>
 </ol>
 <div class="cell docutils container">
@@ -551,7 +557,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<ol class="arabic simple" start="5">
+<ol class="simple">
 <li><p>Using numpy, perform a weighted average of all CAPPI levels using the weights. Finally display the results.</p></li>
 </ol>
 <div class="cell docutils container">
@@ -569,14 +575,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_808/2553980288.py:6: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1109/2553980288.py:6: UserWarning: The input coordinates to pcolormesh are interpreted as cell centers, but are not monotonically increasing or decreasing. This may lead to incorrectly calculated cell edges, in which case, please supply explicit cell edges to pcolormesh.
   plt.pcolormesh(cappi_qpe.point_longitude[&#39;data&#39;][0],
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f9899d03850&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f572836b4f0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/d16d61a6cc6d5c2494069f7572276e0d638226cf797223afd1fc78dfc8134527.png" src="../../_images/d16d61a6cc6d5c2494069f7572276e0d638226cf797223afd1fc78dfc8134527.png" />
+<img alt="../../_images/answer_question_pyart_meteoswiss_12_2.png" src="../../_images/answer_question_pyart_meteoswiss_12_2.png" />
 </div>
 </div>
 <p>Now let’s compare this QPE with the operational QPE of MeteoSwiss at the same timestep:</p>
@@ -596,7 +602,7 @@ const thebe_selector_output = ".output, .cell_output"
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./notebooks/pyart"
         },
         predefinedOutput: true
@@ -678,7 +684,7 @@ const thebe_selector_output = ".output, .cell_output"
         
           By The Open Radar Community.
         
-          Last updated on 20 June 2023.
+          Last updated on 21 February 2024.
         </p>
       </div>
     </div>

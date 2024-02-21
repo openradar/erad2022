@@ -26,9 +26,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-pythia-theme.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -42,8 +43,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -558,7 +560,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>If you have an introductory paragraph, lead with it here! Keep it short and tied to your material, then be sure to continue into the required list of topics below,</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>This is a numbered list of the specific topics</p></li>
 <li><p>These should map approximately to your main sections of content</p></li>
 <li><p>Or each second-level, <code class="docutils literal notranslate"><span class="pre">##</span></code>, header in your notebook</p></li>
@@ -661,8 +663,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="header-levels">
 <h6>header levels<a class="headerlink" href="#header-levels" title="Permalink to this headline"><i class="fas fa-link"></i></a></h6>
 <p>as well <span class="math notranslate nohighlight">\(m = a * t / h\)</span> text! Similarly, you have access to other <span class="math notranslate nohighlight">\(\LaTeX\)</span> equation <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Typesetting%20Equations.html"><strong>functionality</strong></a> via MathJax (demo below from link),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7fd53bf9-bf8e-42ce-ac06-7426683ae573">
-<span class="eqno">()<a class="headerlink" href="#equation-7fd53bf9-bf8e-42ce-ac06-7426683ae573" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bc7ee57f-5f4c-4d82-a92b-7c95d849a174">
+<span class="eqno">()<a class="headerlink" href="#equation-bc7ee57f-5f4c-4d82-a92b-7c95d849a174" title="Permalink to this equation"><i class="fas fa-link"></i></a></span>\[\begin{align}
 \dot{x} &amp; = \sigma(y-x) \\
 \dot{y} &amp; = \rho x - y - xz \\
 \dot{z} &amp; = -\beta z + xy
@@ -730,7 +732,7 @@ const thebe_selector_output = ".output, .cell_output"
             mode: "python"
         },
         kernelOptions: {
-            name: "python3",
+            kernelName: "python3",
             path: "./notebooks"
         },
         predefinedOutput: true
@@ -798,7 +800,7 @@ const thebe_selector_output = ".output, .cell_output"
         
           By The Open Radar Community.
         
-          Last updated on 20 June 2023.
+          Last updated on 21 February 2024.
         </p>
       </div>
     </div>
