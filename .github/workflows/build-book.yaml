@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout files in repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: remove Dockerfile
         run: |
           rm binder/Dockerfile
@@ -54,7 +54,7 @@ jobs:
       run:
         shell: bash -l {0}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Build the book
         run: |
           # copy baltrad notebooks to book dir
