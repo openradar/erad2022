@@ -74,7 +74,7 @@ jobs:
           fi
           zip -r book.zip ${{ inputs.path_to_notebooks }}/_build/html
       - name: Upload zipped book artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: book-zip-${{github.event.number}}
           path: ./book.zip
