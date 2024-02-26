@@ -23,7 +23,7 @@ jobs:
         shell: bash -l {0}
     steps:
       - name: Download Artifact Book
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: book-zip-${{ github.event.number }}
 
